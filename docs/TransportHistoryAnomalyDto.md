@@ -2,14 +2,14 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**TransportHistoryAnomalyId** | Pointer to **int32** |  | [optional] 
-**AnomalyCode** | Pointer to **string** |  | [optional] 
-**AnomalyType** | Pointer to **string** |  | [optional] 
-**AnomalyCategory** | Pointer to **string** |  | [optional] 
-**Comment** | Pointer to **string** |  | [optional] 
-**AnomalyDateTime** | Pointer to **time.Time** |  | [optional] 
+| Name                          | Type                  | Description | Notes      |
+| ----------------------------- | --------------------- | ----------- | ---------- |
+| **TransportHistoryAnomalyId** | Pointer to **int32**  |             | [optional] |
+| **AnomalyCode**               | Pointer to **string** |             | [optional] |
+| **AnomalyType**               | Pointer to **string** |             | [optional] |
+| **AnomalyCategory**           | Pointer to **string** |             | [optional] |
+| **Comment**                   | Pointer to **string** |             | [optional] |
+| **AnomalyDateTime**           | Pointer to **Time**   |             | [optional] |
 
 ## Methods
 
@@ -157,20 +157,20 @@ HasComment returns a boolean if a field has been set.
 
 ### GetAnomalyDateTime
 
-`func (o *TransportHistoryAnomalyDto) GetAnomalyDateTime() time.Time`
+`func (o *TransportHistoryAnomalyDto) GetAnomalyDateTime() Time`
 
 GetAnomalyDateTime returns the AnomalyDateTime field if non-nil, zero value otherwise.
 
 ### GetAnomalyDateTimeOk
 
-`func (o *TransportHistoryAnomalyDto) GetAnomalyDateTimeOk() (*time.Time, bool)`
+`func (o *TransportHistoryAnomalyDto) GetAnomalyDateTimeOk() (*Time, bool)`
 
 GetAnomalyDateTimeOk returns a tuple with the AnomalyDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAnomalyDateTime
 
-`func (o *TransportHistoryAnomalyDto) SetAnomalyDateTime(v time.Time)`
+`func (o *TransportHistoryAnomalyDto) SetAnomalyDateTime(v Time)`
 
 SetAnomalyDateTime sets AnomalyDateTime field to given value.
 
@@ -180,7 +180,4 @@ SetAnomalyDateTime sets AnomalyDateTime field to given value.
 
 HasAnomalyDateTime returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

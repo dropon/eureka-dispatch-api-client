@@ -2,17 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**TransportUid** | **string** | Mandatory. Transport&#39;s unique identifier | 
-**TransportReceipt** | Pointer to **string** | Transport receipt | [optional] 
-**DeliverySign** | Pointer to **string** | Transport delivery sign | [optional] 
-**DeliveryComment** | Pointer to **string** | Transport delivery comment | [optional] 
-**RealizedDateTime** | Pointer to **time.Time** | Transport delivery realized date time | [optional] 
-**RealizedArrivalOnSiteDateTime** | Pointer to **time.Time** | Transport delivery realized arrival on site date time | [optional] 
-**RealizedUnloadingStartDateTime** | Pointer to **time.Time** | Transport delivery realized unloading start date time | [optional] 
-**RealizedUnloadingEndDateTime** | Pointer to **time.Time** | Transport delivery realized unloading end date time | [optional] 
-**PickupData** | Pointer to [**PickupDataOnStatusAppliedDto**](PickupDataOnStatusAppliedDto.md) |  | [optional] 
+| Name                               | Type                                                                           | Description                                           | Notes      |
+| ---------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------- | ---------- |
+| **TransportUid**                   | **string**                                                                     | Mandatory. Transport&#39;s unique identifier          |
+| **TransportReceipt**               | Pointer to **string**                                                          | Transport receipt                                     | [optional] |
+| **DeliverySign**                   | Pointer to **string**                                                          | Transport delivery sign                               | [optional] |
+| **DeliveryComment**                | Pointer to **string**                                                          | Transport delivery comment                            | [optional] |
+| **RealizedDateTime**               | Pointer to **Time**                                                            | Transport delivery realized date time                 | [optional] |
+| **RealizedArrivalOnSiteDateTime**  | Pointer to **Time**                                                            | Transport delivery realized arrival on site date time | [optional] |
+| **RealizedUnloadingStartDateTime** | Pointer to **Time**                                                            | Transport delivery realized unloading start date time | [optional] |
+| **RealizedUnloadingEndDateTime**   | Pointer to **Time**                                                            | Transport delivery realized unloading end date time   | [optional] |
+| **PickupData**                     | Pointer to [**PickupDataOnStatusAppliedDto**](PickupDataOnStatusAppliedDto.md) |                                                       | [optional] |
 
 ## Methods
 
@@ -51,7 +51,6 @@ and a boolean to check if the value has been set.
 `func (o *ApplyDeliveredStatusCommand) SetTransportUid(v string)`
 
 SetTransportUid sets TransportUid field to given value.
-
 
 ### GetTransportReceipt
 
@@ -130,20 +129,20 @@ HasDeliveryComment returns a boolean if a field has been set.
 
 ### GetRealizedDateTime
 
-`func (o *ApplyDeliveredStatusCommand) GetRealizedDateTime() time.Time`
+`func (o *ApplyDeliveredStatusCommand) GetRealizedDateTime() Time`
 
 GetRealizedDateTime returns the RealizedDateTime field if non-nil, zero value otherwise.
 
 ### GetRealizedDateTimeOk
 
-`func (o *ApplyDeliveredStatusCommand) GetRealizedDateTimeOk() (*time.Time, bool)`
+`func (o *ApplyDeliveredStatusCommand) GetRealizedDateTimeOk() (*Time, bool)`
 
 GetRealizedDateTimeOk returns a tuple with the RealizedDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRealizedDateTime
 
-`func (o *ApplyDeliveredStatusCommand) SetRealizedDateTime(v time.Time)`
+`func (o *ApplyDeliveredStatusCommand) SetRealizedDateTime(v Time)`
 
 SetRealizedDateTime sets RealizedDateTime field to given value.
 
@@ -155,20 +154,20 @@ HasRealizedDateTime returns a boolean if a field has been set.
 
 ### GetRealizedArrivalOnSiteDateTime
 
-`func (o *ApplyDeliveredStatusCommand) GetRealizedArrivalOnSiteDateTime() time.Time`
+`func (o *ApplyDeliveredStatusCommand) GetRealizedArrivalOnSiteDateTime() Time`
 
 GetRealizedArrivalOnSiteDateTime returns the RealizedArrivalOnSiteDateTime field if non-nil, zero value otherwise.
 
 ### GetRealizedArrivalOnSiteDateTimeOk
 
-`func (o *ApplyDeliveredStatusCommand) GetRealizedArrivalOnSiteDateTimeOk() (*time.Time, bool)`
+`func (o *ApplyDeliveredStatusCommand) GetRealizedArrivalOnSiteDateTimeOk() (*Time, bool)`
 
 GetRealizedArrivalOnSiteDateTimeOk returns a tuple with the RealizedArrivalOnSiteDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRealizedArrivalOnSiteDateTime
 
-`func (o *ApplyDeliveredStatusCommand) SetRealizedArrivalOnSiteDateTime(v time.Time)`
+`func (o *ApplyDeliveredStatusCommand) SetRealizedArrivalOnSiteDateTime(v Time)`
 
 SetRealizedArrivalOnSiteDateTime sets RealizedArrivalOnSiteDateTime field to given value.
 
@@ -180,20 +179,20 @@ HasRealizedArrivalOnSiteDateTime returns a boolean if a field has been set.
 
 ### GetRealizedUnloadingStartDateTime
 
-`func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingStartDateTime() time.Time`
+`func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingStartDateTime() Time`
 
 GetRealizedUnloadingStartDateTime returns the RealizedUnloadingStartDateTime field if non-nil, zero value otherwise.
 
 ### GetRealizedUnloadingStartDateTimeOk
 
-`func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingStartDateTimeOk() (*time.Time, bool)`
+`func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingStartDateTimeOk() (*Time, bool)`
 
 GetRealizedUnloadingStartDateTimeOk returns a tuple with the RealizedUnloadingStartDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRealizedUnloadingStartDateTime
 
-`func (o *ApplyDeliveredStatusCommand) SetRealizedUnloadingStartDateTime(v time.Time)`
+`func (o *ApplyDeliveredStatusCommand) SetRealizedUnloadingStartDateTime(v Time)`
 
 SetRealizedUnloadingStartDateTime sets RealizedUnloadingStartDateTime field to given value.
 
@@ -205,20 +204,20 @@ HasRealizedUnloadingStartDateTime returns a boolean if a field has been set.
 
 ### GetRealizedUnloadingEndDateTime
 
-`func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingEndDateTime() time.Time`
+`func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingEndDateTime() Time`
 
 GetRealizedUnloadingEndDateTime returns the RealizedUnloadingEndDateTime field if non-nil, zero value otherwise.
 
 ### GetRealizedUnloadingEndDateTimeOk
 
-`func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingEndDateTimeOk() (*time.Time, bool)`
+`func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingEndDateTimeOk() (*Time, bool)`
 
 GetRealizedUnloadingEndDateTimeOk returns a tuple with the RealizedUnloadingEndDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRealizedUnloadingEndDateTime
 
-`func (o *ApplyDeliveredStatusCommand) SetRealizedUnloadingEndDateTime(v time.Time)`
+`func (o *ApplyDeliveredStatusCommand) SetRealizedUnloadingEndDateTime(v Time)`
 
 SetRealizedUnloadingEndDateTime sets RealizedUnloadingEndDateTime field to given value.
 
@@ -253,7 +252,4 @@ SetPickupData sets PickupData field to given value.
 
 HasPickupData returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

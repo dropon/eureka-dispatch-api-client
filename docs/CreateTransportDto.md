@@ -2,42 +2,42 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**CustomerCode** | **string** | Mandatory. Customer&#39;s unique code. | 
-**AgencyCode** | **string** | Mandatory. Agency unique code. | 
-**OrdererCode** | Pointer to **string** | Orderer unique code. | [optional] 
-**OrdererName** | Pointer to **string** | Orderer name, when orderer code is not specified. | [optional] 
-**Sign** | Pointer to **string** |  | [optional] 
-**SecretCode** | Pointer to **string** |  | [optional] 
-**Notes** | Pointer to **string** |  | [optional] 
-**IsRoundTrip** | Pointer to **bool** |  | [optional] 
-**CustomerCallDateTime** | Pointer to **time.Time** | The date and time at which the customer have contacted the transport company to request the transport.  If not set, will default to the service current local date and time at server time zone. | [optional] 
-**PickupStep** | [**CreateTransportDtoStepDto**](CreateTransportDtoStepDto.md) |  | 
-**DeliveryStep** | [**CreateTransportDtoStepDto**](CreateTransportDtoStepDto.md) |  | 
-**ServiceCode** | **string** | Mandatory. Service&#39;s unique code. | 
-**SubServices** | Pointer to [**[]CreateTransportDtoSubServiceDto**](CreateTransportDtoSubServiceDto.md) | Transport&#39;s sub services.  When this list is null or empty, the transport uses service&#39;s default sub services.  When at least an element is specified in this list, the transport uses only the specified sub services:  service&#39;s default sub services are not included and must be specified manually if they are needed. | [optional] 
-**Packing** | Pointer to [**CreateTransportDtoPackingDto**](CreateTransportDtoPackingDto.md) |  | [optional] 
-**CustomerCustomParameters** | Pointer to [**[]CreateTransportDtoCustomParameterDto**](CreateTransportDtoCustomParameterDto.md) | Custom parameters related to the customer. | [optional] 
-**ServiceCustomParameters** | Pointer to [**[]CreateTransportDtoCustomParameterDto**](CreateTransportDtoCustomParameterDto.md) | Custom parameters related to the service. | [optional] 
-**Reference1** | Pointer to **string** |  | [optional] 
-**Reference2** | Pointer to **string** |  | [optional] 
-**Reference3** | Pointer to **string** |  | [optional] 
-**DistanceKm** | Pointer to **float64** | Distance of the transport in kilometers. | [optional] 
-**TotalDurationMinutes** | Pointer to **int32** | Total duration of the transport in minutes | [optional] 
-**IsStrategic** | Pointer to **bool** | Indicates if the transport has a strategic importance.  When not specified, this information is filled from the customer. | [optional] 
-**IsShared** | Pointer to **bool** | Indicates if the transport is &#39;shared&#39; between agencies.    If true, the transport will be visible on Dispatch planning   via the &#39;supervising&#39; mode. | [optional] 
-**ResponsibleOperatorId** | Pointer to **int32** | The identifier of a dispatch user that is responsible for following the execution of the transport. | [optional] 
-**GasEmission** | Pointer to **float64** | Gas emission (CO2) in Kilograms.  Used only when gas emission is forced. | [optional] 
-**IsGasEmissionForced** | Pointer to **bool** |  | [optional] 
-**ForcedSellPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices,Set prices in orders. | [optional] 
-**ForcedBuyPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices,Set prices in orders. | [optional] 
-**SellPricingPathId** | Pointer to **int32** | Used to force a specific sell pricing path.  The pricing path must be a customer pricing path (not a subcontractor&#39;s one).    When provided, the addresses are overwritten with the ones defined in the provided sell pricing path.    The provided service must match the one defined in the pricing path. | [optional] 
-**Comment** | Pointer to [**CreateTransportDtoCommentDto**](CreateTransportDtoCommentDto.md) |  | [optional] 
-**TransportBillAddress** | Pointer to [**CreateTransportDtoTransportBillAddressDto**](CreateTransportDtoTransportBillAddressDto.md) |  | [optional] 
-**CashOnDelivery** | Pointer to [**CreateTransportDtoCashOnDeliveryDto**](CreateTransportDtoCashOnDeliveryDto.md) |  | [optional] 
-**Communication** | Pointer to [**TransportCommunicationConfigurationDto**](TransportCommunicationConfigurationDto.md) |  | [optional] 
-**DangerousGoods** | Pointer to [**[]CreateTransportDtoDangerousGoodDto**](CreateTransportDtoDangerousGoodDto.md) |  | [optional] 
+| Name                         | Type                                                                                                     | Description                                                                                                                                                                                                                                                                                                                          | Notes      |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| **CustomerCode**             | **string**                                                                                               | Mandatory. Customer&#39;s unique code.                                                                                                                                                                                                                                                                                               |
+| **AgencyCode**               | **string**                                                                                               | Mandatory. Agency unique code.                                                                                                                                                                                                                                                                                                       |
+| **OrdererCode**              | Pointer to **string**                                                                                    | Orderer unique code.                                                                                                                                                                                                                                                                                                                 | [optional] |
+| **OrdererName**              | Pointer to **string**                                                                                    | Orderer name, when orderer code is not specified.                                                                                                                                                                                                                                                                                    | [optional] |
+| **Sign**                     | Pointer to **string**                                                                                    |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **SecretCode**               | Pointer to **string**                                                                                    |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **Notes**                    | Pointer to **string**                                                                                    |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **IsRoundTrip**              | Pointer to **bool**                                                                                      |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **CustomerCallDateTime**     | Pointer to **Time**                                                                                      | The date and time at which the customer have contacted the transport company to request the transport. If not set, will default to the service current local date and time at server time zone.                                                                                                                                      | [optional] |
+| **PickupStep**               | [**CreateTransportDtoStepDto**](CreateTransportDtoStepDto.md)                                            |                                                                                                                                                                                                                                                                                                                                      |
+| **DeliveryStep**             | [**CreateTransportDtoStepDto**](CreateTransportDtoStepDto.md)                                            |                                                                                                                                                                                                                                                                                                                                      |
+| **ServiceCode**              | **string**                                                                                               | Mandatory. Service&#39;s unique code.                                                                                                                                                                                                                                                                                                |
+| **SubServices**              | Pointer to [**[]CreateTransportDtoSubServiceDto**](CreateTransportDtoSubServiceDto.md)                   | Transport&#39;s sub services. When this list is null or empty, the transport uses service&#39;s default sub services. When at least an element is specified in this list, the transport uses only the specified sub services: service&#39;s default sub services are not included and must be specified manually if they are needed. | [optional] |
+| **Packing**                  | Pointer to [**CreateTransportDtoPackingDto**](CreateTransportDtoPackingDto.md)                           |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **CustomerCustomParameters** | Pointer to [**[]CreateTransportDtoCustomParameterDto**](CreateTransportDtoCustomParameterDto.md)         | Custom parameters related to the customer.                                                                                                                                                                                                                                                                                           | [optional] |
+| **ServiceCustomParameters**  | Pointer to [**[]CreateTransportDtoCustomParameterDto**](CreateTransportDtoCustomParameterDto.md)         | Custom parameters related to the service.                                                                                                                                                                                                                                                                                            | [optional] |
+| **Reference1**               | Pointer to **string**                                                                                    |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **Reference2**               | Pointer to **string**                                                                                    |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **Reference3**               | Pointer to **string**                                                                                    |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **DistanceKm**               | Pointer to **float64**                                                                                   | Distance of the transport in kilometers.                                                                                                                                                                                                                                                                                             | [optional] |
+| **TotalDurationMinutes**     | Pointer to **int32**                                                                                     | Total duration of the transport in minutes                                                                                                                                                                                                                                                                                           | [optional] |
+| **IsStrategic**              | Pointer to **bool**                                                                                      | Indicates if the transport has a strategic importance. When not specified, this information is filled from the customer.                                                                                                                                                                                                             | [optional] |
+| **IsShared**                 | Pointer to **bool**                                                                                      | Indicates if the transport is &#39;shared&#39; between agencies. If true, the transport will be visible on Dispatch planning via the &#39;supervising&#39; mode.                                                                                                                                                                     | [optional] |
+| **ResponsibleOperatorId**    | Pointer to **int32**                                                                                     | The identifier of a dispatch user that is responsible for following the execution of the transport.                                                                                                                                                                                                                                  | [optional] |
+| **GasEmission**              | Pointer to **float64**                                                                                   | Gas emission (CO2) in Kilograms. Used only when gas emission is forced.                                                                                                                                                                                                                                                              | [optional] |
+| **IsGasEmissionForced**      | Pointer to **bool**                                                                                      |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **ForcedSellPrice**          | Pointer to **float64**                                                                                   | The following permission(s) are required to access this property: See prices,Set prices in orders.                                                                                                                                                                                                                                   | [optional] |
+| **ForcedBuyPrice**           | Pointer to **float64**                                                                                   | The following permission(s) are required to access this property: See prices,Set prices in orders.                                                                                                                                                                                                                                   | [optional] |
+| **SellPricingPathId**        | Pointer to **int32**                                                                                     | Used to force a specific sell pricing path. The pricing path must be a customer pricing path (not a subcontractor&#39;s one). When provided, the addresses are overwritten with the ones defined in the provided sell pricing path. The provided service must match the one defined in the pricing path.                             | [optional] |
+| **Comment**                  | Pointer to [**CreateTransportDtoCommentDto**](CreateTransportDtoCommentDto.md)                           |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **TransportBillAddress**     | Pointer to [**CreateTransportDtoTransportBillAddressDto**](CreateTransportDtoTransportBillAddressDto.md) |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **CashOnDelivery**           | Pointer to [**CreateTransportDtoCashOnDeliveryDto**](CreateTransportDtoCashOnDeliveryDto.md)             |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **Communication**            | Pointer to [**TransportCommunicationConfigurationDto**](TransportCommunicationConfigurationDto.md)       |                                                                                                                                                                                                                                                                                                                                      | [optional] |
+| **DangerousGoods**           | Pointer to [**[]CreateTransportDtoDangerousGoodDto**](CreateTransportDtoDangerousGoodDto.md)             |                                                                                                                                                                                                                                                                                                                                      | [optional] |
 
 ## Methods
 
@@ -77,7 +77,6 @@ and a boolean to check if the value has been set.
 
 SetCustomerCode sets CustomerCode field to given value.
 
-
 ### GetAgencyCode
 
 `func (o *CreateTransportDto) GetAgencyCode() string`
@@ -96,7 +95,6 @@ and a boolean to check if the value has been set.
 `func (o *CreateTransportDto) SetAgencyCode(v string)`
 
 SetAgencyCode sets AgencyCode field to given value.
-
 
 ### GetOrdererCode
 
@@ -250,20 +248,20 @@ HasIsRoundTrip returns a boolean if a field has been set.
 
 ### GetCustomerCallDateTime
 
-`func (o *CreateTransportDto) GetCustomerCallDateTime() time.Time`
+`func (o *CreateTransportDto) GetCustomerCallDateTime() Time`
 
 GetCustomerCallDateTime returns the CustomerCallDateTime field if non-nil, zero value otherwise.
 
 ### GetCustomerCallDateTimeOk
 
-`func (o *CreateTransportDto) GetCustomerCallDateTimeOk() (*time.Time, bool)`
+`func (o *CreateTransportDto) GetCustomerCallDateTimeOk() (*Time, bool)`
 
 GetCustomerCallDateTimeOk returns a tuple with the CustomerCallDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerCallDateTime
 
-`func (o *CreateTransportDto) SetCustomerCallDateTime(v time.Time)`
+`func (o *CreateTransportDto) SetCustomerCallDateTime(v Time)`
 
 SetCustomerCallDateTime sets CustomerCallDateTime field to given value.
 
@@ -292,7 +290,6 @@ and a boolean to check if the value has been set.
 
 SetPickupStep sets PickupStep field to given value.
 
-
 ### GetDeliveryStep
 
 `func (o *CreateTransportDto) GetDeliveryStep() CreateTransportDtoStepDto`
@@ -312,7 +309,6 @@ and a boolean to check if the value has been set.
 
 SetDeliveryStep sets DeliveryStep field to given value.
 
-
 ### GetServiceCode
 
 `func (o *CreateTransportDto) GetServiceCode() string`
@@ -331,7 +327,6 @@ and a boolean to check if the value has been set.
 `func (o *CreateTransportDto) SetServiceCode(v string)`
 
 SetServiceCode sets ServiceCode field to given value.
-
 
 ### GetSubServices
 
@@ -883,7 +878,4 @@ SetDangerousGoods sets DangerousGoods field to given value.
 
 HasDangerousGoods returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

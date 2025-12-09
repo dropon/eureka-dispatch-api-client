@@ -2,12 +2,12 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**Uid** | Pointer to **string** | Identifier of the document report. | [optional] 
-**ReportGenerationStartDate** | Pointer to **time.Time** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**ErrorDescription** | Pointer to **string** |  | [optional] 
+| Name                          | Type                  | Description                        | Notes      |
+| ----------------------------- | --------------------- | ---------------------------------- | ---------- |
+| **Uid**                       | Pointer to **string** | Identifier of the document report. | [optional] |
+| **ReportGenerationStartDate** | Pointer to **Time**   |                                    | [optional] |
+| **Status**                    | Pointer to **string** |                                    | [optional] |
+| **ErrorDescription**          | Pointer to **string** |                                    | [optional] |
 
 ## Methods
 
@@ -55,20 +55,20 @@ HasUid returns a boolean if a field has been set.
 
 ### GetReportGenerationStartDate
 
-`func (o *DocumentReportDto) GetReportGenerationStartDate() time.Time`
+`func (o *DocumentReportDto) GetReportGenerationStartDate() Time`
 
 GetReportGenerationStartDate returns the ReportGenerationStartDate field if non-nil, zero value otherwise.
 
 ### GetReportGenerationStartDateOk
 
-`func (o *DocumentReportDto) GetReportGenerationStartDateOk() (*time.Time, bool)`
+`func (o *DocumentReportDto) GetReportGenerationStartDateOk() (*Time, bool)`
 
 GetReportGenerationStartDateOk returns a tuple with the ReportGenerationStartDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportGenerationStartDate
 
-`func (o *DocumentReportDto) SetReportGenerationStartDate(v time.Time)`
+`func (o *DocumentReportDto) SetReportGenerationStartDate(v Time)`
 
 SetReportGenerationStartDate sets ReportGenerationStartDate field to given value.
 
@@ -128,7 +128,4 @@ SetErrorDescription sets ErrorDescription field to given value.
 
 HasErrorDescription returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

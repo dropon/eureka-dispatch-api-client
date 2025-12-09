@@ -2,14 +2,14 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**UnloadingStart** | Pointer to **time.Time** |  | [optional] 
-**UnloadingEnd** | Pointer to **time.Time** |  | [optional] 
-**PlannedStart** | Pointer to [**SlotDto**](SlotDto.md) |  | [optional] 
-**PlannedEnd** | Pointer to [**SlotDto**](SlotDto.md) |  | [optional] 
-**ArrivalOnSite** | Pointer to **time.Time** |  | [optional] 
-**EffectiveDate** | Pointer to **time.Time** |  | [optional] 
+| Name               | Type                                 | Description | Notes      |
+| ------------------ | ------------------------------------ | ----------- | ---------- |
+| **UnloadingStart** | Pointer to **Time**                  |             | [optional] |
+| **UnloadingEnd**   | Pointer to **Time**                  |             | [optional] |
+| **PlannedStart**   | Pointer to [**SlotDto**](SlotDto.md) |             | [optional] |
+| **PlannedEnd**     | Pointer to [**SlotDto**](SlotDto.md) |             | [optional] |
+| **ArrivalOnSite**  | Pointer to **Time**                  |             | [optional] |
+| **EffectiveDate**  | Pointer to **Time**                  |             | [optional] |
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUnloadingStart
 
-`func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingStart() time.Time`
+`func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingStart() Time`
 
 GetUnloadingStart returns the UnloadingStart field if non-nil, zero value otherwise.
 
 ### GetUnloadingStartOk
 
-`func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingStartOk() (*time.Time, bool)`
+`func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingStartOk() (*Time, bool)`
 
 GetUnloadingStartOk returns a tuple with the UnloadingStart field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUnloadingStart
 
-`func (o *TransportDeliveryDateTimeSlotDto) SetUnloadingStart(v time.Time)`
+`func (o *TransportDeliveryDateTimeSlotDto) SetUnloadingStart(v Time)`
 
 SetUnloadingStart sets UnloadingStart field to given value.
 
@@ -57,20 +57,20 @@ HasUnloadingStart returns a boolean if a field has been set.
 
 ### GetUnloadingEnd
 
-`func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingEnd() time.Time`
+`func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingEnd() Time`
 
 GetUnloadingEnd returns the UnloadingEnd field if non-nil, zero value otherwise.
 
 ### GetUnloadingEndOk
 
-`func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingEndOk() (*time.Time, bool)`
+`func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingEndOk() (*Time, bool)`
 
 GetUnloadingEndOk returns a tuple with the UnloadingEnd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUnloadingEnd
 
-`func (o *TransportDeliveryDateTimeSlotDto) SetUnloadingEnd(v time.Time)`
+`func (o *TransportDeliveryDateTimeSlotDto) SetUnloadingEnd(v Time)`
 
 SetUnloadingEnd sets UnloadingEnd field to given value.
 
@@ -132,20 +132,20 @@ HasPlannedEnd returns a boolean if a field has been set.
 
 ### GetArrivalOnSite
 
-`func (o *TransportDeliveryDateTimeSlotDto) GetArrivalOnSite() time.Time`
+`func (o *TransportDeliveryDateTimeSlotDto) GetArrivalOnSite() Time`
 
 GetArrivalOnSite returns the ArrivalOnSite field if non-nil, zero value otherwise.
 
 ### GetArrivalOnSiteOk
 
-`func (o *TransportDeliveryDateTimeSlotDto) GetArrivalOnSiteOk() (*time.Time, bool)`
+`func (o *TransportDeliveryDateTimeSlotDto) GetArrivalOnSiteOk() (*Time, bool)`
 
 GetArrivalOnSiteOk returns a tuple with the ArrivalOnSite field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetArrivalOnSite
 
-`func (o *TransportDeliveryDateTimeSlotDto) SetArrivalOnSite(v time.Time)`
+`func (o *TransportDeliveryDateTimeSlotDto) SetArrivalOnSite(v Time)`
 
 SetArrivalOnSite sets ArrivalOnSite field to given value.
 
@@ -157,20 +157,20 @@ HasArrivalOnSite returns a boolean if a field has been set.
 
 ### GetEffectiveDate
 
-`func (o *TransportDeliveryDateTimeSlotDto) GetEffectiveDate() time.Time`
+`func (o *TransportDeliveryDateTimeSlotDto) GetEffectiveDate() Time`
 
 GetEffectiveDate returns the EffectiveDate field if non-nil, zero value otherwise.
 
 ### GetEffectiveDateOk
 
-`func (o *TransportDeliveryDateTimeSlotDto) GetEffectiveDateOk() (*time.Time, bool)`
+`func (o *TransportDeliveryDateTimeSlotDto) GetEffectiveDateOk() (*Time, bool)`
 
 GetEffectiveDateOk returns a tuple with the EffectiveDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEffectiveDate
 
-`func (o *TransportDeliveryDateTimeSlotDto) SetEffectiveDate(v time.Time)`
+`func (o *TransportDeliveryDateTimeSlotDto) SetEffectiveDate(v Time)`
 
 SetEffectiveDate sets EffectiveDate field to given value.
 
@@ -180,7 +180,4 @@ SetEffectiveDate sets EffectiveDate field to given value.
 
 HasEffectiveDate returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

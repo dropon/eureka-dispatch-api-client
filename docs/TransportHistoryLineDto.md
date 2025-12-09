@@ -2,18 +2,18 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**TransportHistoryLineId** | Pointer to **int32** |  | [optional] 
-**InsertionDateTime** | Pointer to **time.Time** |  | [optional] 
-**ActionDateTime** | Pointer to **time.Time** |  | [optional] 
-**TransportState** | Pointer to **string** |  | [optional] 
-**SubStateCode** | Pointer to **string** |  | [optional] 
-**Comment** | Pointer to **string** |  | [optional] 
-**LatitudeLocation** | Pointer to **float64** |  | [optional] 
-**LongitudeLocation** | Pointer to **float64** |  | [optional] 
-**LocationDateTime** | Pointer to **time.Time** |  | [optional] 
-**Anomalies** | Pointer to [**CappedCollectionDtoTransportHistoryAnomalyDto**](CappedCollectionDtoTransportHistoryAnomalyDto.md) |  | [optional] 
+| Name                       | Type                                                                                                             | Description | Notes      |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **TransportHistoryLineId** | Pointer to **int32**                                                                                             |             | [optional] |
+| **InsertionDateTime**      | Pointer to **Time**                                                                                              |             | [optional] |
+| **ActionDateTime**         | Pointer to **Time**                                                                                              |             | [optional] |
+| **TransportState**         | Pointer to **string**                                                                                            |             | [optional] |
+| **SubStateCode**           | Pointer to **string**                                                                                            |             | [optional] |
+| **Comment**                | Pointer to **string**                                                                                            |             | [optional] |
+| **LatitudeLocation**       | Pointer to **float64**                                                                                           |             | [optional] |
+| **LongitudeLocation**      | Pointer to **float64**                                                                                           |             | [optional] |
+| **LocationDateTime**       | Pointer to **Time**                                                                                              |             | [optional] |
+| **Anomalies**              | Pointer to [**CappedCollectionDtoTransportHistoryAnomalyDto**](CappedCollectionDtoTransportHistoryAnomalyDto.md) |             | [optional] |
 
 ## Methods
 
@@ -61,20 +61,20 @@ HasTransportHistoryLineId returns a boolean if a field has been set.
 
 ### GetInsertionDateTime
 
-`func (o *TransportHistoryLineDto) GetInsertionDateTime() time.Time`
+`func (o *TransportHistoryLineDto) GetInsertionDateTime() Time`
 
 GetInsertionDateTime returns the InsertionDateTime field if non-nil, zero value otherwise.
 
 ### GetInsertionDateTimeOk
 
-`func (o *TransportHistoryLineDto) GetInsertionDateTimeOk() (*time.Time, bool)`
+`func (o *TransportHistoryLineDto) GetInsertionDateTimeOk() (*Time, bool)`
 
 GetInsertionDateTimeOk returns a tuple with the InsertionDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInsertionDateTime
 
-`func (o *TransportHistoryLineDto) SetInsertionDateTime(v time.Time)`
+`func (o *TransportHistoryLineDto) SetInsertionDateTime(v Time)`
 
 SetInsertionDateTime sets InsertionDateTime field to given value.
 
@@ -86,20 +86,20 @@ HasInsertionDateTime returns a boolean if a field has been set.
 
 ### GetActionDateTime
 
-`func (o *TransportHistoryLineDto) GetActionDateTime() time.Time`
+`func (o *TransportHistoryLineDto) GetActionDateTime() Time`
 
 GetActionDateTime returns the ActionDateTime field if non-nil, zero value otherwise.
 
 ### GetActionDateTimeOk
 
-`func (o *TransportHistoryLineDto) GetActionDateTimeOk() (*time.Time, bool)`
+`func (o *TransportHistoryLineDto) GetActionDateTimeOk() (*Time, bool)`
 
 GetActionDateTimeOk returns a tuple with the ActionDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActionDateTime
 
-`func (o *TransportHistoryLineDto) SetActionDateTime(v time.Time)`
+`func (o *TransportHistoryLineDto) SetActionDateTime(v Time)`
 
 SetActionDateTime sets ActionDateTime field to given value.
 
@@ -236,20 +236,20 @@ HasLongitudeLocation returns a boolean if a field has been set.
 
 ### GetLocationDateTime
 
-`func (o *TransportHistoryLineDto) GetLocationDateTime() time.Time`
+`func (o *TransportHistoryLineDto) GetLocationDateTime() Time`
 
 GetLocationDateTime returns the LocationDateTime field if non-nil, zero value otherwise.
 
 ### GetLocationDateTimeOk
 
-`func (o *TransportHistoryLineDto) GetLocationDateTimeOk() (*time.Time, bool)`
+`func (o *TransportHistoryLineDto) GetLocationDateTimeOk() (*Time, bool)`
 
 GetLocationDateTimeOk returns a tuple with the LocationDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocationDateTime
 
-`func (o *TransportHistoryLineDto) SetLocationDateTime(v time.Time)`
+`func (o *TransportHistoryLineDto) SetLocationDateTime(v Time)`
 
 SetLocationDateTime sets LocationDateTime field to given value.
 
@@ -284,7 +284,4 @@ SetAnomalies sets Anomalies field to given value.
 
 HasAnomalies returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

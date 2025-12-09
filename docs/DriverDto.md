@@ -2,37 +2,37 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**DriverId** | Pointer to **int32** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**DriverType** | Pointer to **string** |  | [optional] 
-**AgencyCode** | Pointer to **string** |  | [optional] 
-**TeamCode** | Pointer to **string** |  | [optional] 
-**TeamLabel** | Pointer to **string** |  | [optional] 
-**ProfileCode** | Pointer to **string** |  | [optional] 
-**IsEnabled** | Pointer to **bool** |  | [optional] 
-**IsDispatchMobileEnabled** | Pointer to **bool** |  | [optional] 
-**Phone** | Pointer to **string** |  | [optional] 
-**AlternativePhone** | Pointer to **string** |  | [optional] 
-**MobilePhone** | Pointer to **string** |  | [optional] 
-**Email** | Pointer to **string** |  | [optional] 
-**Fax** | Pointer to **string** |  | [optional] 
-**AddressId** | Pointer to **int32** |  | [optional] 
-**Locale** | Pointer to **string** |  | [optional] 
-**CurrentVehicleCode** | Pointer to **string** |  | [optional] 
-**DefaultVehicleCode** | Pointer to **string** |  | [optional] 
-**DrivingLicenceType** | Pointer to **string** |  | [optional] 
-**HasDangerousGoodsCertification** | Pointer to **bool** |  | [optional] 
-**GlobalMark** | Pointer to **int32** |  | [optional] 
-**Included** | Pointer to [**DriverIncludedDto**](DriverIncludedDto.md) |  | [optional] 
-**SubcontractorCode** | Pointer to **string** |  | [optional] 
-**RemoteAgencyCode** | Pointer to **string** |  | [optional] 
-**RemoteLicenseCode** | Pointer to **string** |  | [optional] 
-**SubcontractorEmployeesCount** | Pointer to **int64** |  | [optional] 
-**ArrivalDateTime** | Pointer to **time.Time** |  | [optional] 
-**DepartureDateTime** | Pointer to **time.Time** |  | [optional] 
+| Name                               | Type                                                     | Description | Notes      |
+| ---------------------------------- | -------------------------------------------------------- | ----------- | ---------- |
+| **DriverId**                       | Pointer to **int32**                                     |             | [optional] |
+| **Code**                           | Pointer to **string**                                    |             | [optional] |
+| **Name**                           | Pointer to **string**                                    |             | [optional] |
+| **DriverType**                     | Pointer to **string**                                    |             | [optional] |
+| **AgencyCode**                     | Pointer to **string**                                    |             | [optional] |
+| **TeamCode**                       | Pointer to **string**                                    |             | [optional] |
+| **TeamLabel**                      | Pointer to **string**                                    |             | [optional] |
+| **ProfileCode**                    | Pointer to **string**                                    |             | [optional] |
+| **IsEnabled**                      | Pointer to **bool**                                      |             | [optional] |
+| **IsDispatchMobileEnabled**        | Pointer to **bool**                                      |             | [optional] |
+| **Phone**                          | Pointer to **string**                                    |             | [optional] |
+| **AlternativePhone**               | Pointer to **string**                                    |             | [optional] |
+| **MobilePhone**                    | Pointer to **string**                                    |             | [optional] |
+| **Email**                          | Pointer to **string**                                    |             | [optional] |
+| **Fax**                            | Pointer to **string**                                    |             | [optional] |
+| **AddressId**                      | Pointer to **int32**                                     |             | [optional] |
+| **Locale**                         | Pointer to **string**                                    |             | [optional] |
+| **CurrentVehicleCode**             | Pointer to **string**                                    |             | [optional] |
+| **DefaultVehicleCode**             | Pointer to **string**                                    |             | [optional] |
+| **DrivingLicenceType**             | Pointer to **string**                                    |             | [optional] |
+| **HasDangerousGoodsCertification** | Pointer to **bool**                                      |             | [optional] |
+| **GlobalMark**                     | Pointer to **int32**                                     |             | [optional] |
+| **Included**                       | Pointer to [**DriverIncludedDto**](DriverIncludedDto.md) |             | [optional] |
+| **SubcontractorCode**              | Pointer to **string**                                    |             | [optional] |
+| **RemoteAgencyCode**               | Pointer to **string**                                    |             | [optional] |
+| **RemoteLicenseCode**              | Pointer to **string**                                    |             | [optional] |
+| **SubcontractorEmployeesCount**    | Pointer to **int64**                                     |             | [optional] |
+| **ArrivalDateTime**                | Pointer to **Time**                                      |             | [optional] |
+| **DepartureDateTime**              | Pointer to **Time**                                      |             | [optional] |
 
 ## Methods
 
@@ -730,20 +730,20 @@ HasSubcontractorEmployeesCount returns a boolean if a field has been set.
 
 ### GetArrivalDateTime
 
-`func (o *DriverDto) GetArrivalDateTime() time.Time`
+`func (o *DriverDto) GetArrivalDateTime() Time`
 
 GetArrivalDateTime returns the ArrivalDateTime field if non-nil, zero value otherwise.
 
 ### GetArrivalDateTimeOk
 
-`func (o *DriverDto) GetArrivalDateTimeOk() (*time.Time, bool)`
+`func (o *DriverDto) GetArrivalDateTimeOk() (*Time, bool)`
 
 GetArrivalDateTimeOk returns a tuple with the ArrivalDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetArrivalDateTime
 
-`func (o *DriverDto) SetArrivalDateTime(v time.Time)`
+`func (o *DriverDto) SetArrivalDateTime(v Time)`
 
 SetArrivalDateTime sets ArrivalDateTime field to given value.
 
@@ -755,20 +755,20 @@ HasArrivalDateTime returns a boolean if a field has been set.
 
 ### GetDepartureDateTime
 
-`func (o *DriverDto) GetDepartureDateTime() time.Time`
+`func (o *DriverDto) GetDepartureDateTime() Time`
 
 GetDepartureDateTime returns the DepartureDateTime field if non-nil, zero value otherwise.
 
 ### GetDepartureDateTimeOk
 
-`func (o *DriverDto) GetDepartureDateTimeOk() (*time.Time, bool)`
+`func (o *DriverDto) GetDepartureDateTimeOk() (*Time, bool)`
 
 GetDepartureDateTimeOk returns a tuple with the DepartureDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDepartureDateTime
 
-`func (o *DriverDto) SetDepartureDateTime(v time.Time)`
+`func (o *DriverDto) SetDepartureDateTime(v Time)`
 
 SetDepartureDateTime sets DepartureDateTime field to given value.
 
@@ -778,7 +778,4 @@ SetDepartureDateTime sets DepartureDateTime field to given value.
 
 HasDepartureDateTime returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

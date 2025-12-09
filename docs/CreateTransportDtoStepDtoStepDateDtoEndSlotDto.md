@@ -2,9 +2,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**DateTime** | Pointer to **time.Time** | Date and time of the slot, with unspecified time zone.  The time corresponds to slot&#39;s address time zone. | [optional] 
+| Name         | Type                | Description                                                                                                  | Notes      |
+| ------------ | ------------------- | ------------------------------------------------------------------------------------------------------------ | ---------- |
+| **DateTime** | Pointer to **Time** | Date and time of the slot, with unspecified time zone. The time corresponds to slot&#39;s address time zone. | [optional] |
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDateTime
 
-`func (o *CreateTransportDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() time.Time`
+`func (o *CreateTransportDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() Time`
 
 GetDateTime returns the DateTime field if non-nil, zero value otherwise.
 
 ### GetDateTimeOk
 
-`func (o *CreateTransportDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*time.Time, bool)`
+`func (o *CreateTransportDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*Time, bool)`
 
 GetDateTimeOk returns a tuple with the DateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDateTime
 
-`func (o *CreateTransportDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v time.Time)`
+`func (o *CreateTransportDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v Time)`
 
 SetDateTime sets DateTime field to given value.
 
@@ -50,7 +50,4 @@ SetDateTime sets DateTime field to given value.
 
 HasDateTime returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

@@ -2,14 +2,14 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**AcquisitionDateTime** | Pointer to **time.Time** |  | [optional] 
-**Latitude** | Pointer to **float64** |  | [optional] 
-**Longitude** | Pointer to **float64** |  | [optional] 
-**Heading** | Pointer to **int32** |  | [optional] 
-**Precision** | Pointer to **int32** |  | [optional] 
-**Altitude** | Pointer to **int32** |  | [optional] 
+| Name                    | Type                   | Description | Notes      |
+| ----------------------- | ---------------------- | ----------- | ---------- |
+| **AcquisitionDateTime** | Pointer to **Time**    |             | [optional] |
+| **Latitude**            | Pointer to **float64** |             | [optional] |
+| **Longitude**           | Pointer to **float64** |             | [optional] |
+| **Heading**             | Pointer to **int32**   |             | [optional] |
+| **Precision**           | Pointer to **int32**   |             | [optional] |
+| **Altitude**            | Pointer to **int32**   |             | [optional] |
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAcquisitionDateTime
 
-`func (o *PositionDto) GetAcquisitionDateTime() time.Time`
+`func (o *PositionDto) GetAcquisitionDateTime() Time`
 
 GetAcquisitionDateTime returns the AcquisitionDateTime field if non-nil, zero value otherwise.
 
 ### GetAcquisitionDateTimeOk
 
-`func (o *PositionDto) GetAcquisitionDateTimeOk() (*time.Time, bool)`
+`func (o *PositionDto) GetAcquisitionDateTimeOk() (*Time, bool)`
 
 GetAcquisitionDateTimeOk returns a tuple with the AcquisitionDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAcquisitionDateTime
 
-`func (o *PositionDto) SetAcquisitionDateTime(v time.Time)`
+`func (o *PositionDto) SetAcquisitionDateTime(v Time)`
 
 SetAcquisitionDateTime sets AcquisitionDateTime field to given value.
 
@@ -180,7 +180,4 @@ SetAltitude sets Altitude field to given value.
 
 HasAltitude returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

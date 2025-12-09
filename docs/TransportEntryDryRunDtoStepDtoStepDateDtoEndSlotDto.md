@@ -2,9 +2,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**DateTime** | Pointer to **time.Time** |  | [optional] 
+| Name         | Type                | Description | Notes      |
+| ------------ | ------------------- | ----------- | ---------- |
+| **DateTime** | Pointer to **Time** |             | [optional] |
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDateTime
 
-`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() time.Time`
+`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() Time`
 
 GetDateTime returns the DateTime field if non-nil, zero value otherwise.
 
 ### GetDateTimeOk
 
-`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*time.Time, bool)`
+`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*Time, bool)`
 
 GetDateTimeOk returns a tuple with the DateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDateTime
 
-`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v time.Time)`
+`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v Time)`
 
 SetDateTime sets DateTime field to given value.
 
@@ -50,7 +50,4 @@ SetDateTime sets DateTime field to given value.
 
 HasDateTime returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

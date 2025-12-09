@@ -2,74 +2,74 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**Uid** | Pointer to **string** | Transport&#39;s internal unique identifier | [optional] 
-**TransportId** | Pointer to **int32** | Transport&#39;s internal unique identifier | [optional] 
-**Index** | Pointer to **int32** | The index of the transport in the mission or quotation | [optional] 
-**MissionNumber** | Pointer to **int32** | Mission&#39;s public identifier | [optional] 
-**MissionUid** | Pointer to **string** | Mission&#39;s internal unique identifier | [optional] 
-**MissionTrackId** | Pointer to **string** | Mission&#39;s tracking number | [optional] 
-**QuotationNumber** | Pointer to **int32** | Quotation&#39;s public identifier | [optional] 
-**QuotationUid** | Pointer to **string** | Quotation&#39;s internal unique identifier | [optional] 
-**QuotationTrackId** | Pointer to **string** | Quotation&#39;s tracking number | [optional] 
-**IsQuotationArchived** | Pointer to **bool** |  | [optional] 
-**IsQuotationFinalized** | Pointer to **bool** |  | [optional] 
-**IsQuotationSubjectToApproval** | Pointer to **bool** |  | [optional] 
-**IsMissionReadyToBill** | Pointer to **bool** |  | [optional] 
-**SourceQuotationNumber** | Pointer to **int32** | Source quotation number, for a transport included in a mission created from a quotation. | [optional] 
-**RoundId** | Pointer to **int32** |  | [optional] 
-**CustomerCode** | Pointer to **string** |  | [optional] 
-**AgencyCode** | Pointer to **string** |  | [optional] 
-**OrdererCode** | Pointer to **string** |  | [optional] 
-**OrdererName** | Pointer to **string** |  | [optional] 
-**ContractorAgentId** | Pointer to **int32** |  | [optional] 
-**ContractorAgentName** | Pointer to **string** |  | [optional] 
-**HandlerId** | Pointer to **int32** |  | [optional] 
-**VehicleCode** | Pointer to **string** |  | [optional] 
-**TrailerCode** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**SubStateCode** | Pointer to **string** |  | [optional] 
-**CustomerCallDateTime** | Pointer to **time.Time** | The date and time at which the customer has contacted the transport company to request the transport.  By default, it corresponds to the mission creation date. | [optional] 
-**DriverId** | Pointer to **int32** |  | [optional] 
-**Sign** | Pointer to **string** |  | [optional] 
-**SecretCode** | Pointer to **string** |  | [optional] 
-**Notes** | Pointer to **string** |  | [optional] 
-**IsRoundTrip** | Pointer to **bool** |  | [optional] 
-**ServiceCode** | Pointer to **string** |  | [optional] 
-**SubServices** | Pointer to [**CappedCollectionDtoTransportSubServiceDto**](CappedCollectionDtoTransportSubServiceDto.md) |  | [optional] 
-**PickupStep** | Pointer to [**TransportPickupStepDto**](TransportPickupStepDto.md) |  | [optional] 
-**DeliveryStep** | Pointer to [**TransportDeliveryStepDto**](TransportDeliveryStepDto.md) |  | [optional] 
-**Packing** | Pointer to [**TransportPackingDto**](TransportPackingDto.md) |  | [optional] 
-**DistanceKm** | Pointer to **float64** | Distance of the transport in kilometers. | [optional] 
-**TotalDurationMinutes** | Pointer to **int32** | Total duration of the transport in minutes | [optional] 
-**IsStrategic** | Pointer to **bool** | Indicates if the transport has a strategic importance | [optional] 
-**IsShared** | Pointer to **bool** | Indicates if the transport is &#39;shared&#39; between agencies.    If true, the transport will be visible on Dispatch planning   via the &#39;supervising&#39; mode. | [optional] 
-**ResponsibleOperatorId** | Pointer to **int32** | The id of a dispatch user that is responsible for following the execution of the transport. | [optional] 
-**GasEmission** | Pointer to **float64** | Gas emission (CO2) in Kilograms. | [optional] 
-**IsGasEmissionForced** | Pointer to **bool** |  | [optional] 
-**SellCurrencyCode** | Pointer to **string** |  | [optional] 
-**SellPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**ForcedSellPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**SellFuelSurchargePrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**BuyCurrencyCode** | Pointer to **string** |  | [optional] 
-**BuyPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**ForcedBuyPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**BuyFuelSurchargePrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**ReferenceCurrencyCode** | Pointer to **string** |  | [optional] 
-**SellPricingPathId** | Pointer to **int32** |  | [optional] 
-**IsFragmented** | Pointer to **bool** | Indicates if this transport is fragmented:  in this case, this transport is a parent transport and has child fragments. | [optional] 
-**ParentTransportId** | Pointer to **int32** | Identifier of the parent transport for a child fragment,  when the mission or quotation is fragmented | [optional] 
-**MissionIsInSequence** | Pointer to **bool** |  | [optional] 
-**MissionIsUniqueOrder** | Pointer to **bool** |  | [optional] 
-**QuotationIsInSequence** | Pointer to **bool** |  | [optional] 
-**QuotationIsUniqueOrder** | Pointer to **bool** |  | [optional] 
-**Reference1** | Pointer to **string** |  | [optional] 
-**Reference2** | Pointer to **string** |  | [optional] 
-**Reference3** | Pointer to **string** |  | [optional] 
-**Comment** | Pointer to [**TransportCommentDto**](TransportCommentDto.md) |  | [optional] 
-**CashOnDelivery** | Pointer to [**TransportCashOnDeliveryDto**](TransportCashOnDeliveryDto.md) |  | [optional] 
-**Included** | Pointer to [**TransportIncludedDto**](TransportIncludedDto.md) |  | [optional] 
+| Name                             | Type                                                                                                     | Description                                                                                                                                                      | Notes      |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **Uid**                          | Pointer to **string**                                                                                    | Transport&#39;s internal unique identifier                                                                                                                       | [optional] |
+| **TransportId**                  | Pointer to **int32**                                                                                     | Transport&#39;s internal unique identifier                                                                                                                       | [optional] |
+| **Index**                        | Pointer to **int32**                                                                                     | The index of the transport in the mission or quotation                                                                                                           | [optional] |
+| **MissionNumber**                | Pointer to **int32**                                                                                     | Mission&#39;s public identifier                                                                                                                                  | [optional] |
+| **MissionUid**                   | Pointer to **string**                                                                                    | Mission&#39;s internal unique identifier                                                                                                                         | [optional] |
+| **MissionTrackId**               | Pointer to **string**                                                                                    | Mission&#39;s tracking number                                                                                                                                    | [optional] |
+| **QuotationNumber**              | Pointer to **int32**                                                                                     | Quotation&#39;s public identifier                                                                                                                                | [optional] |
+| **QuotationUid**                 | Pointer to **string**                                                                                    | Quotation&#39;s internal unique identifier                                                                                                                       | [optional] |
+| **QuotationTrackId**             | Pointer to **string**                                                                                    | Quotation&#39;s tracking number                                                                                                                                  | [optional] |
+| **IsQuotationArchived**          | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **IsQuotationFinalized**         | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **IsQuotationSubjectToApproval** | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **IsMissionReadyToBill**         | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **SourceQuotationNumber**        | Pointer to **int32**                                                                                     | Source quotation number, for a transport included in a mission created from a quotation.                                                                         | [optional] |
+| **RoundId**                      | Pointer to **int32**                                                                                     |                                                                                                                                                                  | [optional] |
+| **CustomerCode**                 | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **AgencyCode**                   | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **OrdererCode**                  | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **OrdererName**                  | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **ContractorAgentId**            | Pointer to **int32**                                                                                     |                                                                                                                                                                  | [optional] |
+| **ContractorAgentName**          | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **HandlerId**                    | Pointer to **int32**                                                                                     |                                                                                                                                                                  | [optional] |
+| **VehicleCode**                  | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **TrailerCode**                  | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **Status**                       | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **SubStateCode**                 | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **CustomerCallDateTime**         | Pointer to **Time**                                                                                      | The date and time at which the customer has contacted the transport company to request the transport. By default, it corresponds to the mission creation date.   | [optional] |
+| **DriverId**                     | Pointer to **int32**                                                                                     |                                                                                                                                                                  | [optional] |
+| **Sign**                         | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **SecretCode**                   | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **Notes**                        | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **IsRoundTrip**                  | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **ServiceCode**                  | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **SubServices**                  | Pointer to [**CappedCollectionDtoTransportSubServiceDto**](CappedCollectionDtoTransportSubServiceDto.md) |                                                                                                                                                                  | [optional] |
+| **PickupStep**                   | Pointer to [**TransportPickupStepDto**](TransportPickupStepDto.md)                                       |                                                                                                                                                                  | [optional] |
+| **DeliveryStep**                 | Pointer to [**TransportDeliveryStepDto**](TransportDeliveryStepDto.md)                                   |                                                                                                                                                                  | [optional] |
+| **Packing**                      | Pointer to [**TransportPackingDto**](TransportPackingDto.md)                                             |                                                                                                                                                                  | [optional] |
+| **DistanceKm**                   | Pointer to **float64**                                                                                   | Distance of the transport in kilometers.                                                                                                                         | [optional] |
+| **TotalDurationMinutes**         | Pointer to **int32**                                                                                     | Total duration of the transport in minutes                                                                                                                       | [optional] |
+| **IsStrategic**                  | Pointer to **bool**                                                                                      | Indicates if the transport has a strategic importance                                                                                                            | [optional] |
+| **IsShared**                     | Pointer to **bool**                                                                                      | Indicates if the transport is &#39;shared&#39; between agencies. If true, the transport will be visible on Dispatch planning via the &#39;supervising&#39; mode. | [optional] |
+| **ResponsibleOperatorId**        | Pointer to **int32**                                                                                     | The id of a dispatch user that is responsible for following the execution of the transport.                                                                      | [optional] |
+| **GasEmission**                  | Pointer to **float64**                                                                                   | Gas emission (CO2) in Kilograms.                                                                                                                                 | [optional] |
+| **IsGasEmissionForced**          | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **SellCurrencyCode**             | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **SellPrice**                    | Pointer to **float64**                                                                                   | The following permission(s) are required to access this property: See prices.                                                                                    | [optional] |
+| **ForcedSellPrice**              | Pointer to **float64**                                                                                   | The following permission(s) are required to access this property: See prices.                                                                                    | [optional] |
+| **SellFuelSurchargePrice**       | Pointer to **float64**                                                                                   | The following permission(s) are required to access this property: See prices.                                                                                    | [optional] |
+| **BuyCurrencyCode**              | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **BuyPrice**                     | Pointer to **float64**                                                                                   | The following permission(s) are required to access this property: See prices.                                                                                    | [optional] |
+| **ForcedBuyPrice**               | Pointer to **float64**                                                                                   | The following permission(s) are required to access this property: See prices.                                                                                    | [optional] |
+| **BuyFuelSurchargePrice**        | Pointer to **float64**                                                                                   | The following permission(s) are required to access this property: See prices.                                                                                    | [optional] |
+| **ReferenceCurrencyCode**        | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **SellPricingPathId**            | Pointer to **int32**                                                                                     |                                                                                                                                                                  | [optional] |
+| **IsFragmented**                 | Pointer to **bool**                                                                                      | Indicates if this transport is fragmented: in this case, this transport is a parent transport and has child fragments.                                           | [optional] |
+| **ParentTransportId**            | Pointer to **int32**                                                                                     | Identifier of the parent transport for a child fragment, when the mission or quotation is fragmented                                                             | [optional] |
+| **MissionIsInSequence**          | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **MissionIsUniqueOrder**         | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **QuotationIsInSequence**        | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **QuotationIsUniqueOrder**       | Pointer to **bool**                                                                                      |                                                                                                                                                                  | [optional] |
+| **Reference1**                   | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **Reference2**                   | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **Reference3**                   | Pointer to **string**                                                                                    |                                                                                                                                                                  | [optional] |
+| **Comment**                      | Pointer to [**TransportCommentDto**](TransportCommentDto.md)                                             |                                                                                                                                                                  | [optional] |
+| **CashOnDelivery**               | Pointer to [**TransportCashOnDeliveryDto**](TransportCashOnDeliveryDto.md)                               |                                                                                                                                                                  | [optional] |
+| **Included**                     | Pointer to [**TransportIncludedDto**](TransportIncludedDto.md)                                           |                                                                                                                                                                  | [optional] |
 
 ## Methods
 
@@ -742,20 +742,20 @@ HasSubStateCode returns a boolean if a field has been set.
 
 ### GetCustomerCallDateTime
 
-`func (o *TransportDto) GetCustomerCallDateTime() time.Time`
+`func (o *TransportDto) GetCustomerCallDateTime() Time`
 
 GetCustomerCallDateTime returns the CustomerCallDateTime field if non-nil, zero value otherwise.
 
 ### GetCustomerCallDateTimeOk
 
-`func (o *TransportDto) GetCustomerCallDateTimeOk() (*time.Time, bool)`
+`func (o *TransportDto) GetCustomerCallDateTimeOk() (*Time, bool)`
 
 GetCustomerCallDateTimeOk returns a tuple with the CustomerCallDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerCallDateTime
 
-`func (o *TransportDto) SetCustomerCallDateTime(v time.Time)`
+`func (o *TransportDto) SetCustomerCallDateTime(v Time)`
 
 SetCustomerCallDateTime sets CustomerCallDateTime field to given value.
 
@@ -1740,7 +1740,4 @@ SetIncluded sets Included field to given value.
 
 HasIncluded returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

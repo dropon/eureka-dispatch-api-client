@@ -2,13 +2,13 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**TransportUid** | **string** | Mandatory. Transport unique identifier | 
-**TransportReceipt** | Pointer to **string** | Transport receipt | [optional] 
-**RealizedDateTime** | Pointer to **time.Time** | Transport termination realized date time | [optional] 
-**PickupData** | Pointer to [**PickupDataOnStatusAppliedDto**](PickupDataOnStatusAppliedDto.md) |  | [optional] 
-**DeliveryData** | Pointer to [**DeliveryDataOnStatusAppliedDto**](DeliveryDataOnStatusAppliedDto.md) |  | [optional] 
+| Name                 | Type                                                                               | Description                              | Notes      |
+| -------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------- | ---------- |
+| **TransportUid**     | **string**                                                                         | Mandatory. Transport unique identifier   |
+| **TransportReceipt** | Pointer to **string**                                                              | Transport receipt                        | [optional] |
+| **RealizedDateTime** | Pointer to **Time**                                                                | Transport termination realized date time | [optional] |
+| **PickupData**       | Pointer to [**PickupDataOnStatusAppliedDto**](PickupDataOnStatusAppliedDto.md)     |                                          | [optional] |
+| **DeliveryData**     | Pointer to [**DeliveryDataOnStatusAppliedDto**](DeliveryDataOnStatusAppliedDto.md) |                                          | [optional] |
 
 ## Methods
 
@@ -48,7 +48,6 @@ and a boolean to check if the value has been set.
 
 SetTransportUid sets TransportUid field to given value.
 
-
 ### GetTransportReceipt
 
 `func (o *ApplyTerminatedStatusCommand) GetTransportReceipt() string`
@@ -76,20 +75,20 @@ HasTransportReceipt returns a boolean if a field has been set.
 
 ### GetRealizedDateTime
 
-`func (o *ApplyTerminatedStatusCommand) GetRealizedDateTime() time.Time`
+`func (o *ApplyTerminatedStatusCommand) GetRealizedDateTime() Time`
 
 GetRealizedDateTime returns the RealizedDateTime field if non-nil, zero value otherwise.
 
 ### GetRealizedDateTimeOk
 
-`func (o *ApplyTerminatedStatusCommand) GetRealizedDateTimeOk() (*time.Time, bool)`
+`func (o *ApplyTerminatedStatusCommand) GetRealizedDateTimeOk() (*Time, bool)`
 
 GetRealizedDateTimeOk returns a tuple with the RealizedDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRealizedDateTime
 
-`func (o *ApplyTerminatedStatusCommand) SetRealizedDateTime(v time.Time)`
+`func (o *ApplyTerminatedStatusCommand) SetRealizedDateTime(v Time)`
 
 SetRealizedDateTime sets RealizedDateTime field to given value.
 
@@ -149,7 +148,4 @@ SetDeliveryData sets DeliveryData field to given value.
 
 HasDeliveryData returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

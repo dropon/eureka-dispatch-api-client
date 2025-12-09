@@ -2,55 +2,55 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**CustomerCode** | Pointer to **string** |  | [optional] 
-**AgencyCode** | Pointer to **string** |  | [optional] 
-**OrdererCode** | Pointer to **string** |  | [optional] 
-**OrdererName** | Pointer to **string** |  | [optional] 
-**Sign** | Pointer to **string** |  | [optional] 
-**SecretCode** | Pointer to **string** |  | [optional] 
-**Notes** | Pointer to **string** |  | [optional] 
-**IsRoundTrip** | Pointer to **bool** |  | [optional] 
-**CustomerCallDateTime** | Pointer to **time.Time** |  | [optional] 
-**PickupStep** | Pointer to [**TransportEntryDryRunDtoStepDto**](TransportEntryDryRunDtoStepDto.md) |  | [optional] 
-**DeliveryStep** | Pointer to [**TransportEntryDryRunDtoStepDto**](TransportEntryDryRunDtoStepDto.md) |  | [optional] 
-**ServiceCode** | Pointer to **string** |  | [optional] 
-**SubServices** | Pointer to [**[]TransportEntryDryRunDtoSubServiceDto**](TransportEntryDryRunDtoSubServiceDto.md) |  | [optional] 
-**Packing** | Pointer to [**TransportEntryDryRunDtoPackingDto**](TransportEntryDryRunDtoPackingDto.md) |  | [optional] 
-**CustomerCustomParameters** | Pointer to [**[]TransportEntryDryRunDtoCustomParameterDto**](TransportEntryDryRunDtoCustomParameterDto.md) |  | [optional] 
-**ServiceCustomParameters** | Pointer to [**[]TransportEntryDryRunDtoCustomParameterDto**](TransportEntryDryRunDtoCustomParameterDto.md) |  | [optional] 
-**Reference1** | Pointer to **string** |  | [optional] 
-**Reference2** | Pointer to **string** |  | [optional] 
-**Reference3** | Pointer to **string** |  | [optional] 
-**DistanceKm** | Pointer to **float64** |  | [optional] 
-**TotalDurationMinutes** | Pointer to **int32** |  | [optional] 
-**IsStrategic** | Pointer to **bool** |  | [optional] 
-**IsShared** | Pointer to **bool** |  | [optional] 
-**ResponsibleOperatorId** | Pointer to **int32** |  | [optional] 
-**GasEmission** | Pointer to **float64** |  | [optional] 
-**IsGasEmissionForced** | Pointer to **bool** |  | [optional] 
-**SellCurrencyCode** | Pointer to **string** |  | [optional] 
-**SellPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**ForcedSellPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**SellFuelSurchargePrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**BuyCurrencyCode** | Pointer to **string** |  | [optional] 
-**BuyPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**ForcedBuyPrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**BuyFuelSurchargePrice** | Pointer to **float64** | The following permission(s) are required to access this property:  See prices. | [optional] 
-**ReferenceCurrencyCode** | Pointer to **string** |  | [optional] 
-**SellPricingPathId** | Pointer to **int32** |  | [optional] 
-**SellPriceInReferenceCurrency** | Pointer to **float64** | Transport&#39;s sell price converted to reference currency    The following permission(s) are required to access this property:  See prices. | [optional] 
-**ForcedSellPriceInReferenceCurrency** | Pointer to **float64** | Transport&#39;s forced sell price converted to reference currency    The following permission(s) are required to access this property:  See prices. | [optional] 
-**SellFuelSurchargePriceInReferenceCurrency** | Pointer to **float64** | Transport&#39;s sell fuel surcharge price converted to reference currency    The following permission(s) are required to access this property:  See prices. | [optional] 
-**BuyPriceInReferenceCurrency** | Pointer to **float64** | Transport&#39;s buy price converted to reference currency    The following permission(s) are required to access this property:  See prices. | [optional] 
-**ForcedBuyPriceInReferenceCurrency** | Pointer to **float64** | Transport&#39;s forced buy price converted to reference currency    The following permission(s) are required to access this property:  See prices. | [optional] 
-**BuyFuelSurchargePriceInReferenceCurrency** | Pointer to **float64** | Transport&#39;s buy fuel surcharge price converted to reference currency    The following permission(s) are required to access this property:  See prices. | [optional] 
-**Comment** | Pointer to [**TransportEntryDryRunDtoCommentDto**](TransportEntryDryRunDtoCommentDto.md) |  | [optional] 
-**TransportBillAddress** | Pointer to [**TransportEntryDryRunDtoTransportBillAddressDto**](TransportEntryDryRunDtoTransportBillAddressDto.md) |  | [optional] 
-**CashOnDelivery** | Pointer to [**TransportEntryDryRunDtoCashOnDeliveryDto**](TransportEntryDryRunDtoCashOnDeliveryDto.md) |  | [optional] 
-**Communication** | Pointer to [**TransportCommunicationConfigurationDto**](TransportCommunicationConfigurationDto.md) |  | [optional] 
-**DangerousGoods** | Pointer to [**[]TransportEntryDryRunDtoDangerousGoodDto**](TransportEntryDryRunDtoDangerousGoodDto.md) |  | [optional] 
+| Name                                          | Type                                                                                                               | Description                                                                                                                                             | Notes      |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **CustomerCode**                              | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **AgencyCode**                                | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **OrdererCode**                               | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **OrdererName**                               | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **Sign**                                      | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **SecretCode**                                | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **Notes**                                     | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **IsRoundTrip**                               | Pointer to **bool**                                                                                                |                                                                                                                                                         | [optional] |
+| **CustomerCallDateTime**                      | Pointer to **Time**                                                                                                |                                                                                                                                                         | [optional] |
+| **PickupStep**                                | Pointer to [**TransportEntryDryRunDtoStepDto**](TransportEntryDryRunDtoStepDto.md)                                 |                                                                                                                                                         | [optional] |
+| **DeliveryStep**                              | Pointer to [**TransportEntryDryRunDtoStepDto**](TransportEntryDryRunDtoStepDto.md)                                 |                                                                                                                                                         | [optional] |
+| **ServiceCode**                               | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **SubServices**                               | Pointer to [**[]TransportEntryDryRunDtoSubServiceDto**](TransportEntryDryRunDtoSubServiceDto.md)                   |                                                                                                                                                         | [optional] |
+| **Packing**                                   | Pointer to [**TransportEntryDryRunDtoPackingDto**](TransportEntryDryRunDtoPackingDto.md)                           |                                                                                                                                                         | [optional] |
+| **CustomerCustomParameters**                  | Pointer to [**[]TransportEntryDryRunDtoCustomParameterDto**](TransportEntryDryRunDtoCustomParameterDto.md)         |                                                                                                                                                         | [optional] |
+| **ServiceCustomParameters**                   | Pointer to [**[]TransportEntryDryRunDtoCustomParameterDto**](TransportEntryDryRunDtoCustomParameterDto.md)         |                                                                                                                                                         | [optional] |
+| **Reference1**                                | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **Reference2**                                | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **Reference3**                                | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **DistanceKm**                                | Pointer to **float64**                                                                                             |                                                                                                                                                         | [optional] |
+| **TotalDurationMinutes**                      | Pointer to **int32**                                                                                               |                                                                                                                                                         | [optional] |
+| **IsStrategic**                               | Pointer to **bool**                                                                                                |                                                                                                                                                         | [optional] |
+| **IsShared**                                  | Pointer to **bool**                                                                                                |                                                                                                                                                         | [optional] |
+| **ResponsibleOperatorId**                     | Pointer to **int32**                                                                                               |                                                                                                                                                         | [optional] |
+| **GasEmission**                               | Pointer to **float64**                                                                                             |                                                                                                                                                         | [optional] |
+| **IsGasEmissionForced**                       | Pointer to **bool**                                                                                                |                                                                                                                                                         | [optional] |
+| **SellCurrencyCode**                          | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **SellPrice**                                 | Pointer to **float64**                                                                                             | The following permission(s) are required to access this property: See prices.                                                                           | [optional] |
+| **ForcedSellPrice**                           | Pointer to **float64**                                                                                             | The following permission(s) are required to access this property: See prices.                                                                           | [optional] |
+| **SellFuelSurchargePrice**                    | Pointer to **float64**                                                                                             | The following permission(s) are required to access this property: See prices.                                                                           | [optional] |
+| **BuyCurrencyCode**                           | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **BuyPrice**                                  | Pointer to **float64**                                                                                             | The following permission(s) are required to access this property: See prices.                                                                           | [optional] |
+| **ForcedBuyPrice**                            | Pointer to **float64**                                                                                             | The following permission(s) are required to access this property: See prices.                                                                           | [optional] |
+| **BuyFuelSurchargePrice**                     | Pointer to **float64**                                                                                             | The following permission(s) are required to access this property: See prices.                                                                           | [optional] |
+| **ReferenceCurrencyCode**                     | Pointer to **string**                                                                                              |                                                                                                                                                         | [optional] |
+| **SellPricingPathId**                         | Pointer to **int32**                                                                                               |                                                                                                                                                         | [optional] |
+| **SellPriceInReferenceCurrency**              | Pointer to **float64**                                                                                             | Transport&#39;s sell price converted to reference currency The following permission(s) are required to access this property: See prices.                | [optional] |
+| **ForcedSellPriceInReferenceCurrency**        | Pointer to **float64**                                                                                             | Transport&#39;s forced sell price converted to reference currency The following permission(s) are required to access this property: See prices.         | [optional] |
+| **SellFuelSurchargePriceInReferenceCurrency** | Pointer to **float64**                                                                                             | Transport&#39;s sell fuel surcharge price converted to reference currency The following permission(s) are required to access this property: See prices. | [optional] |
+| **BuyPriceInReferenceCurrency**               | Pointer to **float64**                                                                                             | Transport&#39;s buy price converted to reference currency The following permission(s) are required to access this property: See prices.                 | [optional] |
+| **ForcedBuyPriceInReferenceCurrency**         | Pointer to **float64**                                                                                             | Transport&#39;s forced buy price converted to reference currency The following permission(s) are required to access this property: See prices.          | [optional] |
+| **BuyFuelSurchargePriceInReferenceCurrency**  | Pointer to **float64**                                                                                             | Transport&#39;s buy fuel surcharge price converted to reference currency The following permission(s) are required to access this property: See prices.  | [optional] |
+| **Comment**                                   | Pointer to [**TransportEntryDryRunDtoCommentDto**](TransportEntryDryRunDtoCommentDto.md)                           |                                                                                                                                                         | [optional] |
+| **TransportBillAddress**                      | Pointer to [**TransportEntryDryRunDtoTransportBillAddressDto**](TransportEntryDryRunDtoTransportBillAddressDto.md) |                                                                                                                                                         | [optional] |
+| **CashOnDelivery**                            | Pointer to [**TransportEntryDryRunDtoCashOnDeliveryDto**](TransportEntryDryRunDtoCashOnDeliveryDto.md)             |                                                                                                                                                         | [optional] |
+| **Communication**                             | Pointer to [**TransportCommunicationConfigurationDto**](TransportCommunicationConfigurationDto.md)                 |                                                                                                                                                         | [optional] |
+| **DangerousGoods**                            | Pointer to [**[]TransportEntryDryRunDtoDangerousGoodDto**](TransportEntryDryRunDtoDangerousGoodDto.md)             |                                                                                                                                                         | [optional] |
 
 ## Methods
 
@@ -273,20 +273,20 @@ HasIsRoundTrip returns a boolean if a field has been set.
 
 ### GetCustomerCallDateTime
 
-`func (o *TransportEntryDryRunDto) GetCustomerCallDateTime() time.Time`
+`func (o *TransportEntryDryRunDto) GetCustomerCallDateTime() Time`
 
 GetCustomerCallDateTime returns the CustomerCallDateTime field if non-nil, zero value otherwise.
 
 ### GetCustomerCallDateTimeOk
 
-`func (o *TransportEntryDryRunDto) GetCustomerCallDateTimeOk() (*time.Time, bool)`
+`func (o *TransportEntryDryRunDto) GetCustomerCallDateTimeOk() (*Time, bool)`
 
 GetCustomerCallDateTimeOk returns a tuple with the CustomerCallDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerCallDateTime
 
-`func (o *TransportEntryDryRunDto) SetCustomerCallDateTime(v time.Time)`
+`func (o *TransportEntryDryRunDto) SetCustomerCallDateTime(v Time)`
 
 SetCustomerCallDateTime sets CustomerCallDateTime field to given value.
 
@@ -1246,7 +1246,4 @@ SetDangerousGoods sets DangerousGoods field to given value.
 
 HasDangerousGoods returns a boolean if a field has been set.
 
-
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
