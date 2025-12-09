@@ -1,7 +1,6 @@
 package openapi
 
 import (
-	"encoding/json"
 	"strings"
 	time "time"
 )
@@ -11,6 +10,10 @@ type Time struct {
 }
 
 const timeLayout = "2006-01-02T15:04:05"
+
+func (t *Time) MarshalJSON() ([]byte, error) {
+	return []byte(t.Time.Format(timeLayout)), nil
+}
 
 func (t *Time) UnmarshalJSON(b []byte) (err error) {
 	s := strings.Trim(string(b), "\"")
@@ -30,8 +33,4 @@ func (t *Time) UnmarshalJSON(b []byte) (err error) {
 
 	t.Time = parsedTime
 	return
-}
-
-func (t Time) MarshalJSON() ([]byte, error) {
-	return json.Marshal(t.Time)
 }
