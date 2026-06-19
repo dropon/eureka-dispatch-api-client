@@ -286,7 +286,7 @@ func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix stri
 					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, dataMap, style, collectionType)
 					return
 				}
-				if t, ok := obj.(time.Time); ok {
+				if t, ok := obj.(Time); ok {
 					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, t.Format(time.RFC3339Nano), style, collectionType)
 					return
 				}

@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the SlotDto type satisfies the MappedNullable interface at compile time
@@ -21,7 +20,7 @@ var _ MappedNullable = &SlotDto{}
 // SlotDto struct for SlotDto
 type SlotDto struct {
 	// Date and time of the slot, with unspecified time zone.  The time corresponds to slot's address time zone.
-	DateTime *time.Time `json:"dateTime,omitempty"`
+	DateTime *Time `json:"dateTime,omitempty"`
 	IsTimeOfDayIgnored *bool `json:"isTimeOfDayIgnored,omitempty"`
 }
 
@@ -43,9 +42,9 @@ func NewSlotDtoWithDefaults() *SlotDto {
 }
 
 // GetDateTime returns the DateTime field value if set, zero value otherwise.
-func (o *SlotDto) GetDateTime() time.Time {
+func (o *SlotDto) GetDateTime() Time {
 	if o == nil || IsNil(o.DateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.DateTime
@@ -53,7 +52,7 @@ func (o *SlotDto) GetDateTime() time.Time {
 
 // GetDateTimeOk returns a tuple with the DateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SlotDto) GetDateTimeOk() (*time.Time, bool) {
+func (o *SlotDto) GetDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.DateTime) {
 		return nil, false
 	}
@@ -69,8 +68,8 @@ func (o *SlotDto) HasDateTime() bool {
 	return false
 }
 
-// SetDateTime gets a reference to the given time.Time and assigns it to the DateTime field.
-func (o *SlotDto) SetDateTime(v time.Time) {
+// SetDateTime gets a reference to the given Time and assigns it to the DateTime field.
+func (o *SlotDto) SetDateTime(v Time) {
 	o.DateTime = &v
 }
 

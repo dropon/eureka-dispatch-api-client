@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TransportPickupDateTimeSlotDto type satisfies the MappedNullable interface at compile time
@@ -20,12 +19,12 @@ var _ MappedNullable = &TransportPickupDateTimeSlotDto{}
 
 // TransportPickupDateTimeSlotDto A transport date slot.  The transformation into Dispatch's transports date and time will follow these rules :  - Specifying only the start datetime will set a single \"from\" datetime condition  - Specifying both, but different, start and end datetime will set \"after\" start and \"before\" end.  - Specifying the same start and end datetime will set a single \"at\" datetime.  - Specifying only the end datetime will set a \"from\" \"now\" (\\_\\_:\\_\\_) to end.  - Specifying no date will set to \"as soon as possible\" transport.
 type TransportPickupDateTimeSlotDto struct {
-	LoadingStart *time.Time `json:"loadingStart,omitempty"`
-	LoadingEnd *time.Time `json:"loadingEnd,omitempty"`
+	LoadingStart *Time `json:"loadingStart,omitempty"`
+	LoadingEnd *Time `json:"loadingEnd,omitempty"`
 	PlannedStart *SlotDto `json:"plannedStart,omitempty"`
 	PlannedEnd *SlotDto `json:"plannedEnd,omitempty"`
-	ArrivalOnSite *time.Time `json:"arrivalOnSite,omitempty"`
-	EffectiveDate *time.Time `json:"effectiveDate,omitempty"`
+	ArrivalOnSite *Time `json:"arrivalOnSite,omitempty"`
+	EffectiveDate *Time `json:"effectiveDate,omitempty"`
 }
 
 // NewTransportPickupDateTimeSlotDto instantiates a new TransportPickupDateTimeSlotDto object
@@ -46,9 +45,9 @@ func NewTransportPickupDateTimeSlotDtoWithDefaults() *TransportPickupDateTimeSlo
 }
 
 // GetLoadingStart returns the LoadingStart field value if set, zero value otherwise.
-func (o *TransportPickupDateTimeSlotDto) GetLoadingStart() time.Time {
+func (o *TransportPickupDateTimeSlotDto) GetLoadingStart() Time {
 	if o == nil || IsNil(o.LoadingStart) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.LoadingStart
@@ -56,7 +55,7 @@ func (o *TransportPickupDateTimeSlotDto) GetLoadingStart() time.Time {
 
 // GetLoadingStartOk returns a tuple with the LoadingStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportPickupDateTimeSlotDto) GetLoadingStartOk() (*time.Time, bool) {
+func (o *TransportPickupDateTimeSlotDto) GetLoadingStartOk() (*Time, bool) {
 	if o == nil || IsNil(o.LoadingStart) {
 		return nil, false
 	}
@@ -72,15 +71,15 @@ func (o *TransportPickupDateTimeSlotDto) HasLoadingStart() bool {
 	return false
 }
 
-// SetLoadingStart gets a reference to the given time.Time and assigns it to the LoadingStart field.
-func (o *TransportPickupDateTimeSlotDto) SetLoadingStart(v time.Time) {
+// SetLoadingStart gets a reference to the given Time and assigns it to the LoadingStart field.
+func (o *TransportPickupDateTimeSlotDto) SetLoadingStart(v Time) {
 	o.LoadingStart = &v
 }
 
 // GetLoadingEnd returns the LoadingEnd field value if set, zero value otherwise.
-func (o *TransportPickupDateTimeSlotDto) GetLoadingEnd() time.Time {
+func (o *TransportPickupDateTimeSlotDto) GetLoadingEnd() Time {
 	if o == nil || IsNil(o.LoadingEnd) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.LoadingEnd
@@ -88,7 +87,7 @@ func (o *TransportPickupDateTimeSlotDto) GetLoadingEnd() time.Time {
 
 // GetLoadingEndOk returns a tuple with the LoadingEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportPickupDateTimeSlotDto) GetLoadingEndOk() (*time.Time, bool) {
+func (o *TransportPickupDateTimeSlotDto) GetLoadingEndOk() (*Time, bool) {
 	if o == nil || IsNil(o.LoadingEnd) {
 		return nil, false
 	}
@@ -104,8 +103,8 @@ func (o *TransportPickupDateTimeSlotDto) HasLoadingEnd() bool {
 	return false
 }
 
-// SetLoadingEnd gets a reference to the given time.Time and assigns it to the LoadingEnd field.
-func (o *TransportPickupDateTimeSlotDto) SetLoadingEnd(v time.Time) {
+// SetLoadingEnd gets a reference to the given Time and assigns it to the LoadingEnd field.
+func (o *TransportPickupDateTimeSlotDto) SetLoadingEnd(v Time) {
 	o.LoadingEnd = &v
 }
 
@@ -174,9 +173,9 @@ func (o *TransportPickupDateTimeSlotDto) SetPlannedEnd(v SlotDto) {
 }
 
 // GetArrivalOnSite returns the ArrivalOnSite field value if set, zero value otherwise.
-func (o *TransportPickupDateTimeSlotDto) GetArrivalOnSite() time.Time {
+func (o *TransportPickupDateTimeSlotDto) GetArrivalOnSite() Time {
 	if o == nil || IsNil(o.ArrivalOnSite) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.ArrivalOnSite
@@ -184,7 +183,7 @@ func (o *TransportPickupDateTimeSlotDto) GetArrivalOnSite() time.Time {
 
 // GetArrivalOnSiteOk returns a tuple with the ArrivalOnSite field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportPickupDateTimeSlotDto) GetArrivalOnSiteOk() (*time.Time, bool) {
+func (o *TransportPickupDateTimeSlotDto) GetArrivalOnSiteOk() (*Time, bool) {
 	if o == nil || IsNil(o.ArrivalOnSite) {
 		return nil, false
 	}
@@ -200,15 +199,15 @@ func (o *TransportPickupDateTimeSlotDto) HasArrivalOnSite() bool {
 	return false
 }
 
-// SetArrivalOnSite gets a reference to the given time.Time and assigns it to the ArrivalOnSite field.
-func (o *TransportPickupDateTimeSlotDto) SetArrivalOnSite(v time.Time) {
+// SetArrivalOnSite gets a reference to the given Time and assigns it to the ArrivalOnSite field.
+func (o *TransportPickupDateTimeSlotDto) SetArrivalOnSite(v Time) {
 	o.ArrivalOnSite = &v
 }
 
 // GetEffectiveDate returns the EffectiveDate field value if set, zero value otherwise.
-func (o *TransportPickupDateTimeSlotDto) GetEffectiveDate() time.Time {
+func (o *TransportPickupDateTimeSlotDto) GetEffectiveDate() Time {
 	if o == nil || IsNil(o.EffectiveDate) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.EffectiveDate
@@ -216,7 +215,7 @@ func (o *TransportPickupDateTimeSlotDto) GetEffectiveDate() time.Time {
 
 // GetEffectiveDateOk returns a tuple with the EffectiveDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportPickupDateTimeSlotDto) GetEffectiveDateOk() (*time.Time, bool) {
+func (o *TransportPickupDateTimeSlotDto) GetEffectiveDateOk() (*Time, bool) {
 	if o == nil || IsNil(o.EffectiveDate) {
 		return nil, false
 	}
@@ -232,8 +231,8 @@ func (o *TransportPickupDateTimeSlotDto) HasEffectiveDate() bool {
 	return false
 }
 
-// SetEffectiveDate gets a reference to the given time.Time and assigns it to the EffectiveDate field.
-func (o *TransportPickupDateTimeSlotDto) SetEffectiveDate(v time.Time) {
+// SetEffectiveDate gets a reference to the given Time and assigns it to the EffectiveDate field.
+func (o *TransportPickupDateTimeSlotDto) SetEffectiveDate(v Time) {
 	o.EffectiveDate = &v
 }
 

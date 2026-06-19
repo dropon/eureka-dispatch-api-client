@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **FileCategoryLabel** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
-**CreationDateTime** | Pointer to **time.Time** |  | [optional] 
+**CreationDateTime** | Pointer to **Time** |  | [optional] 
 
 ## Methods
 
@@ -157,20 +157,20 @@ HasLink returns a boolean if a field has been set.
 
 ### GetCreationDateTime
 
-`func (o *TransportDocumentLinkDto) GetCreationDateTime() time.Time`
+`func (o *TransportDocumentLinkDto) GetCreationDateTime() Time`
 
 GetCreationDateTime returns the CreationDateTime field if non-nil, zero value otherwise.
 
 ### GetCreationDateTimeOk
 
-`func (o *TransportDocumentLinkDto) GetCreationDateTimeOk() (*time.Time, bool)`
+`func (o *TransportDocumentLinkDto) GetCreationDateTimeOk() (*Time, bool)`
 
 GetCreationDateTimeOk returns a tuple with the CreationDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreationDateTime
 
-`func (o *TransportDocumentLinkDto) SetCreationDateTime(v time.Time)`
+`func (o *TransportDocumentLinkDto) SetCreationDateTime(v Time)`
 
 SetCreationDateTime sets CreationDateTime field to given value.
 

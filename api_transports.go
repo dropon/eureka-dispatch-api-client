@@ -17,7 +17,6 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"time"
 	"reflect"
 )
 
@@ -2299,19 +2298,19 @@ type ApiGetTransportRouteRequest struct {
 	ctx context.Context
 	ApiService *TransportsAPIService
 	uid string
-	startDate *time.Time
-	endDate *time.Time
+	startDate *Time
+	endDate *Time
 	useSmoothRoute *bool
 }
 
 // Optional start date, restrict to positions acquired after this date
-func (r ApiGetTransportRouteRequest) StartDate(startDate time.Time) ApiGetTransportRouteRequest {
+func (r ApiGetTransportRouteRequest) StartDate(startDate Time) ApiGetTransportRouteRequest {
 	r.startDate = &startDate
 	return r
 }
 
 // Optional end date, restrict to positions acquired before this date
-func (r ApiGetTransportRouteRequest) EndDate(endDate time.Time) ApiGetTransportRouteRequest {
+func (r ApiGetTransportRouteRequest) EndDate(endDate Time) ApiGetTransportRouteRequest {
 	r.endDate = &endDate
 	return r
 }
@@ -2907,8 +2906,8 @@ type ApiGetTransportsRequest struct {
 	quotationUids *[]string
 	quotationTrackIds *[]string
 	sourceQuotationNumbers *[]int32
-	dateFrom *time.Time
-	dateTo *time.Time
+	dateFrom *Time
+	dateTo *Time
 	dateActions *[]string
 	dateToDateActions *[]string
 	dateCombinationCriterion *string
@@ -3036,13 +3035,13 @@ func (r ApiGetTransportsRequest) SourceQuotationNumbers(sourceQuotationNumbers [
 }
 
 // The inclusive start date and time for the search.
-func (r ApiGetTransportsRequest) DateFrom(dateFrom time.Time) ApiGetTransportsRequest {
+func (r ApiGetTransportsRequest) DateFrom(dateFrom Time) ApiGetTransportsRequest {
 	r.dateFrom = &dateFrom
 	return r
 }
 
 // The exclusive end date and time for the search.
-func (r ApiGetTransportsRequest) DateTo(dateTo time.Time) ApiGetTransportsRequest {
+func (r ApiGetTransportsRequest) DateTo(dateTo Time) ApiGetTransportsRequest {
 	r.dateTo = &dateTo
 	return r
 }

@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 	"bytes"
 	"fmt"
 )
@@ -31,13 +30,13 @@ type ApplyDeliveredStatusCommand struct {
 	// Transport delivery comment
 	DeliveryComment *string `json:"deliveryComment,omitempty"`
 	// Transport delivery realized date time
-	RealizedDateTime *time.Time `json:"realizedDateTime,omitempty"`
+	RealizedDateTime *Time `json:"realizedDateTime,omitempty"`
 	// Transport delivery realized arrival on site date time
-	RealizedArrivalOnSiteDateTime *time.Time `json:"realizedArrivalOnSiteDateTime,omitempty"`
+	RealizedArrivalOnSiteDateTime *Time `json:"realizedArrivalOnSiteDateTime,omitempty"`
 	// Transport delivery realized unloading start date time
-	RealizedUnloadingStartDateTime *time.Time `json:"realizedUnloadingStartDateTime,omitempty"`
+	RealizedUnloadingStartDateTime *Time `json:"realizedUnloadingStartDateTime,omitempty"`
 	// Transport delivery realized unloading end date time
-	RealizedUnloadingEndDateTime *time.Time `json:"realizedUnloadingEndDateTime,omitempty"`
+	RealizedUnloadingEndDateTime *Time `json:"realizedUnloadingEndDateTime,omitempty"`
 	PickupData *PickupDataOnStatusAppliedDto `json:"pickupData,omitempty"`
 }
 
@@ -182,9 +181,9 @@ func (o *ApplyDeliveredStatusCommand) SetDeliveryComment(v string) {
 }
 
 // GetRealizedDateTime returns the RealizedDateTime field value if set, zero value otherwise.
-func (o *ApplyDeliveredStatusCommand) GetRealizedDateTime() time.Time {
+func (o *ApplyDeliveredStatusCommand) GetRealizedDateTime() Time {
 	if o == nil || IsNil(o.RealizedDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.RealizedDateTime
@@ -192,7 +191,7 @@ func (o *ApplyDeliveredStatusCommand) GetRealizedDateTime() time.Time {
 
 // GetRealizedDateTimeOk returns a tuple with the RealizedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplyDeliveredStatusCommand) GetRealizedDateTimeOk() (*time.Time, bool) {
+func (o *ApplyDeliveredStatusCommand) GetRealizedDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.RealizedDateTime) {
 		return nil, false
 	}
@@ -208,15 +207,15 @@ func (o *ApplyDeliveredStatusCommand) HasRealizedDateTime() bool {
 	return false
 }
 
-// SetRealizedDateTime gets a reference to the given time.Time and assigns it to the RealizedDateTime field.
-func (o *ApplyDeliveredStatusCommand) SetRealizedDateTime(v time.Time) {
+// SetRealizedDateTime gets a reference to the given Time and assigns it to the RealizedDateTime field.
+func (o *ApplyDeliveredStatusCommand) SetRealizedDateTime(v Time) {
 	o.RealizedDateTime = &v
 }
 
 // GetRealizedArrivalOnSiteDateTime returns the RealizedArrivalOnSiteDateTime field value if set, zero value otherwise.
-func (o *ApplyDeliveredStatusCommand) GetRealizedArrivalOnSiteDateTime() time.Time {
+func (o *ApplyDeliveredStatusCommand) GetRealizedArrivalOnSiteDateTime() Time {
 	if o == nil || IsNil(o.RealizedArrivalOnSiteDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.RealizedArrivalOnSiteDateTime
@@ -224,7 +223,7 @@ func (o *ApplyDeliveredStatusCommand) GetRealizedArrivalOnSiteDateTime() time.Ti
 
 // GetRealizedArrivalOnSiteDateTimeOk returns a tuple with the RealizedArrivalOnSiteDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplyDeliveredStatusCommand) GetRealizedArrivalOnSiteDateTimeOk() (*time.Time, bool) {
+func (o *ApplyDeliveredStatusCommand) GetRealizedArrivalOnSiteDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.RealizedArrivalOnSiteDateTime) {
 		return nil, false
 	}
@@ -240,15 +239,15 @@ func (o *ApplyDeliveredStatusCommand) HasRealizedArrivalOnSiteDateTime() bool {
 	return false
 }
 
-// SetRealizedArrivalOnSiteDateTime gets a reference to the given time.Time and assigns it to the RealizedArrivalOnSiteDateTime field.
-func (o *ApplyDeliveredStatusCommand) SetRealizedArrivalOnSiteDateTime(v time.Time) {
+// SetRealizedArrivalOnSiteDateTime gets a reference to the given Time and assigns it to the RealizedArrivalOnSiteDateTime field.
+func (o *ApplyDeliveredStatusCommand) SetRealizedArrivalOnSiteDateTime(v Time) {
 	o.RealizedArrivalOnSiteDateTime = &v
 }
 
 // GetRealizedUnloadingStartDateTime returns the RealizedUnloadingStartDateTime field value if set, zero value otherwise.
-func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingStartDateTime() time.Time {
+func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingStartDateTime() Time {
 	if o == nil || IsNil(o.RealizedUnloadingStartDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.RealizedUnloadingStartDateTime
@@ -256,7 +255,7 @@ func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingStartDateTime() time.T
 
 // GetRealizedUnloadingStartDateTimeOk returns a tuple with the RealizedUnloadingStartDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingStartDateTimeOk() (*time.Time, bool) {
+func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingStartDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.RealizedUnloadingStartDateTime) {
 		return nil, false
 	}
@@ -272,15 +271,15 @@ func (o *ApplyDeliveredStatusCommand) HasRealizedUnloadingStartDateTime() bool {
 	return false
 }
 
-// SetRealizedUnloadingStartDateTime gets a reference to the given time.Time and assigns it to the RealizedUnloadingStartDateTime field.
-func (o *ApplyDeliveredStatusCommand) SetRealizedUnloadingStartDateTime(v time.Time) {
+// SetRealizedUnloadingStartDateTime gets a reference to the given Time and assigns it to the RealizedUnloadingStartDateTime field.
+func (o *ApplyDeliveredStatusCommand) SetRealizedUnloadingStartDateTime(v Time) {
 	o.RealizedUnloadingStartDateTime = &v
 }
 
 // GetRealizedUnloadingEndDateTime returns the RealizedUnloadingEndDateTime field value if set, zero value otherwise.
-func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingEndDateTime() time.Time {
+func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingEndDateTime() Time {
 	if o == nil || IsNil(o.RealizedUnloadingEndDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.RealizedUnloadingEndDateTime
@@ -288,7 +287,7 @@ func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingEndDateTime() time.Tim
 
 // GetRealizedUnloadingEndDateTimeOk returns a tuple with the RealizedUnloadingEndDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingEndDateTimeOk() (*time.Time, bool) {
+func (o *ApplyDeliveredStatusCommand) GetRealizedUnloadingEndDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.RealizedUnloadingEndDateTime) {
 		return nil, false
 	}
@@ -304,8 +303,8 @@ func (o *ApplyDeliveredStatusCommand) HasRealizedUnloadingEndDateTime() bool {
 	return false
 }
 
-// SetRealizedUnloadingEndDateTime gets a reference to the given time.Time and assigns it to the RealizedUnloadingEndDateTime field.
-func (o *ApplyDeliveredStatusCommand) SetRealizedUnloadingEndDateTime(v time.Time) {
+// SetRealizedUnloadingEndDateTime gets a reference to the given Time and assigns it to the RealizedUnloadingEndDateTime field.
+func (o *ApplyDeliveredStatusCommand) SetRealizedUnloadingEndDateTime(v Time) {
 	o.RealizedUnloadingEndDateTime = &v
 }
 

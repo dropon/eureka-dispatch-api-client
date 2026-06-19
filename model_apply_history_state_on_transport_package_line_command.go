@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ApplyHistoryStateOnTransportPackageLineCommand type satisfies the MappedNullable interface at compile time
@@ -27,7 +26,7 @@ type ApplyHistoryStateOnTransportPackageLineCommand struct {
 	// Status code
 	StatusCode *string `json:"statusCode,omitempty"`
 	// Status business date
-	StatusDate *time.Time `json:"statusDate,omitempty"`
+	StatusDate *Time `json:"statusDate,omitempty"`
 	// Status comment
 	Comment *string `json:"comment,omitempty"`
 }
@@ -146,9 +145,9 @@ func (o *ApplyHistoryStateOnTransportPackageLineCommand) SetStatusCode(v string)
 }
 
 // GetStatusDate returns the StatusDate field value if set, zero value otherwise.
-func (o *ApplyHistoryStateOnTransportPackageLineCommand) GetStatusDate() time.Time {
+func (o *ApplyHistoryStateOnTransportPackageLineCommand) GetStatusDate() Time {
 	if o == nil || IsNil(o.StatusDate) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.StatusDate
@@ -156,7 +155,7 @@ func (o *ApplyHistoryStateOnTransportPackageLineCommand) GetStatusDate() time.Ti
 
 // GetStatusDateOk returns a tuple with the StatusDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplyHistoryStateOnTransportPackageLineCommand) GetStatusDateOk() (*time.Time, bool) {
+func (o *ApplyHistoryStateOnTransportPackageLineCommand) GetStatusDateOk() (*Time, bool) {
 	if o == nil || IsNil(o.StatusDate) {
 		return nil, false
 	}
@@ -172,8 +171,8 @@ func (o *ApplyHistoryStateOnTransportPackageLineCommand) HasStatusDate() bool {
 	return false
 }
 
-// SetStatusDate gets a reference to the given time.Time and assigns it to the StatusDate field.
-func (o *ApplyHistoryStateOnTransportPackageLineCommand) SetStatusDate(v time.Time) {
+// SetStatusDate gets a reference to the given Time and assigns it to the StatusDate field.
+func (o *ApplyHistoryStateOnTransportPackageLineCommand) SetStatusDate(v Time) {
 	o.StatusDate = &v
 }
 

@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the CustomerBillingDetailsDtoAdministrativeInfoDto type satisfies the MappedNullable interface at compile time
@@ -26,7 +25,7 @@ type CustomerBillingDetailsDtoAdministrativeInfoDto struct {
 	EuropeanVat *string `json:"europeanVat,omitempty"`
 	GeneralAccount *string `json:"generalAccount,omitempty"`
 	AuxiliaryAccount *string `json:"auxiliaryAccount,omitempty"`
-	ExitDate *time.Time `json:"exitDate,omitempty"`
+	ExitDate *Time `json:"exitDate,omitempty"`
 }
 
 // NewCustomerBillingDetailsDtoAdministrativeInfoDto instantiates a new CustomerBillingDetailsDtoAdministrativeInfoDto object
@@ -175,9 +174,9 @@ func (o *CustomerBillingDetailsDtoAdministrativeInfoDto) SetAuxiliaryAccount(v s
 }
 
 // GetExitDate returns the ExitDate field value if set, zero value otherwise.
-func (o *CustomerBillingDetailsDtoAdministrativeInfoDto) GetExitDate() time.Time {
+func (o *CustomerBillingDetailsDtoAdministrativeInfoDto) GetExitDate() Time {
 	if o == nil || IsNil(o.ExitDate) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.ExitDate
@@ -185,7 +184,7 @@ func (o *CustomerBillingDetailsDtoAdministrativeInfoDto) GetExitDate() time.Time
 
 // GetExitDateOk returns a tuple with the ExitDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerBillingDetailsDtoAdministrativeInfoDto) GetExitDateOk() (*time.Time, bool) {
+func (o *CustomerBillingDetailsDtoAdministrativeInfoDto) GetExitDateOk() (*Time, bool) {
 	if o == nil || IsNil(o.ExitDate) {
 		return nil, false
 	}
@@ -201,8 +200,8 @@ func (o *CustomerBillingDetailsDtoAdministrativeInfoDto) HasExitDate() bool {
 	return false
 }
 
-// SetExitDate gets a reference to the given time.Time and assigns it to the ExitDate field.
-func (o *CustomerBillingDetailsDtoAdministrativeInfoDto) SetExitDate(v time.Time) {
+// SetExitDate gets a reference to the given Time and assigns it to the ExitDate field.
+func (o *CustomerBillingDetailsDtoAdministrativeInfoDto) SetExitDate(v Time) {
 	o.ExitDate = &v
 }
 

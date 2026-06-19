@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TransportDeliveryDateTimeSlotDto type satisfies the MappedNullable interface at compile time
@@ -20,12 +19,12 @@ var _ MappedNullable = &TransportDeliveryDateTimeSlotDto{}
 
 // TransportDeliveryDateTimeSlotDto A transport date slot.  The transformation into Dispatch's transports date and time will follow these rules :  - Specifying only the start datetime will set a single \"from\" datetime condition  - Specifying both, but different, start and end datetime will set \"after\" start and \"before\" end.  - Specifying the same start and end datetime will set a single \"at\" datetime.  - Specifying only the end datetime will set a \"from\" \"now\" (\\_\\_:\\_\\_) to end.  - Specifying no date will set to \"as soon as possible\" transport.
 type TransportDeliveryDateTimeSlotDto struct {
-	UnloadingStart *time.Time `json:"unloadingStart,omitempty"`
-	UnloadingEnd *time.Time `json:"unloadingEnd,omitempty"`
+	UnloadingStart *Time `json:"unloadingStart,omitempty"`
+	UnloadingEnd *Time `json:"unloadingEnd,omitempty"`
 	PlannedStart *SlotDto `json:"plannedStart,omitempty"`
 	PlannedEnd *SlotDto `json:"plannedEnd,omitempty"`
-	ArrivalOnSite *time.Time `json:"arrivalOnSite,omitempty"`
-	EffectiveDate *time.Time `json:"effectiveDate,omitempty"`
+	ArrivalOnSite *Time `json:"arrivalOnSite,omitempty"`
+	EffectiveDate *Time `json:"effectiveDate,omitempty"`
 }
 
 // NewTransportDeliveryDateTimeSlotDto instantiates a new TransportDeliveryDateTimeSlotDto object
@@ -46,9 +45,9 @@ func NewTransportDeliveryDateTimeSlotDtoWithDefaults() *TransportDeliveryDateTim
 }
 
 // GetUnloadingStart returns the UnloadingStart field value if set, zero value otherwise.
-func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingStart() time.Time {
+func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingStart() Time {
 	if o == nil || IsNil(o.UnloadingStart) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.UnloadingStart
@@ -56,7 +55,7 @@ func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingStart() time.Time {
 
 // GetUnloadingStartOk returns a tuple with the UnloadingStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingStartOk() (*time.Time, bool) {
+func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingStartOk() (*Time, bool) {
 	if o == nil || IsNil(o.UnloadingStart) {
 		return nil, false
 	}
@@ -72,15 +71,15 @@ func (o *TransportDeliveryDateTimeSlotDto) HasUnloadingStart() bool {
 	return false
 }
 
-// SetUnloadingStart gets a reference to the given time.Time and assigns it to the UnloadingStart field.
-func (o *TransportDeliveryDateTimeSlotDto) SetUnloadingStart(v time.Time) {
+// SetUnloadingStart gets a reference to the given Time and assigns it to the UnloadingStart field.
+func (o *TransportDeliveryDateTimeSlotDto) SetUnloadingStart(v Time) {
 	o.UnloadingStart = &v
 }
 
 // GetUnloadingEnd returns the UnloadingEnd field value if set, zero value otherwise.
-func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingEnd() time.Time {
+func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingEnd() Time {
 	if o == nil || IsNil(o.UnloadingEnd) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.UnloadingEnd
@@ -88,7 +87,7 @@ func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingEnd() time.Time {
 
 // GetUnloadingEndOk returns a tuple with the UnloadingEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingEndOk() (*time.Time, bool) {
+func (o *TransportDeliveryDateTimeSlotDto) GetUnloadingEndOk() (*Time, bool) {
 	if o == nil || IsNil(o.UnloadingEnd) {
 		return nil, false
 	}
@@ -104,8 +103,8 @@ func (o *TransportDeliveryDateTimeSlotDto) HasUnloadingEnd() bool {
 	return false
 }
 
-// SetUnloadingEnd gets a reference to the given time.Time and assigns it to the UnloadingEnd field.
-func (o *TransportDeliveryDateTimeSlotDto) SetUnloadingEnd(v time.Time) {
+// SetUnloadingEnd gets a reference to the given Time and assigns it to the UnloadingEnd field.
+func (o *TransportDeliveryDateTimeSlotDto) SetUnloadingEnd(v Time) {
 	o.UnloadingEnd = &v
 }
 
@@ -174,9 +173,9 @@ func (o *TransportDeliveryDateTimeSlotDto) SetPlannedEnd(v SlotDto) {
 }
 
 // GetArrivalOnSite returns the ArrivalOnSite field value if set, zero value otherwise.
-func (o *TransportDeliveryDateTimeSlotDto) GetArrivalOnSite() time.Time {
+func (o *TransportDeliveryDateTimeSlotDto) GetArrivalOnSite() Time {
 	if o == nil || IsNil(o.ArrivalOnSite) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.ArrivalOnSite
@@ -184,7 +183,7 @@ func (o *TransportDeliveryDateTimeSlotDto) GetArrivalOnSite() time.Time {
 
 // GetArrivalOnSiteOk returns a tuple with the ArrivalOnSite field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportDeliveryDateTimeSlotDto) GetArrivalOnSiteOk() (*time.Time, bool) {
+func (o *TransportDeliveryDateTimeSlotDto) GetArrivalOnSiteOk() (*Time, bool) {
 	if o == nil || IsNil(o.ArrivalOnSite) {
 		return nil, false
 	}
@@ -200,15 +199,15 @@ func (o *TransportDeliveryDateTimeSlotDto) HasArrivalOnSite() bool {
 	return false
 }
 
-// SetArrivalOnSite gets a reference to the given time.Time and assigns it to the ArrivalOnSite field.
-func (o *TransportDeliveryDateTimeSlotDto) SetArrivalOnSite(v time.Time) {
+// SetArrivalOnSite gets a reference to the given Time and assigns it to the ArrivalOnSite field.
+func (o *TransportDeliveryDateTimeSlotDto) SetArrivalOnSite(v Time) {
 	o.ArrivalOnSite = &v
 }
 
 // GetEffectiveDate returns the EffectiveDate field value if set, zero value otherwise.
-func (o *TransportDeliveryDateTimeSlotDto) GetEffectiveDate() time.Time {
+func (o *TransportDeliveryDateTimeSlotDto) GetEffectiveDate() Time {
 	if o == nil || IsNil(o.EffectiveDate) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.EffectiveDate
@@ -216,7 +215,7 @@ func (o *TransportDeliveryDateTimeSlotDto) GetEffectiveDate() time.Time {
 
 // GetEffectiveDateOk returns a tuple with the EffectiveDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportDeliveryDateTimeSlotDto) GetEffectiveDateOk() (*time.Time, bool) {
+func (o *TransportDeliveryDateTimeSlotDto) GetEffectiveDateOk() (*Time, bool) {
 	if o == nil || IsNil(o.EffectiveDate) {
 		return nil, false
 	}
@@ -232,8 +231,8 @@ func (o *TransportDeliveryDateTimeSlotDto) HasEffectiveDate() bool {
 	return false
 }
 
-// SetEffectiveDate gets a reference to the given time.Time and assigns it to the EffectiveDate field.
-func (o *TransportDeliveryDateTimeSlotDto) SetEffectiveDate(v time.Time) {
+// SetEffectiveDate gets a reference to the given Time and assigns it to the EffectiveDate field.
+func (o *TransportDeliveryDateTimeSlotDto) SetEffectiveDate(v Time) {
 	o.EffectiveDate = &v
 }
 

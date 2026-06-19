@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the PickupDataOnStatusAppliedDto type satisfies the MappedNullable interface at compile time
@@ -25,11 +24,11 @@ type PickupDataOnStatusAppliedDto struct {
 	// Transport pickup comment
 	Comment *string `json:"comment,omitempty"`
 	// Transport pickup realized arrival on site date time
-	RealizedArrivalOnSiteDateTime *time.Time `json:"realizedArrivalOnSiteDateTime,omitempty"`
+	RealizedArrivalOnSiteDateTime *Time `json:"realizedArrivalOnSiteDateTime,omitempty"`
 	// Transport pickup realized loading start date time
-	RealizedLoadingStartDateTime *time.Time `json:"realizedLoadingStartDateTime,omitempty"`
+	RealizedLoadingStartDateTime *Time `json:"realizedLoadingStartDateTime,omitempty"`
 	// Transport pickup realized loading end date time
-	RealizedLoadingEndDateTime *time.Time `json:"realizedLoadingEndDateTime,omitempty"`
+	RealizedLoadingEndDateTime *Time `json:"realizedLoadingEndDateTime,omitempty"`
 }
 
 // NewPickupDataOnStatusAppliedDto instantiates a new PickupDataOnStatusAppliedDto object
@@ -114,9 +113,9 @@ func (o *PickupDataOnStatusAppliedDto) SetComment(v string) {
 }
 
 // GetRealizedArrivalOnSiteDateTime returns the RealizedArrivalOnSiteDateTime field value if set, zero value otherwise.
-func (o *PickupDataOnStatusAppliedDto) GetRealizedArrivalOnSiteDateTime() time.Time {
+func (o *PickupDataOnStatusAppliedDto) GetRealizedArrivalOnSiteDateTime() Time {
 	if o == nil || IsNil(o.RealizedArrivalOnSiteDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.RealizedArrivalOnSiteDateTime
@@ -124,7 +123,7 @@ func (o *PickupDataOnStatusAppliedDto) GetRealizedArrivalOnSiteDateTime() time.T
 
 // GetRealizedArrivalOnSiteDateTimeOk returns a tuple with the RealizedArrivalOnSiteDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PickupDataOnStatusAppliedDto) GetRealizedArrivalOnSiteDateTimeOk() (*time.Time, bool) {
+func (o *PickupDataOnStatusAppliedDto) GetRealizedArrivalOnSiteDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.RealizedArrivalOnSiteDateTime) {
 		return nil, false
 	}
@@ -140,15 +139,15 @@ func (o *PickupDataOnStatusAppliedDto) HasRealizedArrivalOnSiteDateTime() bool {
 	return false
 }
 
-// SetRealizedArrivalOnSiteDateTime gets a reference to the given time.Time and assigns it to the RealizedArrivalOnSiteDateTime field.
-func (o *PickupDataOnStatusAppliedDto) SetRealizedArrivalOnSiteDateTime(v time.Time) {
+// SetRealizedArrivalOnSiteDateTime gets a reference to the given Time and assigns it to the RealizedArrivalOnSiteDateTime field.
+func (o *PickupDataOnStatusAppliedDto) SetRealizedArrivalOnSiteDateTime(v Time) {
 	o.RealizedArrivalOnSiteDateTime = &v
 }
 
 // GetRealizedLoadingStartDateTime returns the RealizedLoadingStartDateTime field value if set, zero value otherwise.
-func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingStartDateTime() time.Time {
+func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingStartDateTime() Time {
 	if o == nil || IsNil(o.RealizedLoadingStartDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.RealizedLoadingStartDateTime
@@ -156,7 +155,7 @@ func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingStartDateTime() time.Ti
 
 // GetRealizedLoadingStartDateTimeOk returns a tuple with the RealizedLoadingStartDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingStartDateTimeOk() (*time.Time, bool) {
+func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingStartDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.RealizedLoadingStartDateTime) {
 		return nil, false
 	}
@@ -172,15 +171,15 @@ func (o *PickupDataOnStatusAppliedDto) HasRealizedLoadingStartDateTime() bool {
 	return false
 }
 
-// SetRealizedLoadingStartDateTime gets a reference to the given time.Time and assigns it to the RealizedLoadingStartDateTime field.
-func (o *PickupDataOnStatusAppliedDto) SetRealizedLoadingStartDateTime(v time.Time) {
+// SetRealizedLoadingStartDateTime gets a reference to the given Time and assigns it to the RealizedLoadingStartDateTime field.
+func (o *PickupDataOnStatusAppliedDto) SetRealizedLoadingStartDateTime(v Time) {
 	o.RealizedLoadingStartDateTime = &v
 }
 
 // GetRealizedLoadingEndDateTime returns the RealizedLoadingEndDateTime field value if set, zero value otherwise.
-func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingEndDateTime() time.Time {
+func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingEndDateTime() Time {
 	if o == nil || IsNil(o.RealizedLoadingEndDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.RealizedLoadingEndDateTime
@@ -188,7 +187,7 @@ func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingEndDateTime() time.Time
 
 // GetRealizedLoadingEndDateTimeOk returns a tuple with the RealizedLoadingEndDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingEndDateTimeOk() (*time.Time, bool) {
+func (o *PickupDataOnStatusAppliedDto) GetRealizedLoadingEndDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.RealizedLoadingEndDateTime) {
 		return nil, false
 	}
@@ -204,8 +203,8 @@ func (o *PickupDataOnStatusAppliedDto) HasRealizedLoadingEndDateTime() bool {
 	return false
 }
 
-// SetRealizedLoadingEndDateTime gets a reference to the given time.Time and assigns it to the RealizedLoadingEndDateTime field.
-func (o *PickupDataOnStatusAppliedDto) SetRealizedLoadingEndDateTime(v time.Time) {
+// SetRealizedLoadingEndDateTime gets a reference to the given Time and assigns it to the RealizedLoadingEndDateTime field.
+func (o *PickupDataOnStatusAppliedDto) SetRealizedLoadingEndDateTime(v Time) {
 	o.RealizedLoadingEndDateTime = &v
 }
 

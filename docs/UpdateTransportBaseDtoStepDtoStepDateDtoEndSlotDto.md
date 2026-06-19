@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DateTime** | Pointer to **time.Time** | Date and time of the slot, with unspecified time zone.  The time corresponds to slot&#39;s address time zone. | [optional] 
+**DateTime** | Pointer to **Time** | Date and time of the slot, with unspecified time zone.  The time corresponds to slot&#39;s address time zone. | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDateTime
 
-`func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() time.Time`
+`func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() Time`
 
 GetDateTime returns the DateTime field if non-nil, zero value otherwise.
 
 ### GetDateTimeOk
 
-`func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*time.Time, bool)`
+`func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*Time, bool)`
 
 GetDateTimeOk returns a tuple with the DateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDateTime
 
-`func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v time.Time)`
+`func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v Time)`
 
 SetDateTime sets DateTime field to given value.
 

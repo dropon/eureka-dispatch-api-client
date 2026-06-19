@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Uid** | Pointer to **string** | Customer&#39;s unique identifier | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
-**CreationDateTime** | Pointer to **time.Time** |  | [optional] 
-**LastModificationDateTime** | Pointer to **time.Time** |  | [optional] 
+**CreationDateTime** | Pointer to **Time** |  | [optional] 
+**LastModificationDateTime** | Pointer to **Time** |  | [optional] 
 **AgencyCode** | Pointer to **string** |  | [optional] 
 **OperationAddressId** | Pointer to **int32** |  | [optional] 
 **UseAgencyAddressInsteadOfOperationAddress** | Pointer to **bool** | If true, the agency address should be used instead of operation address. | [optional] 
@@ -117,20 +117,20 @@ HasLabel returns a boolean if a field has been set.
 
 ### GetCreationDateTime
 
-`func (o *CustomerDto) GetCreationDateTime() time.Time`
+`func (o *CustomerDto) GetCreationDateTime() Time`
 
 GetCreationDateTime returns the CreationDateTime field if non-nil, zero value otherwise.
 
 ### GetCreationDateTimeOk
 
-`func (o *CustomerDto) GetCreationDateTimeOk() (*time.Time, bool)`
+`func (o *CustomerDto) GetCreationDateTimeOk() (*Time, bool)`
 
 GetCreationDateTimeOk returns a tuple with the CreationDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreationDateTime
 
-`func (o *CustomerDto) SetCreationDateTime(v time.Time)`
+`func (o *CustomerDto) SetCreationDateTime(v Time)`
 
 SetCreationDateTime sets CreationDateTime field to given value.
 
@@ -142,20 +142,20 @@ HasCreationDateTime returns a boolean if a field has been set.
 
 ### GetLastModificationDateTime
 
-`func (o *CustomerDto) GetLastModificationDateTime() time.Time`
+`func (o *CustomerDto) GetLastModificationDateTime() Time`
 
 GetLastModificationDateTime returns the LastModificationDateTime field if non-nil, zero value otherwise.
 
 ### GetLastModificationDateTimeOk
 
-`func (o *CustomerDto) GetLastModificationDateTimeOk() (*time.Time, bool)`
+`func (o *CustomerDto) GetLastModificationDateTimeOk() (*Time, bool)`
 
 GetLastModificationDateTimeOk returns a tuple with the LastModificationDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastModificationDateTime
 
-`func (o *CustomerDto) SetLastModificationDateTime(v time.Time)`
+`func (o *CustomerDto) SetLastModificationDateTime(v Time)`
 
 SetLastModificationDateTime sets LastModificationDateTime field to given value.
 

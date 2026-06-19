@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 	"bytes"
 	"fmt"
 )
@@ -29,13 +28,13 @@ type ApplyTransportSubStateCommand struct {
 	// Free text comment
 	Comment *string `json:"comment,omitempty"`
 	// Date and time of the action, with unspecified time zone.  The time corresponds to time zone of the location where the action must be applied.
-	ActionDateTime *time.Time `json:"actionDateTime,omitempty"`
+	ActionDateTime *Time `json:"actionDateTime,omitempty"`
 	// Latitude of the position where the action is applied.    This number must be between -90 and 90.
 	Latitude *float64 `json:"latitude,omitempty"`
 	// Longitude of the position where the action is applied.    This number must be between -180 and 180.
 	Longitude *float64 `json:"longitude,omitempty"`
 	// Date and time corresponding to when the position is set.
-	PositionDateTime *time.Time `json:"positionDateTime,omitempty"`
+	PositionDateTime *Time `json:"positionDateTime,omitempty"`
 }
 
 type _ApplyTransportSubStateCommand ApplyTransportSubStateCommand
@@ -140,9 +139,9 @@ func (o *ApplyTransportSubStateCommand) SetComment(v string) {
 }
 
 // GetActionDateTime returns the ActionDateTime field value if set, zero value otherwise.
-func (o *ApplyTransportSubStateCommand) GetActionDateTime() time.Time {
+func (o *ApplyTransportSubStateCommand) GetActionDateTime() Time {
 	if o == nil || IsNil(o.ActionDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.ActionDateTime
@@ -150,7 +149,7 @@ func (o *ApplyTransportSubStateCommand) GetActionDateTime() time.Time {
 
 // GetActionDateTimeOk returns a tuple with the ActionDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplyTransportSubStateCommand) GetActionDateTimeOk() (*time.Time, bool) {
+func (o *ApplyTransportSubStateCommand) GetActionDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.ActionDateTime) {
 		return nil, false
 	}
@@ -166,8 +165,8 @@ func (o *ApplyTransportSubStateCommand) HasActionDateTime() bool {
 	return false
 }
 
-// SetActionDateTime gets a reference to the given time.Time and assigns it to the ActionDateTime field.
-func (o *ApplyTransportSubStateCommand) SetActionDateTime(v time.Time) {
+// SetActionDateTime gets a reference to the given Time and assigns it to the ActionDateTime field.
+func (o *ApplyTransportSubStateCommand) SetActionDateTime(v Time) {
 	o.ActionDateTime = &v
 }
 
@@ -236,9 +235,9 @@ func (o *ApplyTransportSubStateCommand) SetLongitude(v float64) {
 }
 
 // GetPositionDateTime returns the PositionDateTime field value if set, zero value otherwise.
-func (o *ApplyTransportSubStateCommand) GetPositionDateTime() time.Time {
+func (o *ApplyTransportSubStateCommand) GetPositionDateTime() Time {
 	if o == nil || IsNil(o.PositionDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.PositionDateTime
@@ -246,7 +245,7 @@ func (o *ApplyTransportSubStateCommand) GetPositionDateTime() time.Time {
 
 // GetPositionDateTimeOk returns a tuple with the PositionDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplyTransportSubStateCommand) GetPositionDateTimeOk() (*time.Time, bool) {
+func (o *ApplyTransportSubStateCommand) GetPositionDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.PositionDateTime) {
 		return nil, false
 	}
@@ -262,8 +261,8 @@ func (o *ApplyTransportSubStateCommand) HasPositionDateTime() bool {
 	return false
 }
 
-// SetPositionDateTime gets a reference to the given time.Time and assigns it to the PositionDateTime field.
-func (o *ApplyTransportSubStateCommand) SetPositionDateTime(v time.Time) {
+// SetPositionDateTime gets a reference to the given Time and assigns it to the PositionDateTime field.
+func (o *ApplyTransportSubStateCommand) SetPositionDateTime(v Time) {
 	o.PositionDateTime = &v
 }
 

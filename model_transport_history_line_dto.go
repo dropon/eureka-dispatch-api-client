@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TransportHistoryLineDto type satisfies the MappedNullable interface at compile time
@@ -21,14 +20,14 @@ var _ MappedNullable = &TransportHistoryLineDto{}
 // TransportHistoryLineDto struct for TransportHistoryLineDto
 type TransportHistoryLineDto struct {
 	TransportHistoryLineId *int32 `json:"transportHistoryLineId,omitempty"`
-	InsertionDateTime *time.Time `json:"insertionDateTime,omitempty"`
-	ActionDateTime *time.Time `json:"actionDateTime,omitempty"`
+	InsertionDateTime *Time `json:"insertionDateTime,omitempty"`
+	ActionDateTime *Time `json:"actionDateTime,omitempty"`
 	TransportState *string `json:"transportState,omitempty"`
 	SubStateCode *string `json:"subStateCode,omitempty"`
 	Comment *string `json:"comment,omitempty"`
 	LatitudeLocation *float64 `json:"latitudeLocation,omitempty"`
 	LongitudeLocation *float64 `json:"longitudeLocation,omitempty"`
-	LocationDateTime *time.Time `json:"locationDateTime,omitempty"`
+	LocationDateTime *Time `json:"locationDateTime,omitempty"`
 	Anomalies *CappedCollectionDtoTransportHistoryAnomalyDto `json:"anomalies,omitempty"`
 }
 
@@ -82,9 +81,9 @@ func (o *TransportHistoryLineDto) SetTransportHistoryLineId(v int32) {
 }
 
 // GetInsertionDateTime returns the InsertionDateTime field value if set, zero value otherwise.
-func (o *TransportHistoryLineDto) GetInsertionDateTime() time.Time {
+func (o *TransportHistoryLineDto) GetInsertionDateTime() Time {
 	if o == nil || IsNil(o.InsertionDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.InsertionDateTime
@@ -92,7 +91,7 @@ func (o *TransportHistoryLineDto) GetInsertionDateTime() time.Time {
 
 // GetInsertionDateTimeOk returns a tuple with the InsertionDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportHistoryLineDto) GetInsertionDateTimeOk() (*time.Time, bool) {
+func (o *TransportHistoryLineDto) GetInsertionDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.InsertionDateTime) {
 		return nil, false
 	}
@@ -108,15 +107,15 @@ func (o *TransportHistoryLineDto) HasInsertionDateTime() bool {
 	return false
 }
 
-// SetInsertionDateTime gets a reference to the given time.Time and assigns it to the InsertionDateTime field.
-func (o *TransportHistoryLineDto) SetInsertionDateTime(v time.Time) {
+// SetInsertionDateTime gets a reference to the given Time and assigns it to the InsertionDateTime field.
+func (o *TransportHistoryLineDto) SetInsertionDateTime(v Time) {
 	o.InsertionDateTime = &v
 }
 
 // GetActionDateTime returns the ActionDateTime field value if set, zero value otherwise.
-func (o *TransportHistoryLineDto) GetActionDateTime() time.Time {
+func (o *TransportHistoryLineDto) GetActionDateTime() Time {
 	if o == nil || IsNil(o.ActionDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.ActionDateTime
@@ -124,7 +123,7 @@ func (o *TransportHistoryLineDto) GetActionDateTime() time.Time {
 
 // GetActionDateTimeOk returns a tuple with the ActionDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportHistoryLineDto) GetActionDateTimeOk() (*time.Time, bool) {
+func (o *TransportHistoryLineDto) GetActionDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.ActionDateTime) {
 		return nil, false
 	}
@@ -140,8 +139,8 @@ func (o *TransportHistoryLineDto) HasActionDateTime() bool {
 	return false
 }
 
-// SetActionDateTime gets a reference to the given time.Time and assigns it to the ActionDateTime field.
-func (o *TransportHistoryLineDto) SetActionDateTime(v time.Time) {
+// SetActionDateTime gets a reference to the given Time and assigns it to the ActionDateTime field.
+func (o *TransportHistoryLineDto) SetActionDateTime(v Time) {
 	o.ActionDateTime = &v
 }
 
@@ -306,9 +305,9 @@ func (o *TransportHistoryLineDto) SetLongitudeLocation(v float64) {
 }
 
 // GetLocationDateTime returns the LocationDateTime field value if set, zero value otherwise.
-func (o *TransportHistoryLineDto) GetLocationDateTime() time.Time {
+func (o *TransportHistoryLineDto) GetLocationDateTime() Time {
 	if o == nil || IsNil(o.LocationDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.LocationDateTime
@@ -316,7 +315,7 @@ func (o *TransportHistoryLineDto) GetLocationDateTime() time.Time {
 
 // GetLocationDateTimeOk returns a tuple with the LocationDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportHistoryLineDto) GetLocationDateTimeOk() (*time.Time, bool) {
+func (o *TransportHistoryLineDto) GetLocationDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.LocationDateTime) {
 		return nil, false
 	}
@@ -332,8 +331,8 @@ func (o *TransportHistoryLineDto) HasLocationDateTime() bool {
 	return false
 }
 
-// SetLocationDateTime gets a reference to the given time.Time and assigns it to the LocationDateTime field.
-func (o *TransportHistoryLineDto) SetLocationDateTime(v time.Time) {
+// SetLocationDateTime gets a reference to the given Time and assigns it to the LocationDateTime field.
+func (o *TransportHistoryLineDto) SetLocationDateTime(v Time) {
 	o.LocationDateTime = &v
 }
 

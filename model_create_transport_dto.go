@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 	"bytes"
 	"fmt"
 )
@@ -35,7 +34,7 @@ type CreateTransportDto struct {
 	Notes *string `json:"notes,omitempty"`
 	IsRoundTrip *bool `json:"isRoundTrip,omitempty"`
 	// The date and time at which the customer have contacted the transport company to request the transport.  If not set, will default to the service current local date and time at server time zone.
-	CustomerCallDateTime *time.Time `json:"customerCallDateTime,omitempty"`
+	CustomerCallDateTime *Time `json:"customerCallDateTime,omitempty"`
 	PickupStep CreateTransportDtoStepDto `json:"pickupStep"`
 	DeliveryStep CreateTransportDtoStepDto `json:"deliveryStep"`
 	// Mandatory. Service's unique code.
@@ -341,9 +340,9 @@ func (o *CreateTransportDto) SetIsRoundTrip(v bool) {
 }
 
 // GetCustomerCallDateTime returns the CustomerCallDateTime field value if set, zero value otherwise.
-func (o *CreateTransportDto) GetCustomerCallDateTime() time.Time {
+func (o *CreateTransportDto) GetCustomerCallDateTime() Time {
 	if o == nil || IsNil(o.CustomerCallDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.CustomerCallDateTime
@@ -351,7 +350,7 @@ func (o *CreateTransportDto) GetCustomerCallDateTime() time.Time {
 
 // GetCustomerCallDateTimeOk returns a tuple with the CustomerCallDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateTransportDto) GetCustomerCallDateTimeOk() (*time.Time, bool) {
+func (o *CreateTransportDto) GetCustomerCallDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.CustomerCallDateTime) {
 		return nil, false
 	}
@@ -367,8 +366,8 @@ func (o *CreateTransportDto) HasCustomerCallDateTime() bool {
 	return false
 }
 
-// SetCustomerCallDateTime gets a reference to the given time.Time and assigns it to the CustomerCallDateTime field.
-func (o *CreateTransportDto) SetCustomerCallDateTime(v time.Time) {
+// SetCustomerCallDateTime gets a reference to the given Time and assigns it to the CustomerCallDateTime field.
+func (o *CreateTransportDto) SetCustomerCallDateTime(v Time) {
 	o.CustomerCallDateTime = &v
 }
 

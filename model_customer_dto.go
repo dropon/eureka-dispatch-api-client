@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the CustomerDto type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type CustomerDto struct {
 	Uid *string `json:"uid,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Label *string `json:"label,omitempty"`
-	CreationDateTime *time.Time `json:"creationDateTime,omitempty"`
-	LastModificationDateTime *time.Time `json:"lastModificationDateTime,omitempty"`
+	CreationDateTime *Time `json:"creationDateTime,omitempty"`
+	LastModificationDateTime *Time `json:"lastModificationDateTime,omitempty"`
 	AgencyCode *string `json:"agencyCode,omitempty"`
 	OperationAddressId *int32 `json:"operationAddressId,omitempty"`
 	// If true, the agency address should be used instead of operation address.
@@ -154,9 +153,9 @@ func (o *CustomerDto) SetLabel(v string) {
 }
 
 // GetCreationDateTime returns the CreationDateTime field value if set, zero value otherwise.
-func (o *CustomerDto) GetCreationDateTime() time.Time {
+func (o *CustomerDto) GetCreationDateTime() Time {
 	if o == nil || IsNil(o.CreationDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.CreationDateTime
@@ -164,7 +163,7 @@ func (o *CustomerDto) GetCreationDateTime() time.Time {
 
 // GetCreationDateTimeOk returns a tuple with the CreationDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDto) GetCreationDateTimeOk() (*time.Time, bool) {
+func (o *CustomerDto) GetCreationDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.CreationDateTime) {
 		return nil, false
 	}
@@ -180,15 +179,15 @@ func (o *CustomerDto) HasCreationDateTime() bool {
 	return false
 }
 
-// SetCreationDateTime gets a reference to the given time.Time and assigns it to the CreationDateTime field.
-func (o *CustomerDto) SetCreationDateTime(v time.Time) {
+// SetCreationDateTime gets a reference to the given Time and assigns it to the CreationDateTime field.
+func (o *CustomerDto) SetCreationDateTime(v Time) {
 	o.CreationDateTime = &v
 }
 
 // GetLastModificationDateTime returns the LastModificationDateTime field value if set, zero value otherwise.
-func (o *CustomerDto) GetLastModificationDateTime() time.Time {
+func (o *CustomerDto) GetLastModificationDateTime() Time {
 	if o == nil || IsNil(o.LastModificationDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.LastModificationDateTime
@@ -196,7 +195,7 @@ func (o *CustomerDto) GetLastModificationDateTime() time.Time {
 
 // GetLastModificationDateTimeOk returns a tuple with the LastModificationDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDto) GetLastModificationDateTimeOk() (*time.Time, bool) {
+func (o *CustomerDto) GetLastModificationDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.LastModificationDateTime) {
 		return nil, false
 	}
@@ -212,8 +211,8 @@ func (o *CustomerDto) HasLastModificationDateTime() bool {
 	return false
 }
 
-// SetLastModificationDateTime gets a reference to the given time.Time and assigns it to the LastModificationDateTime field.
-func (o *CustomerDto) SetLastModificationDateTime(v time.Time) {
+// SetLastModificationDateTime gets a reference to the given Time and assigns it to the LastModificationDateTime field.
+func (o *CustomerDto) SetLastModificationDateTime(v Time) {
 	o.LastModificationDateTime = &v
 }
 

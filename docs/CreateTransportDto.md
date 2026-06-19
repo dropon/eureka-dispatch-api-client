@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SecretCode** | Pointer to **string** |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
 **IsRoundTrip** | Pointer to **bool** |  | [optional] 
-**CustomerCallDateTime** | Pointer to **time.Time** | The date and time at which the customer have contacted the transport company to request the transport.  If not set, will default to the service current local date and time at server time zone. | [optional] 
+**CustomerCallDateTime** | Pointer to **Time** | The date and time at which the customer have contacted the transport company to request the transport.  If not set, will default to the service current local date and time at server time zone. | [optional] 
 **PickupStep** | [**CreateTransportDtoStepDto**](CreateTransportDtoStepDto.md) |  | 
 **DeliveryStep** | [**CreateTransportDtoStepDto**](CreateTransportDtoStepDto.md) |  | 
 **ServiceCode** | **string** | Mandatory. Service&#39;s unique code. | 
@@ -250,20 +250,20 @@ HasIsRoundTrip returns a boolean if a field has been set.
 
 ### GetCustomerCallDateTime
 
-`func (o *CreateTransportDto) GetCustomerCallDateTime() time.Time`
+`func (o *CreateTransportDto) GetCustomerCallDateTime() Time`
 
 GetCustomerCallDateTime returns the CustomerCallDateTime field if non-nil, zero value otherwise.
 
 ### GetCustomerCallDateTimeOk
 
-`func (o *CreateTransportDto) GetCustomerCallDateTimeOk() (*time.Time, bool)`
+`func (o *CreateTransportDto) GetCustomerCallDateTimeOk() (*Time, bool)`
 
 GetCustomerCallDateTimeOk returns a tuple with the CustomerCallDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerCallDateTime
 
-`func (o *CreateTransportDto) SetCustomerCallDateTime(v time.Time)`
+`func (o *CreateTransportDto) SetCustomerCallDateTime(v Time)`
 
 SetCustomerCallDateTime sets CustomerCallDateTime field to given value.
 

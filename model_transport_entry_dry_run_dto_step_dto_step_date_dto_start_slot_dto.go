@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto type satisfies the MappedNullable interface at compile time
@@ -20,7 +19,7 @@ var _ MappedNullable = &TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto{}
 
 // TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto struct for TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto
 type TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto struct {
-	DateTime *time.Time `json:"dateTime,omitempty"`
+	DateTime *Time `json:"dateTime,omitempty"`
 	IsTimeOfDayIgnored *bool `json:"isTimeOfDayIgnored,omitempty"`
 }
 
@@ -42,9 +41,9 @@ func NewTransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDtoWithDefaults() *Tra
 }
 
 // GetDateTime returns the DateTime field value if set, zero value otherwise.
-func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) GetDateTime() time.Time {
+func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) GetDateTime() Time {
 	if o == nil || IsNil(o.DateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.DateTime
@@ -52,7 +51,7 @@ func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) GetDateTime() ti
 
 // GetDateTimeOk returns a tuple with the DateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) GetDateTimeOk() (*time.Time, bool) {
+func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) GetDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.DateTime) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) HasDateTime() bo
 	return false
 }
 
-// SetDateTime gets a reference to the given time.Time and assigns it to the DateTime field.
-func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) SetDateTime(v time.Time) {
+// SetDateTime gets a reference to the given Time and assigns it to the DateTime field.
+func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) SetDateTime(v Time) {
 	o.DateTime = &v
 }
 

@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TransportDto type satisfies the MappedNullable interface at compile time
@@ -57,7 +56,7 @@ type TransportDto struct {
 	Status *string `json:"status,omitempty"`
 	SubStateCode *string `json:"subStateCode,omitempty"`
 	// The date and time at which the customer has contacted the transport company to request the transport.  By default, it corresponds to the mission creation date.
-	CustomerCallDateTime *time.Time `json:"customerCallDateTime,omitempty"`
+	CustomerCallDateTime *Time `json:"customerCallDateTime,omitempty"`
 	DriverId *int32 `json:"driverId,omitempty"`
 	Sign *string `json:"sign,omitempty"`
 	SecretCode *string `json:"secretCode,omitempty"`
@@ -963,9 +962,9 @@ func (o *TransportDto) SetSubStateCode(v string) {
 }
 
 // GetCustomerCallDateTime returns the CustomerCallDateTime field value if set, zero value otherwise.
-func (o *TransportDto) GetCustomerCallDateTime() time.Time {
+func (o *TransportDto) GetCustomerCallDateTime() Time {
 	if o == nil || IsNil(o.CustomerCallDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.CustomerCallDateTime
@@ -973,7 +972,7 @@ func (o *TransportDto) GetCustomerCallDateTime() time.Time {
 
 // GetCustomerCallDateTimeOk returns a tuple with the CustomerCallDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportDto) GetCustomerCallDateTimeOk() (*time.Time, bool) {
+func (o *TransportDto) GetCustomerCallDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.CustomerCallDateTime) {
 		return nil, false
 	}
@@ -989,8 +988,8 @@ func (o *TransportDto) HasCustomerCallDateTime() bool {
 	return false
 }
 
-// SetCustomerCallDateTime gets a reference to the given time.Time and assigns it to the CustomerCallDateTime field.
-func (o *TransportDto) SetCustomerCallDateTime(v time.Time) {
+// SetCustomerCallDateTime gets a reference to the given Time and assigns it to the CustomerCallDateTime field.
+func (o *TransportDto) SetCustomerCallDateTime(v Time) {
 	o.CustomerCallDateTime = &v
 }
 

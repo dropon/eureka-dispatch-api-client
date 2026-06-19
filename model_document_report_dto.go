@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the DocumentReportDto type satisfies the MappedNullable interface at compile time
@@ -22,7 +21,7 @@ var _ MappedNullable = &DocumentReportDto{}
 type DocumentReportDto struct {
 	// Identifier of the document report.
 	Uid *string `json:"uid,omitempty"`
-	ReportGenerationStartDate *time.Time `json:"reportGenerationStartDate,omitempty"`
+	ReportGenerationStartDate *Time `json:"reportGenerationStartDate,omitempty"`
 	Status *string `json:"status,omitempty"`
 	ErrorDescription *string `json:"errorDescription,omitempty"`
 }
@@ -77,9 +76,9 @@ func (o *DocumentReportDto) SetUid(v string) {
 }
 
 // GetReportGenerationStartDate returns the ReportGenerationStartDate field value if set, zero value otherwise.
-func (o *DocumentReportDto) GetReportGenerationStartDate() time.Time {
+func (o *DocumentReportDto) GetReportGenerationStartDate() Time {
 	if o == nil || IsNil(o.ReportGenerationStartDate) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.ReportGenerationStartDate
@@ -87,7 +86,7 @@ func (o *DocumentReportDto) GetReportGenerationStartDate() time.Time {
 
 // GetReportGenerationStartDateOk returns a tuple with the ReportGenerationStartDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DocumentReportDto) GetReportGenerationStartDateOk() (*time.Time, bool) {
+func (o *DocumentReportDto) GetReportGenerationStartDateOk() (*Time, bool) {
 	if o == nil || IsNil(o.ReportGenerationStartDate) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *DocumentReportDto) HasReportGenerationStartDate() bool {
 	return false
 }
 
-// SetReportGenerationStartDate gets a reference to the given time.Time and assigns it to the ReportGenerationStartDate field.
-func (o *DocumentReportDto) SetReportGenerationStartDate(v time.Time) {
+// SetReportGenerationStartDate gets a reference to the given Time and assigns it to the ReportGenerationStartDate field.
+func (o *DocumentReportDto) SetReportGenerationStartDate(v Time) {
 	o.ReportGenerationStartDate = &v
 }
 

@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto type satisfies the MappedNullable interface at compile time
@@ -21,7 +20,7 @@ var _ MappedNullable = &UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto{}
 // UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto struct for UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto
 type UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto struct {
 	// Date and time of the slot, with unspecified time zone.  The time corresponds to slot's address time zone.
-	DateTime *time.Time `json:"dateTime,omitempty"`
+	DateTime *Time `json:"dateTime,omitempty"`
 }
 
 // NewUpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto instantiates a new UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto object
@@ -42,9 +41,9 @@ func NewUpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDtoWithDefaults() *Update
 }
 
 // GetDateTime returns the DateTime field value if set, zero value otherwise.
-func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() time.Time {
+func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() Time {
 	if o == nil || IsNil(o.DateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.DateTime
@@ -52,7 +51,7 @@ func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() time.
 
 // GetDateTimeOk returns a tuple with the DateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*time.Time, bool) {
+func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.DateTime) {
 		return nil, false
 	}
@@ -68,8 +67,8 @@ func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) HasDateTime() bool 
 	return false
 }
 
-// SetDateTime gets a reference to the given time.Time and assigns it to the DateTime field.
-func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v time.Time) {
+// SetDateTime gets a reference to the given Time and assigns it to the DateTime field.
+func (o *UpdateTransportBaseDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v Time) {
 	o.DateTime = &v
 }
 

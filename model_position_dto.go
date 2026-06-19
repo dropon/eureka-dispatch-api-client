@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the PositionDto type satisfies the MappedNullable interface at compile time
@@ -20,7 +19,7 @@ var _ MappedNullable = &PositionDto{}
 
 // PositionDto struct for PositionDto
 type PositionDto struct {
-	AcquisitionDateTime *time.Time `json:"acquisitionDateTime,omitempty"`
+	AcquisitionDateTime *Time `json:"acquisitionDateTime,omitempty"`
 	Latitude *float64 `json:"latitude,omitempty"`
 	Longitude *float64 `json:"longitude,omitempty"`
 	Heading *int32 `json:"heading,omitempty"`
@@ -46,9 +45,9 @@ func NewPositionDtoWithDefaults() *PositionDto {
 }
 
 // GetAcquisitionDateTime returns the AcquisitionDateTime field value if set, zero value otherwise.
-func (o *PositionDto) GetAcquisitionDateTime() time.Time {
+func (o *PositionDto) GetAcquisitionDateTime() Time {
 	if o == nil || IsNil(o.AcquisitionDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.AcquisitionDateTime
@@ -56,7 +55,7 @@ func (o *PositionDto) GetAcquisitionDateTime() time.Time {
 
 // GetAcquisitionDateTimeOk returns a tuple with the AcquisitionDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PositionDto) GetAcquisitionDateTimeOk() (*time.Time, bool) {
+func (o *PositionDto) GetAcquisitionDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.AcquisitionDateTime) {
 		return nil, false
 	}
@@ -72,8 +71,8 @@ func (o *PositionDto) HasAcquisitionDateTime() bool {
 	return false
 }
 
-// SetAcquisitionDateTime gets a reference to the given time.Time and assigns it to the AcquisitionDateTime field.
-func (o *PositionDto) SetAcquisitionDateTime(v time.Time) {
+// SetAcquisitionDateTime gets a reference to the given Time and assigns it to the AcquisitionDateTime field.
+func (o *PositionDto) SetAcquisitionDateTime(v Time) {
 	o.AcquisitionDateTime = &v
 }
 

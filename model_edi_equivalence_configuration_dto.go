@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the EdiEquivalenceConfigurationDto type satisfies the MappedNullable interface at compile time
@@ -23,7 +22,7 @@ type EdiEquivalenceConfigurationDto struct {
 	Id *string `json:"id,omitempty"`
 	Code *string `json:"code,omitempty"`
 	Label *string `json:"label,omitempty"`
-	LastModificationDateTime *time.Time `json:"lastModificationDateTime,omitempty"`
+	LastModificationDateTime *Time `json:"lastModificationDateTime,omitempty"`
 	EdiEquivalenceConfigurationType *string `json:"ediEquivalenceConfigurationType,omitempty"`
 }
 
@@ -141,9 +140,9 @@ func (o *EdiEquivalenceConfigurationDto) SetLabel(v string) {
 }
 
 // GetLastModificationDateTime returns the LastModificationDateTime field value if set, zero value otherwise.
-func (o *EdiEquivalenceConfigurationDto) GetLastModificationDateTime() time.Time {
+func (o *EdiEquivalenceConfigurationDto) GetLastModificationDateTime() Time {
 	if o == nil || IsNil(o.LastModificationDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.LastModificationDateTime
@@ -151,7 +150,7 @@ func (o *EdiEquivalenceConfigurationDto) GetLastModificationDateTime() time.Time
 
 // GetLastModificationDateTimeOk returns a tuple with the LastModificationDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EdiEquivalenceConfigurationDto) GetLastModificationDateTimeOk() (*time.Time, bool) {
+func (o *EdiEquivalenceConfigurationDto) GetLastModificationDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.LastModificationDateTime) {
 		return nil, false
 	}
@@ -167,8 +166,8 @@ func (o *EdiEquivalenceConfigurationDto) HasLastModificationDateTime() bool {
 	return false
 }
 
-// SetLastModificationDateTime gets a reference to the given time.Time and assigns it to the LastModificationDateTime field.
-func (o *EdiEquivalenceConfigurationDto) SetLastModificationDateTime(v time.Time) {
+// SetLastModificationDateTime gets a reference to the given Time and assigns it to the LastModificationDateTime field.
+func (o *EdiEquivalenceConfigurationDto) SetLastModificationDateTime(v Time) {
 	o.LastModificationDateTime = &v
 }
 

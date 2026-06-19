@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Uid** | Pointer to **string** | Identifier of the document report. | [optional] 
-**ReportGenerationStartDate** | Pointer to **time.Time** |  | [optional] 
+**ReportGenerationStartDate** | Pointer to **Time** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **ErrorDescription** | Pointer to **string** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasUid returns a boolean if a field has been set.
 
 ### GetReportGenerationStartDate
 
-`func (o *DocumentReportDto) GetReportGenerationStartDate() time.Time`
+`func (o *DocumentReportDto) GetReportGenerationStartDate() Time`
 
 GetReportGenerationStartDate returns the ReportGenerationStartDate field if non-nil, zero value otherwise.
 
 ### GetReportGenerationStartDateOk
 
-`func (o *DocumentReportDto) GetReportGenerationStartDateOk() (*time.Time, bool)`
+`func (o *DocumentReportDto) GetReportGenerationStartDateOk() (*Time, bool)`
 
 GetReportGenerationStartDateOk returns a tuple with the ReportGenerationStartDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportGenerationStartDate
 
-`func (o *DocumentReportDto) SetReportGenerationStartDate(v time.Time)`
+`func (o *DocumentReportDto) SetReportGenerationStartDate(v Time)`
 
 SetReportGenerationStartDate sets ReportGenerationStartDate field to given value.
 

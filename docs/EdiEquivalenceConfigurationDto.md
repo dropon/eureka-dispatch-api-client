@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
-**LastModificationDateTime** | Pointer to **time.Time** |  | [optional] 
+**LastModificationDateTime** | Pointer to **Time** |  | [optional] 
 **EdiEquivalenceConfigurationType** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasLabel returns a boolean if a field has been set.
 
 ### GetLastModificationDateTime
 
-`func (o *EdiEquivalenceConfigurationDto) GetLastModificationDateTime() time.Time`
+`func (o *EdiEquivalenceConfigurationDto) GetLastModificationDateTime() Time`
 
 GetLastModificationDateTime returns the LastModificationDateTime field if non-nil, zero value otherwise.
 
 ### GetLastModificationDateTimeOk
 
-`func (o *EdiEquivalenceConfigurationDto) GetLastModificationDateTimeOk() (*time.Time, bool)`
+`func (o *EdiEquivalenceConfigurationDto) GetLastModificationDateTimeOk() (*Time, bool)`
 
 GetLastModificationDateTimeOk returns a tuple with the LastModificationDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastModificationDateTime
 
-`func (o *EdiEquivalenceConfigurationDto) SetLastModificationDateTime(v time.Time)`
+`func (o *EdiEquivalenceConfigurationDto) SetLastModificationDateTime(v Time)`
 
 SetLastModificationDateTime sets LastModificationDateTime field to given value.
 

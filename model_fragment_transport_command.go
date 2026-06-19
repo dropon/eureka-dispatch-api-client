@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 	"bytes"
 	"fmt"
 )
@@ -26,7 +25,7 @@ type FragmentTransportCommand struct {
 	TransportUid string `json:"transportUid"`
 	Step FragmentTransportCommandStepDto `json:"step"`
 	// Mandatory. Link date
-	LinkDate time.Time `json:"linkDate"`
+	LinkDate Time `json:"linkDate"`
 }
 
 type _FragmentTransportCommand FragmentTransportCommand
@@ -35,7 +34,7 @@ type _FragmentTransportCommand FragmentTransportCommand
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFragmentTransportCommand(transportUid string, step FragmentTransportCommandStepDto, linkDate time.Time) *FragmentTransportCommand {
+func NewFragmentTransportCommand(transportUid string, step FragmentTransportCommandStepDto, linkDate Time) *FragmentTransportCommand {
 	this := FragmentTransportCommand{}
 	this.TransportUid = transportUid
 	this.Step = step
@@ -100,9 +99,9 @@ func (o *FragmentTransportCommand) SetStep(v FragmentTransportCommandStepDto) {
 }
 
 // GetLinkDate returns the LinkDate field value
-func (o *FragmentTransportCommand) GetLinkDate() time.Time {
+func (o *FragmentTransportCommand) GetLinkDate() Time {
 	if o == nil {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 
@@ -111,7 +110,7 @@ func (o *FragmentTransportCommand) GetLinkDate() time.Time {
 
 // GetLinkDateOk returns a tuple with the LinkDate field value
 // and a boolean to check if the value has been set.
-func (o *FragmentTransportCommand) GetLinkDateOk() (*time.Time, bool) {
+func (o *FragmentTransportCommand) GetLinkDateOk() (*Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -119,7 +118,7 @@ func (o *FragmentTransportCommand) GetLinkDateOk() (*time.Time, bool) {
 }
 
 // SetLinkDate sets field value
-func (o *FragmentTransportCommand) SetLinkDate(v time.Time) {
+func (o *FragmentTransportCommand) SetLinkDate(v Time) {
 	o.LinkDate = v
 }
 

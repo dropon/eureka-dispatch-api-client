@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SecretCode** | Pointer to **string** |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
 **IsRoundTrip** | Pointer to **bool** |  | [optional] 
-**CustomerCallDateTime** | Pointer to **time.Time** |  | [optional] 
+**CustomerCallDateTime** | Pointer to **Time** |  | [optional] 
 **PickupStep** | Pointer to [**TransportEntryDryRunDtoStepDto**](TransportEntryDryRunDtoStepDto.md) |  | [optional] 
 **DeliveryStep** | Pointer to [**TransportEntryDryRunDtoStepDto**](TransportEntryDryRunDtoStepDto.md) |  | [optional] 
 **ServiceCode** | Pointer to **string** |  | [optional] 
@@ -273,20 +273,20 @@ HasIsRoundTrip returns a boolean if a field has been set.
 
 ### GetCustomerCallDateTime
 
-`func (o *TransportEntryDryRunDto) GetCustomerCallDateTime() time.Time`
+`func (o *TransportEntryDryRunDto) GetCustomerCallDateTime() Time`
 
 GetCustomerCallDateTime returns the CustomerCallDateTime field if non-nil, zero value otherwise.
 
 ### GetCustomerCallDateTimeOk
 
-`func (o *TransportEntryDryRunDto) GetCustomerCallDateTimeOk() (*time.Time, bool)`
+`func (o *TransportEntryDryRunDto) GetCustomerCallDateTimeOk() (*Time, bool)`
 
 GetCustomerCallDateTimeOk returns a tuple with the CustomerCallDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerCallDateTime
 
-`func (o *TransportEntryDryRunDto) SetCustomerCallDateTime(v time.Time)`
+`func (o *TransportEntryDryRunDto) SetCustomerCallDateTime(v Time)`
 
 SetCustomerCallDateTime sets CustomerCallDateTime field to given value.
 

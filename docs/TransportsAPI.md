@@ -1484,8 +1484,8 @@ import (
 
 func main() {
 	uid := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Transport's unique identifier
-	startDate := time.Now() // time.Time | Optional start date, restrict to positions acquired after this date (optional)
-	endDate := time.Now() // time.Time | Optional end date, restrict to positions acquired before this date (optional)
+	startDate := time.Now() // Time | Optional start date, restrict to positions acquired after this date (optional)
+	endDate := time.Now() // Time | Optional end date, restrict to positions acquired before this date (optional)
 	useSmoothRoute := true // bool | Optional value to specify whether or not the route should be smoothed (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1516,8 +1516,8 @@ Other parameters are passed through a pointer to a apiGetTransportRouteRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **startDate** | **time.Time** | Optional start date, restrict to positions acquired after this date | 
- **endDate** | **time.Time** | Optional end date, restrict to positions acquired before this date | 
+ **startDate** | **Time** | Optional start date, restrict to positions acquired after this date | 
+ **endDate** | **Time** | Optional end date, restrict to positions acquired before this date | 
  **useSmoothRoute** | **bool** | Optional value to specify whether or not the route should be smoothed | 
 
 ### Return type
@@ -1813,8 +1813,8 @@ func main() {
 	quotationUids := []string{"Inner_example"} // []string | Quotations unique identifiers (optional)
 	quotationTrackIds := []string{"Inner_example"} // []string | Quotations track identifiers (optional)
 	sourceQuotationNumbers := []int32{int32(123)} // []int32 | Source quotation numbers, for transports included in a mission created from a quotation. (optional)
-	dateFrom := time.Now() // time.Time | The inclusive start date and time for the search. (optional)
-	dateTo := time.Now() // time.Time | The exclusive end date and time for the search. (optional)
+	dateFrom := time.Now() // Time | The inclusive start date and time for the search. (optional)
+	dateTo := time.Now() // Time | The exclusive end date and time for the search. (optional)
 	dateActions := []string{"DateActions_example"} // []string | Specify on which transport dates the date search will be performed.  If left empty, the search will be performed on any of the TransportDate. (optional)
 	dateToDateActions := []string{"DateToDateActions_example"} // []string | Specify a range of transport dates to perform the research.  The expected schema is : From DateToDateActions dates to DateActions dates.  If left empty, the search will be performed using DateActions (optional)
 	dateCombinationCriterion := "dateCombinationCriterion_example" // string | The combination criteria for date search.  Have no impact if DateActions is unspecified or contains a single element.    Default value is 'Or'. (optional) (default to "Or")
@@ -1898,8 +1898,8 @@ Name | Type | Description  | Notes
  **quotationUids** | **[]string** | Quotations unique identifiers | 
  **quotationTrackIds** | **[]string** | Quotations track identifiers | 
  **sourceQuotationNumbers** | **[]int32** | Source quotation numbers, for transports included in a mission created from a quotation. | 
- **dateFrom** | **time.Time** | The inclusive start date and time for the search. | 
- **dateTo** | **time.Time** | The exclusive end date and time for the search. | 
+ **dateFrom** | **Time** | The inclusive start date and time for the search. | 
+ **dateTo** | **Time** | The exclusive end date and time for the search. | 
  **dateActions** | **[]string** | Specify on which transport dates the date search will be performed.  If left empty, the search will be performed on any of the TransportDate. | 
  **dateToDateActions** | **[]string** | Specify a range of transport dates to perform the research.  The expected schema is : From DateToDateActions dates to DateActions dates.  If left empty, the search will be performed using DateActions | 
  **dateCombinationCriterion** | **string** | The combination criteria for date search.  Have no impact if DateActions is unspecified or contains a single element.    Default value is &#39;Or&#39;. | [default to &quot;Or&quot;]

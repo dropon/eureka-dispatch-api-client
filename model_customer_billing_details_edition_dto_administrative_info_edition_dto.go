@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto type satisfies the MappedNullable interface at compile time
@@ -26,7 +25,7 @@ type CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto struct {
 	EuropeanVat *string `json:"europeanVat,omitempty"`
 	GeneralAccount *string `json:"generalAccount,omitempty"`
 	AuxiliaryAccount *string `json:"auxiliaryAccount,omitempty"`
-	ExitDate *time.Time `json:"exitDate,omitempty"`
+	ExitDate *Time `json:"exitDate,omitempty"`
 }
 
 // NewCustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto instantiates a new CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto object
@@ -175,9 +174,9 @@ func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) SetAuxili
 }
 
 // GetExitDate returns the ExitDate field value if set, zero value otherwise.
-func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) GetExitDate() time.Time {
+func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) GetExitDate() Time {
 	if o == nil || IsNil(o.ExitDate) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.ExitDate
@@ -185,7 +184,7 @@ func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) GetExitDa
 
 // GetExitDateOk returns a tuple with the ExitDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) GetExitDateOk() (*time.Time, bool) {
+func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) GetExitDateOk() (*Time, bool) {
 	if o == nil || IsNil(o.ExitDate) {
 		return nil, false
 	}
@@ -201,8 +200,8 @@ func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) HasExitDa
 	return false
 }
 
-// SetExitDate gets a reference to the given time.Time and assigns it to the ExitDate field.
-func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) SetExitDate(v time.Time) {
+// SetExitDate gets a reference to the given Time and assigns it to the ExitDate field.
+func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) SetExitDate(v Time) {
 	o.ExitDate = &v
 }
 

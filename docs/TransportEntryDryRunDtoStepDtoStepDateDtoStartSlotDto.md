@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DateTime** | Pointer to **time.Time** |  | [optional] 
+**DateTime** | Pointer to **Time** |  | [optional] 
 **IsTimeOfDayIgnored** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDateTime
 
-`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) GetDateTime() time.Time`
+`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) GetDateTime() Time`
 
 GetDateTime returns the DateTime field if non-nil, zero value otherwise.
 
 ### GetDateTimeOk
 
-`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) GetDateTimeOk() (*time.Time, bool)`
+`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) GetDateTimeOk() (*Time, bool)`
 
 GetDateTimeOk returns a tuple with the DateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDateTime
 
-`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) SetDateTime(v time.Time)`
+`func (o *TransportEntryDryRunDtoStepDtoStepDateDtoStartSlotDto) SetDateTime(v Time)`
 
 SetDateTime sets DateTime field to given value.
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **TransportUid** | Pointer to **string** | Transport unique identifier | [optional] 
 **PackageLineId** | Pointer to **int32** | Package line identifier | [optional] 
 **StatusCode** | Pointer to **string** | Status code | [optional] 
-**StatusDate** | Pointer to **time.Time** | Status business date | [optional] 
+**StatusDate** | Pointer to **Time** | Status business date | [optional] 
 **Comment** | Pointer to **string** | Status comment | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasStatusCode returns a boolean if a field has been set.
 
 ### GetStatusDate
 
-`func (o *ApplyHistoryStateOnTransportPackageLineCommand) GetStatusDate() time.Time`
+`func (o *ApplyHistoryStateOnTransportPackageLineCommand) GetStatusDate() Time`
 
 GetStatusDate returns the StatusDate field if non-nil, zero value otherwise.
 
 ### GetStatusDateOk
 
-`func (o *ApplyHistoryStateOnTransportPackageLineCommand) GetStatusDateOk() (*time.Time, bool)`
+`func (o *ApplyHistoryStateOnTransportPackageLineCommand) GetStatusDateOk() (*Time, bool)`
 
 GetStatusDateOk returns a tuple with the StatusDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatusDate
 
-`func (o *ApplyHistoryStateOnTransportPackageLineCommand) SetStatusDate(v time.Time)`
+`func (o *ApplyHistoryStateOnTransportPackageLineCommand) SetStatusDate(v Time)`
 
 SetStatusDate sets StatusDate field to given value.
 

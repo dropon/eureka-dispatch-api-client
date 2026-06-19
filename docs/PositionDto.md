@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AcquisitionDateTime** | Pointer to **time.Time** |  | [optional] 
+**AcquisitionDateTime** | Pointer to **Time** |  | [optional] 
 **Latitude** | Pointer to **float64** |  | [optional] 
 **Longitude** | Pointer to **float64** |  | [optional] 
 **Heading** | Pointer to **int32** |  | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAcquisitionDateTime
 
-`func (o *PositionDto) GetAcquisitionDateTime() time.Time`
+`func (o *PositionDto) GetAcquisitionDateTime() Time`
 
 GetAcquisitionDateTime returns the AcquisitionDateTime field if non-nil, zero value otherwise.
 
 ### GetAcquisitionDateTimeOk
 
-`func (o *PositionDto) GetAcquisitionDateTimeOk() (*time.Time, bool)`
+`func (o *PositionDto) GetAcquisitionDateTimeOk() (*Time, bool)`
 
 GetAcquisitionDateTimeOk returns a tuple with the AcquisitionDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAcquisitionDateTime
 
-`func (o *PositionDto) SetAcquisitionDateTime(v time.Time)`
+`func (o *PositionDto) SetAcquisitionDateTime(v Time)`
 
 SetAcquisitionDateTime sets AcquisitionDateTime field to given value.
 

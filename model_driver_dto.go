@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the DriverDto type satisfies the MappedNullable interface at compile time
@@ -47,8 +46,8 @@ type DriverDto struct {
 	RemoteAgencyCode *string `json:"remoteAgencyCode,omitempty"`
 	RemoteLicenseCode *string `json:"remoteLicenseCode,omitempty"`
 	SubcontractorEmployeesCount *int64 `json:"subcontractorEmployeesCount,omitempty"`
-	ArrivalDateTime *time.Time `json:"arrivalDateTime,omitempty"`
-	DepartureDateTime *time.Time `json:"departureDateTime,omitempty"`
+	ArrivalDateTime *Time `json:"arrivalDateTime,omitempty"`
+	DepartureDateTime *Time `json:"departureDateTime,omitempty"`
 }
 
 // NewDriverDto instantiates a new DriverDto object
@@ -933,9 +932,9 @@ func (o *DriverDto) SetSubcontractorEmployeesCount(v int64) {
 }
 
 // GetArrivalDateTime returns the ArrivalDateTime field value if set, zero value otherwise.
-func (o *DriverDto) GetArrivalDateTime() time.Time {
+func (o *DriverDto) GetArrivalDateTime() Time {
 	if o == nil || IsNil(o.ArrivalDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.ArrivalDateTime
@@ -943,7 +942,7 @@ func (o *DriverDto) GetArrivalDateTime() time.Time {
 
 // GetArrivalDateTimeOk returns a tuple with the ArrivalDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriverDto) GetArrivalDateTimeOk() (*time.Time, bool) {
+func (o *DriverDto) GetArrivalDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.ArrivalDateTime) {
 		return nil, false
 	}
@@ -959,15 +958,15 @@ func (o *DriverDto) HasArrivalDateTime() bool {
 	return false
 }
 
-// SetArrivalDateTime gets a reference to the given time.Time and assigns it to the ArrivalDateTime field.
-func (o *DriverDto) SetArrivalDateTime(v time.Time) {
+// SetArrivalDateTime gets a reference to the given Time and assigns it to the ArrivalDateTime field.
+func (o *DriverDto) SetArrivalDateTime(v Time) {
 	o.ArrivalDateTime = &v
 }
 
 // GetDepartureDateTime returns the DepartureDateTime field value if set, zero value otherwise.
-func (o *DriverDto) GetDepartureDateTime() time.Time {
+func (o *DriverDto) GetDepartureDateTime() Time {
 	if o == nil || IsNil(o.DepartureDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.DepartureDateTime
@@ -975,7 +974,7 @@ func (o *DriverDto) GetDepartureDateTime() time.Time {
 
 // GetDepartureDateTimeOk returns a tuple with the DepartureDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DriverDto) GetDepartureDateTimeOk() (*time.Time, bool) {
+func (o *DriverDto) GetDepartureDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.DepartureDateTime) {
 		return nil, false
 	}
@@ -991,8 +990,8 @@ func (o *DriverDto) HasDepartureDateTime() bool {
 	return false
 }
 
-// SetDepartureDateTime gets a reference to the given time.Time and assigns it to the DepartureDateTime field.
-func (o *DriverDto) SetDepartureDateTime(v time.Time) {
+// SetDepartureDateTime gets a reference to the given Time and assigns it to the DepartureDateTime field.
+func (o *DriverDto) SetDepartureDateTime(v Time) {
 	o.DepartureDateTime = &v
 }
 

@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **TrailerCode** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **SubStateCode** | Pointer to **string** |  | [optional] 
-**CustomerCallDateTime** | Pointer to **time.Time** | The date and time at which the customer has contacted the transport company to request the transport.  By default, it corresponds to the mission creation date. | [optional] 
+**CustomerCallDateTime** | Pointer to **Time** | The date and time at which the customer has contacted the transport company to request the transport.  By default, it corresponds to the mission creation date. | [optional] 
 **DriverId** | Pointer to **int32** |  | [optional] 
 **Sign** | Pointer to **string** |  | [optional] 
 **SecretCode** | Pointer to **string** |  | [optional] 
@@ -742,20 +742,20 @@ HasSubStateCode returns a boolean if a field has been set.
 
 ### GetCustomerCallDateTime
 
-`func (o *TransportDto) GetCustomerCallDateTime() time.Time`
+`func (o *TransportDto) GetCustomerCallDateTime() Time`
 
 GetCustomerCallDateTime returns the CustomerCallDateTime field if non-nil, zero value otherwise.
 
 ### GetCustomerCallDateTimeOk
 
-`func (o *TransportDto) GetCustomerCallDateTimeOk() (*time.Time, bool)`
+`func (o *TransportDto) GetCustomerCallDateTimeOk() (*Time, bool)`
 
 GetCustomerCallDateTimeOk returns a tuple with the CustomerCallDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerCallDateTime
 
-`func (o *TransportDto) SetCustomerCallDateTime(v time.Time)`
+`func (o *TransportDto) SetCustomerCallDateTime(v Time)`
 
 SetCustomerCallDateTime sets CustomerCallDateTime field to given value.
 

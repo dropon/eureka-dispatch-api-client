@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TransportDocumentLinkDto type satisfies the MappedNullable interface at compile time
@@ -25,7 +24,7 @@ type TransportDocumentLinkDto struct {
 	FileCategoryLabel *string `json:"fileCategoryLabel,omitempty"`
 	Label *string `json:"label,omitempty"`
 	Link *string `json:"link,omitempty"`
-	CreationDateTime *time.Time `json:"creationDateTime,omitempty"`
+	CreationDateTime *Time `json:"creationDateTime,omitempty"`
 }
 
 // NewTransportDocumentLinkDto instantiates a new TransportDocumentLinkDto object
@@ -206,9 +205,9 @@ func (o *TransportDocumentLinkDto) SetLink(v string) {
 }
 
 // GetCreationDateTime returns the CreationDateTime field value if set, zero value otherwise.
-func (o *TransportDocumentLinkDto) GetCreationDateTime() time.Time {
+func (o *TransportDocumentLinkDto) GetCreationDateTime() Time {
 	if o == nil || IsNil(o.CreationDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.CreationDateTime
@@ -216,7 +215,7 @@ func (o *TransportDocumentLinkDto) GetCreationDateTime() time.Time {
 
 // GetCreationDateTimeOk returns a tuple with the CreationDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportDocumentLinkDto) GetCreationDateTimeOk() (*time.Time, bool) {
+func (o *TransportDocumentLinkDto) GetCreationDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.CreationDateTime) {
 		return nil, false
 	}
@@ -232,8 +231,8 @@ func (o *TransportDocumentLinkDto) HasCreationDateTime() bool {
 	return false
 }
 
-// SetCreationDateTime gets a reference to the given time.Time and assigns it to the CreationDateTime field.
-func (o *TransportDocumentLinkDto) SetCreationDateTime(v time.Time) {
+// SetCreationDateTime gets a reference to the given Time and assigns it to the CreationDateTime field.
+func (o *TransportDocumentLinkDto) SetCreationDateTime(v Time) {
 	o.CreationDateTime = &v
 }
 

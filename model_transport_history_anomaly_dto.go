@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TransportHistoryAnomalyDto type satisfies the MappedNullable interface at compile time
@@ -25,7 +24,7 @@ type TransportHistoryAnomalyDto struct {
 	AnomalyType *string `json:"anomalyType,omitempty"`
 	AnomalyCategory *string `json:"anomalyCategory,omitempty"`
 	Comment *string `json:"comment,omitempty"`
-	AnomalyDateTime *time.Time `json:"anomalyDateTime,omitempty"`
+	AnomalyDateTime *Time `json:"anomalyDateTime,omitempty"`
 }
 
 // NewTransportHistoryAnomalyDto instantiates a new TransportHistoryAnomalyDto object
@@ -206,9 +205,9 @@ func (o *TransportHistoryAnomalyDto) SetComment(v string) {
 }
 
 // GetAnomalyDateTime returns the AnomalyDateTime field value if set, zero value otherwise.
-func (o *TransportHistoryAnomalyDto) GetAnomalyDateTime() time.Time {
+func (o *TransportHistoryAnomalyDto) GetAnomalyDateTime() Time {
 	if o == nil || IsNil(o.AnomalyDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.AnomalyDateTime
@@ -216,7 +215,7 @@ func (o *TransportHistoryAnomalyDto) GetAnomalyDateTime() time.Time {
 
 // GetAnomalyDateTimeOk returns a tuple with the AnomalyDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportHistoryAnomalyDto) GetAnomalyDateTimeOk() (*time.Time, bool) {
+func (o *TransportHistoryAnomalyDto) GetAnomalyDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.AnomalyDateTime) {
 		return nil, false
 	}
@@ -232,8 +231,8 @@ func (o *TransportHistoryAnomalyDto) HasAnomalyDateTime() bool {
 	return false
 }
 
-// SetAnomalyDateTime gets a reference to the given time.Time and assigns it to the AnomalyDateTime field.
-func (o *TransportHistoryAnomalyDto) SetAnomalyDateTime(v time.Time) {
+// SetAnomalyDateTime gets a reference to the given Time and assigns it to the AnomalyDateTime field.
+func (o *TransportHistoryAnomalyDto) SetAnomalyDateTime(v Time) {
 	o.AnomalyDateTime = &v
 }
 

@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto type satisfies the MappedNullable interface at compile time
@@ -20,7 +19,7 @@ var _ MappedNullable = &TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto{}
 
 // TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto struct for TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto
 type TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto struct {
-	DateTime *time.Time `json:"dateTime,omitempty"`
+	DateTime *Time `json:"dateTime,omitempty"`
 }
 
 // NewTransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto instantiates a new TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto object
@@ -41,9 +40,9 @@ func NewTransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDtoWithDefaults() *Trans
 }
 
 // GetDateTime returns the DateTime field value if set, zero value otherwise.
-func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() time.Time {
+func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() Time {
 	if o == nil || IsNil(o.DateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.DateTime
@@ -51,7 +50,7 @@ func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) GetDateTime() time
 
 // GetDateTimeOk returns a tuple with the DateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*time.Time, bool) {
+func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) GetDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.DateTime) {
 		return nil, false
 	}
@@ -67,8 +66,8 @@ func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) HasDateTime() bool
 	return false
 }
 
-// SetDateTime gets a reference to the given time.Time and assigns it to the DateTime field.
-func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v time.Time) {
+// SetDateTime gets a reference to the given Time and assigns it to the DateTime field.
+func (o *TransportEntryDryRunDtoStepDtoStepDateDtoEndSlotDto) SetDateTime(v Time) {
 	o.DateTime = &v
 }
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **EuropeanVat** | Pointer to **string** | European VAT (French: TVA communautaire) | [optional] 
 **GeneralAccount** | Pointer to **string** |  | [optional] 
 **AuxiliaryAccount** | Pointer to **string** |  | [optional] 
-**ExitDate** | Pointer to **time.Time** |  | [optional] 
+**ExitDate** | Pointer to **Time** |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAuxiliaryAccount returns a boolean if a field has been set.
 
 ### GetExitDate
 
-`func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) GetExitDate() time.Time`
+`func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) GetExitDate() Time`
 
 GetExitDate returns the ExitDate field if non-nil, zero value otherwise.
 
 ### GetExitDateOk
 
-`func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) GetExitDateOk() (*time.Time, bool)`
+`func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) GetExitDateOk() (*Time, bool)`
 
 GetExitDateOk returns a tuple with the ExitDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExitDate
 
-`func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) SetExitDate(v time.Time)`
+`func (o *CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto) SetExitDate(v Time)`
 
 SetExitDate sets ExitDate field to given value.
 

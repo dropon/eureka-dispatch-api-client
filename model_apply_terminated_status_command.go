@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 	"bytes"
 	"fmt"
 )
@@ -27,7 +26,7 @@ type ApplyTerminatedStatusCommand struct {
 	// Transport receipt
 	TransportReceipt *string `json:"transportReceipt,omitempty"`
 	// Transport termination realized date time
-	RealizedDateTime *time.Time `json:"realizedDateTime,omitempty"`
+	RealizedDateTime *Time `json:"realizedDateTime,omitempty"`
 	PickupData *PickupDataOnStatusAppliedDto `json:"pickupData,omitempty"`
 	DeliveryData *DeliveryDataOnStatusAppliedDto `json:"deliveryData,omitempty"`
 }
@@ -109,9 +108,9 @@ func (o *ApplyTerminatedStatusCommand) SetTransportReceipt(v string) {
 }
 
 // GetRealizedDateTime returns the RealizedDateTime field value if set, zero value otherwise.
-func (o *ApplyTerminatedStatusCommand) GetRealizedDateTime() time.Time {
+func (o *ApplyTerminatedStatusCommand) GetRealizedDateTime() Time {
 	if o == nil || IsNil(o.RealizedDateTime) {
-		var ret time.Time
+		var ret Time
 		return ret
 	}
 	return *o.RealizedDateTime
@@ -119,7 +118,7 @@ func (o *ApplyTerminatedStatusCommand) GetRealizedDateTime() time.Time {
 
 // GetRealizedDateTimeOk returns a tuple with the RealizedDateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplyTerminatedStatusCommand) GetRealizedDateTimeOk() (*time.Time, bool) {
+func (o *ApplyTerminatedStatusCommand) GetRealizedDateTimeOk() (*Time, bool) {
 	if o == nil || IsNil(o.RealizedDateTime) {
 		return nil, false
 	}
@@ -135,8 +134,8 @@ func (o *ApplyTerminatedStatusCommand) HasRealizedDateTime() bool {
 	return false
 }
 
-// SetRealizedDateTime gets a reference to the given time.Time and assigns it to the RealizedDateTime field.
-func (o *ApplyTerminatedStatusCommand) SetRealizedDateTime(v time.Time) {
+// SetRealizedDateTime gets a reference to the given Time and assigns it to the RealizedDateTime field.
+func (o *ApplyTerminatedStatusCommand) SetRealizedDateTime(v Time) {
 	o.RealizedDateTime = &v
 }
 
