@@ -2,17 +2,17 @@
 
 ## Properties
 
-| Name             | Type                                                                      | Description                            | Notes |
-| ---------------- | ------------------------------------------------------------------------- | -------------------------------------- | ----- |
-| **TransportUid** | **string**                                                                | Mandatory. Transport unique identifier |
-| **Step**         | [**FragmentTransportCommandStepDto**](FragmentTransportCommandStepDto.md) |                                        |
-| **LinkDate**     | **Time**                                                                  | Mandatory. Link date                   |
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**TransportUid** | **string** | Mandatory. Transport unique identifier | 
+**Step** | [**FragmentTransportCommandStepDto**](FragmentTransportCommandStepDto.md) |  | 
+**LinkDate** | **time.Time** | Mandatory. Link date | 
 
 ## Methods
 
 ### NewFragmentTransportCommand
 
-`func NewFragmentTransportCommand(transportUid string, step FragmentTransportCommandStepDto, linkDate Time, ) *FragmentTransportCommand`
+`func NewFragmentTransportCommand(transportUid string, step FragmentTransportCommandStepDto, linkDate time.Time, ) *FragmentTransportCommand`
 
 NewFragmentTransportCommand instantiates a new FragmentTransportCommand object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,7 @@ and a boolean to check if the value has been set.
 
 SetTransportUid sets TransportUid field to given value.
 
+
 ### GetStep
 
 `func (o *FragmentTransportCommand) GetStep() FragmentTransportCommandStepDto`
@@ -65,23 +66,28 @@ and a boolean to check if the value has been set.
 
 SetStep sets Step field to given value.
 
+
 ### GetLinkDate
 
-`func (o *FragmentTransportCommand) GetLinkDate() Time`
+`func (o *FragmentTransportCommand) GetLinkDate() time.Time`
 
 GetLinkDate returns the LinkDate field if non-nil, zero value otherwise.
 
 ### GetLinkDateOk
 
-`func (o *FragmentTransportCommand) GetLinkDateOk() (*Time, bool)`
+`func (o *FragmentTransportCommand) GetLinkDateOk() (*time.Time, bool)`
 
 GetLinkDateOk returns a tuple with the LinkDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinkDate
 
-`func (o *FragmentTransportCommand) SetLinkDate(v Time)`
+`func (o *FragmentTransportCommand) SetLinkDate(v time.Time)`
 
 SetLinkDate sets LinkDate field to given value.
 
+
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

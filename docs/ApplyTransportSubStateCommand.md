@@ -2,15 +2,15 @@
 
 ## Properties
 
-| Name                 | Type                   | Description                                                                                                                                  | Notes      |
-| -------------------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| **TransportUid**     | **string**             | Mandatory. Transport unique identifier                                                                                                       |
-| **SubStateCode**     | **string**             | Mandatory. Sub state code to apply                                                                                                           |
-| **Comment**          | Pointer to **string**  | Free text comment                                                                                                                            | [optional] |
-| **ActionDateTime**   | Pointer to **Time**    | Date and time of the action, with unspecified time zone. The time corresponds to time zone of the location where the action must be applied. | [optional] |
-| **Latitude**         | Pointer to **float64** | Latitude of the position where the action is applied. This number must be between -90 and 90.                                                | [optional] |
-| **Longitude**        | Pointer to **float64** | Longitude of the position where the action is applied. This number must be between -180 and 180.                                             | [optional] |
-| **PositionDateTime** | Pointer to **Time**    | Date and time corresponding to when the position is set.                                                                                     | [optional] |
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**TransportUid** | **string** | Mandatory. Transport unique identifier | 
+**SubStateCode** | **string** | Mandatory. Sub state code to apply | 
+**Comment** | Pointer to **string** | Free text comment | [optional] 
+**ActionDateTime** | Pointer to **time.Time** | Date and time of the action, with unspecified time zone.  The time corresponds to time zone of the location where the action must be applied. | [optional] 
+**Latitude** | Pointer to **float64** | Latitude of the position where the action is applied.    This number must be between -90 and 90. | [optional] 
+**Longitude** | Pointer to **float64** | Longitude of the position where the action is applied.    This number must be between -180 and 180. | [optional] 
+**PositionDateTime** | Pointer to **time.Time** | Date and time corresponding to when the position is set. | [optional] 
 
 ## Methods
 
@@ -50,6 +50,7 @@ and a boolean to check if the value has been set.
 
 SetTransportUid sets TransportUid field to given value.
 
+
 ### GetSubStateCode
 
 `func (o *ApplyTransportSubStateCommand) GetSubStateCode() string`
@@ -68,6 +69,7 @@ and a boolean to check if the value has been set.
 `func (o *ApplyTransportSubStateCommand) SetSubStateCode(v string)`
 
 SetSubStateCode sets SubStateCode field to given value.
+
 
 ### GetComment
 
@@ -96,20 +98,20 @@ HasComment returns a boolean if a field has been set.
 
 ### GetActionDateTime
 
-`func (o *ApplyTransportSubStateCommand) GetActionDateTime() Time`
+`func (o *ApplyTransportSubStateCommand) GetActionDateTime() time.Time`
 
 GetActionDateTime returns the ActionDateTime field if non-nil, zero value otherwise.
 
 ### GetActionDateTimeOk
 
-`func (o *ApplyTransportSubStateCommand) GetActionDateTimeOk() (*Time, bool)`
+`func (o *ApplyTransportSubStateCommand) GetActionDateTimeOk() (*time.Time, bool)`
 
 GetActionDateTimeOk returns a tuple with the ActionDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActionDateTime
 
-`func (o *ApplyTransportSubStateCommand) SetActionDateTime(v Time)`
+`func (o *ApplyTransportSubStateCommand) SetActionDateTime(v time.Time)`
 
 SetActionDateTime sets ActionDateTime field to given value.
 
@@ -171,20 +173,20 @@ HasLongitude returns a boolean if a field has been set.
 
 ### GetPositionDateTime
 
-`func (o *ApplyTransportSubStateCommand) GetPositionDateTime() Time`
+`func (o *ApplyTransportSubStateCommand) GetPositionDateTime() time.Time`
 
 GetPositionDateTime returns the PositionDateTime field if non-nil, zero value otherwise.
 
 ### GetPositionDateTimeOk
 
-`func (o *ApplyTransportSubStateCommand) GetPositionDateTimeOk() (*Time, bool)`
+`func (o *ApplyTransportSubStateCommand) GetPositionDateTimeOk() (*time.Time, bool)`
 
 GetPositionDateTimeOk returns a tuple with the PositionDateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPositionDateTime
 
-`func (o *ApplyTransportSubStateCommand) SetPositionDateTime(v Time)`
+`func (o *ApplyTransportSubStateCommand) SetPositionDateTime(v time.Time)`
 
 SetPositionDateTime sets PositionDateTime field to given value.
 
@@ -194,4 +196,7 @@ SetPositionDateTime sets PositionDateTime field to given value.
 
 HasPositionDateTime returns a boolean if a field has been set.
 
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

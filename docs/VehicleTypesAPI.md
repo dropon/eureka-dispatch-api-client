@@ -4,13 +4,13 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetVehicles**](VehicleTypesAPI.md#GetVehicles) | **Get** /v3/vehicle-types | Get vehicle types
+[**GetVehicleTypes**](VehicleTypesAPI.md#GetVehicleTypes) | **Get** /v3/vehicle-types | Get vehicle types
 
 
 
-## GetVehicles
+## GetVehicleTypes
 
-> IPagedResourceListVehicleTypeDto GetVehicles(ctx).Code(code).Label(label).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+> IPagedResourceListVehicleTypeDto GetVehicleTypes(ctx).Code(code).Label(label).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 
 Get vehicle types
 
@@ -41,13 +41,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VehicleTypesAPI.GetVehicles(context.Background()).Code(code).Label(label).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+	resp, r, err := apiClient.VehicleTypesAPI.GetVehicleTypes(context.Background()).Code(code).Label(label).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `VehicleTypesAPI.GetVehicles``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `VehicleTypesAPI.GetVehicleTypes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetVehicles`: IPagedResourceListVehicleTypeDto
-	fmt.Fprintf(os.Stdout, "Response from `VehicleTypesAPI.GetVehicles`: %v\n", resp)
+	// response from `GetVehicleTypes`: IPagedResourceListVehicleTypeDto
+	fmt.Fprintf(os.Stdout, "Response from `VehicleTypesAPI.GetVehicleTypes`: %v\n", resp)
 }
 ```
 
@@ -57,7 +57,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetVehiclesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetVehicleTypesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -6,9 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CancelQuotation**](QuotationsAPI.md#CancelQuotation) | **Post** /v3/quotations/{uid}/cancellation-process | Cancel quotation
 [**CreateMissionFromQuotation**](QuotationsAPI.md#CreateMissionFromQuotation) | **Post** /v3/quotations/{uid}/to-mission-process | Create mission from quotation
-[**CreateQuotation**](QuotationsAPI.md#CreateQuotation) | **Post** /v3/quotations | Create a quotation
-[**GetQuotationById**](QuotationsAPI.md#GetQuotationById) | **Get** /v3/quotations/{uid} | Get a quotation by its unique identifier
-[**GetQuotationByQuotationNumber**](QuotationsAPI.md#GetQuotationByQuotationNumber) | **Get** /v3/quotations/by-quotation-number | Get a quotation by its quotation number
+[**CreateQuotation**](QuotationsAPI.md#CreateQuotation) | **Post** /v3/quotations | Create quotation
+[**GetQuotationById**](QuotationsAPI.md#GetQuotationById) | **Get** /v3/quotations/{uid} | Get quotation by id
+[**GetQuotationByQuotationNumber**](QuotationsAPI.md#GetQuotationByQuotationNumber) | **Get** /v3/quotations/by-quotation-number | Get quotation by quotation number
 [**QuotationCreationDryRun**](QuotationsAPI.md#QuotationCreationDryRun) | **Post** /v3/quotations/dry-run | Quotation creation dry run
 [**QuotationUpdateDryRun**](QuotationsAPI.md#QuotationUpdateDryRun) | **Patch** /v3/quotations/{uid}/dry-run | Quotation update dry run
 [**UpdateQuotation**](QuotationsAPI.md#UpdateQuotation) | **Patch** /v3/quotations/{uid} | Update quotation
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 > CreateQuotationResultDto CreateQuotation(ctx).Command(command).Execute()
 
-Create a quotation
+Create quotation
 
 ### Example
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 > QuotationDto GetQuotationById(ctx, uid).Fields(fields).Execute()
 
-Get a quotation by its unique identifier
+Get quotation by id
 
 ### Example
 
@@ -295,7 +295,7 @@ Name | Type | Description  | Notes
 
 > QuotationDto GetQuotationByQuotationNumber(ctx).QuotationNumber(quotationNumber).Fields(fields).Execute()
 
-Get a quotation by its quotation number
+Get quotation by quotation number
 
 ### Example
 

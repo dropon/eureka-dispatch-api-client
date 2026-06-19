@@ -314,6 +314,7 @@ resource_not_found | The resource does not exist
 resource_already_exists | A resource with the same identifier already exists
 user_missing_permission | The user is not allowed to perform the operation or to access the resource
 datetime_out_of_range | The date time is out of the range supported by the system
+time_of_day_out_of_range | Invalid time span: value is out of range for a time of day
 guid_should_not_be_empty | The unique identifier GUID must not be empty
 invalid_enum_value | The provided value is not a valid enumeration value 
 invalid_field_name | The field provided in the query parameters is not valid
@@ -325,6 +326,9 @@ end_date_must_be_greater_than_start_date | The end date must be greater than the
 max_date_interval_reached | The maximum date interval is reached
 user_has_no_eureka_maps_key | The user does not have access to Eureka Maps
 max_user_application_preferences_reached | The maximum number of application preferences is reached for this user
+maximum_items_count_in_collection_reached | The number of items provided in collection exceeds the maximum allowed by the system.
+entity_cannot_be_deleted | The entity cannot be deleted
+list_contains_duplicated_elements | The list contains duplicated elements
 
 #### Drivers  
 Error code | Error description  
@@ -334,6 +338,13 @@ driver_unavailability_reason_disabled | The driver unavailability reason is disa
 driver_unavailability_overlapping | There is a driver unavailability in the same interval
 contractor_agent_subcontractor_mandatory | The subcontractor is mandatory when the contractor agent is provided
 contractor_agent_invalid_subcontractor | The provided contractor agent cannot be used with the provided subcontractor
+
+#### Customers  
+Error code | Error description  
+----|----  
+customer_address_city_agency_mismatch | The agency does not match the agency for the address's city
+customer_used_as_agency_customer | The customer is used as an agency customer
+customer_used_in_mutualized_regular_transport | The customer is used in a mutualized regular transport
 
 #### Missions  
 Error code | Error description  
@@ -347,6 +358,7 @@ invalid_custom_parameter | The provided custom parameter is invalid
 invalid_packing_nature | The package nature is invalid
 invalid_unit_code | The unit code is invalid
 invalid_dimension_unit | The dimension unit is invalid
+invalid_tunnel_code | The dangerous goods tunnel code is invalid
 transport_unexpected_state | The operation cannot be performed because the transport has an unexpected status
 document_report_unexpected_state | The operation cannot be performed because the transport document report has an unexpected status
 invalid_service_code | The provided service code is invalid
@@ -361,14 +373,24 @@ Error code | Error description
 ----|----  
 invalid_address_id | The provided address id is invalid
 invalid_city_id | The provided city id is invalid
+invalid_country_code | The provided country code is invalid
+province_country_mismatch | The provided province does not belong to the provided country
+province_subdivision_mismatch | The provided subdivision does not belong to the provided province
+province_mandatory_for_country | The province is mandatory for this country
+address_city_agency_mismatch | The provided agency does not match the city's agency
 geocoding_failed | Unable to geocode the address
+
+#### Billing  
+Error code | Error description  
+----|----  
+Invalid_vat_format | The provided VAT has an invalid format
 
 
 
 ## Resource update  
 
 You can use PATCH operations to partially update a resource.  
-The update uses merge patch semantics : you need to provide only the fields to updates.  
+The update uses merge patch semantics : you need to provide only the fields to update.  
 See more details about JSON merge patch standard [here](https://tools.ietf.org/html/rfc7396).  
 
 Fields that are not present in the request will be preserved, and fields set to null will be cleared.  
@@ -490,7 +512,7 @@ This API includes various features :
 * Fragmentation
 
 This API does not include these features :
-* In mission entry : dangerous goods, air transport, deposits (aka consignes), orders in sequence
+* In mission entry : air transport, deposits (aka consignes), orders in sequence
 * Disputes and misfunction sheets, call for tender
 * D2D
 * Operations (creation, update, delete) on resources and tools except on transports
@@ -1353,64 +1375,107 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AddressesAPI* | [**GetAddressById**](docs/AddressesAPI.md#getaddressbyid) | **Get** /v3/addresses/by-address-id | Get an address by its identifier
+*AddressCategoriesAPI* | [**GetAddressCategories**](docs/AddressCategoriesAPI.md#getaddresscategories) | **Get** /v3/address-categories | Get address categories
+*AddressesAPI* | [**CheckAddressDeletionConstraints**](docs/AddressesAPI.md#checkaddressdeletionconstraints) | **Get** /v3/addresses/{id}/deletion-constraints | Check address deletion constraints
+*AddressesAPI* | [**CreateAddress**](docs/AddressesAPI.md#createaddress) | **Post** /v3/addresses | Create address
+*AddressesAPI* | [**DeleteAddress**](docs/AddressesAPI.md#deleteaddress) | **Delete** /v3/addresses/{id} | Delete address
+*AddressesAPI* | [**GetAddressAdditionalContacts**](docs/AddressesAPI.md#getaddressadditionalcontacts) | **Get** /v3/addresses/{id}/additional-contacts | Get address additional contacts
+*AddressesAPI* | [**GetAddressById**](docs/AddressesAPI.md#getaddressbyid) | **Get** /v3/addresses/{id} | Get address by id
+*AddressesAPI* | [**GetAddressByIdAlternativeRoute**](docs/AddressesAPI.md#getaddressbyidalternativeroute) | **Get** /v3/addresses/by-address-id | Get address by id (alternative route)
+*AddressesAPI* | [**GetAddressForbiddenVehicleTypes**](docs/AddressesAPI.md#getaddressforbiddenvehicletypes) | **Get** /v3/addresses/{id}/forbidden-vehicle-types | Get address forbidden vehicle types
 *AddressesAPI* | [**GetAddresses**](docs/AddressesAPI.md#getaddresses) | **Get** /v3/addresses | Get addresses
 *AddressesAPI* | [**GetStreetsSuggestions**](docs/AddressesAPI.md#getstreetssuggestions) | **Get** /v3/addresses/streets/suggestions | Get streets suggestions
+*AddressesAPI* | [**UpdateAddress**](docs/AddressesAPI.md#updateaddress) | **Patch** /v3/addresses/{id} | Update address
 *AgenciesAPI* | [**GetAgencies**](docs/AgenciesAPI.md#getagencies) | **Get** /v3/agencies | Get agencies
 *ApiFlagsAPI* | [**GetApiFlagByKey**](docs/ApiFlagsAPI.md#getapiflagbykey) | **Get** /v3/apiflags/{key} | Get api flag by key
 *ApiFlagsAPI* | [**GetApiFlags**](docs/ApiFlagsAPI.md#getapiflags) | **Get** /v3/apiflags | Get api flags
+*CircuitAddressSetsAPI* | [**GetCircuitAddressSets**](docs/CircuitAddressSetsAPI.md#getcircuitaddresssets) | **Get** /v3/circuit-address-sets | Get circuit address sets
+*CitiesAPI* | [**CheckCityDeletionConstraints**](docs/CitiesAPI.md#checkcitydeletionconstraints) | **Get** /v3/cities/{cityId}/deletion-constraints | Check city deletion constraints
+*CitiesAPI* | [**CreateCity**](docs/CitiesAPI.md#createcity) | **Post** /v3/cities | Create city
+*CitiesAPI* | [**DeleteCity**](docs/CitiesAPI.md#deletecity) | **Delete** /v3/cities/{cityId} | Delete city
 *CitiesAPI* | [**GetBestMatch**](docs/CitiesAPI.md#getbestmatch) | **Get** /v3/cities/best-match | Get best match
 *CitiesAPI* | [**GetCities**](docs/CitiesAPI.md#getcities) | **Get** /v3/cities | Get cities
-*CitiesAPI* | [**GetCityById**](docs/CitiesAPI.md#getcitybyid) | **Get** /v3/cities/by-city-id | Get a city by its identifier
+*CitiesAPI* | [**GetCityById**](docs/CitiesAPI.md#getcitybyid) | **Get** /v3/cities/{cityId} | Get city by id
+*CitiesAPI* | [**GetCityByIdAlternativeRoute**](docs/CitiesAPI.md#getcitybyidalternativeroute) | **Get** /v3/cities/by-city-id | Get city by id (alternative route)
+*CitiesAPI* | [**UpdateCity**](docs/CitiesAPI.md#updatecity) | **Patch** /v3/cities/{cityId} | Update city
 *CompaniesAPI* | [**GetCompanies**](docs/CompaniesAPI.md#getcompanies) | **Get** /v3/companies | Get companies
 *ContractorAgentsAPI* | [**GetContractorAgents**](docs/ContractorAgentsAPI.md#getcontractoragents) | **Get** /v3/contractor-agents | Get contractor agents
+*CountriesAPI* | [**CheckCountryDeletionConstraints**](docs/CountriesAPI.md#checkcountrydeletionconstraints) | **Get** /v3/countries/{code}/deletion-constraints | Check country deletion constraints
+*CountriesAPI* | [**CreateCountry**](docs/CountriesAPI.md#createcountry) | **Post** /v3/countries | Create country
+*CountriesAPI* | [**DeleteCountry**](docs/CountriesAPI.md#deletecountry) | **Delete** /v3/countries/{code} | Delete country
 *CountriesAPI* | [**GetCountries**](docs/CountriesAPI.md#getcountries) | **Get** /v3/countries | Get countries
-*CountriesAPI* | [**GetCountryByCode**](docs/CountriesAPI.md#getcountrybycode) | **Get** /v3/countries/by-country-code | Get country by code
+*CountriesAPI* | [**GetCountryByCode**](docs/CountriesAPI.md#getcountrybycode) | **Get** /v3/countries/{code} | Get country by code
+*CountriesAPI* | [**GetCountryByCodeAlternativeRoute**](docs/CountriesAPI.md#getcountrybycodealternativeroute) | **Get** /v3/countries/by-country-code | Get country by code (alternative route)
+*CountriesAPI* | [**UpdateCountry**](docs/CountriesAPI.md#updatecountry) | **Patch** /v3/countries/{code} | Update country
+*CountryFamiliesAPI* | [**GetCountryFamilies**](docs/CountryFamiliesAPI.md#getcountryfamilies) | **Get** /v3/country-families | Get country families
+*CustomerFamiliesAPI* | [**GetCustomerFamilies**](docs/CustomerFamiliesAPI.md#getcustomerfamilies) | **Get** /v3/customer-families | Get customer families
+*CustomerPriceCatalogsAPI* | [**GetCustomersPriceCatalogs**](docs/CustomerPriceCatalogsAPI.md#getcustomerspricecatalogs) | **Get** /v3/customer-price-catalogs | Get customers price catalogs
+*CustomersAPI* | [**CheckCustomerDeletionConstraints**](docs/CustomersAPI.md#checkcustomerdeletionconstraints) | **Get** /v3/customers/{uid}/deletion-constraints | Check customer deletion constraints
+*CustomersAPI* | [**CreateCustomer**](docs/CustomersAPI.md#createcustomer) | **Post** /v3/customers | Create customer
+*CustomersAPI* | [**DeleteCustomer**](docs/CustomersAPI.md#deletecustomer) | **Delete** /v3/customers/{uid} | Delete customer
 *CustomersAPI* | [**GetCustomParameterValues**](docs/CustomersAPI.md#getcustomparametervalues) | **Get** /v3/customers/{uid}/custom-parameters/{parameterId}/values | Get custom parameter values
 *CustomersAPI* | [**GetCustomParameters**](docs/CustomersAPI.md#getcustomparameters) | **Get** /v3/customers/{uid}/custom-parameters | Get custom parameters
-*CustomersAPI* | [**GetCustomerByCode**](docs/CustomersAPI.md#getcustomerbycode) | **Get** /v3/customers/by-customer-code | Get a customer by its code
-*CustomersAPI* | [**GetCustomerById**](docs/CustomersAPI.md#getcustomerbyid) | **Get** /v3/customers/{uid} | Get a customer by its unique identifier
+*CustomersAPI* | [**GetCustomerByCode**](docs/CustomersAPI.md#getcustomerbycode) | **Get** /v3/customers/by-customer-code | Get customer by code
+*CustomersAPI* | [**GetCustomerById**](docs/CustomersAPI.md#getcustomerbyid) | **Get** /v3/customers/{uid} | Get customer by id
 *CustomersAPI* | [**GetCustomerReferences**](docs/CustomersAPI.md#getcustomerreferences) | **Get** /v3/customers/{uid}/references | Get customer references
 *CustomersAPI* | [**GetCustomers**](docs/CustomersAPI.md#getcustomers) | **Get** /v3/customers | Get customers
-*DriversAPI* | [**GetDriverByCode**](docs/DriversAPI.md#getdriverbycode) | **Get** /v3/drivers/by-code | Get a driver by its code
-*DriversAPI* | [**GetDriverById**](docs/DriversAPI.md#getdriverbyid) | **Get** /v3/drivers/{driverId} | Get a driver by its identifier
+*CustomersAPI* | [**UpdateCustomer**](docs/CustomersAPI.md#updatecustomer) | **Patch** /v3/customers/{uid} | Update customer
+*DriversAPI* | [**GetDriverByCode**](docs/DriversAPI.md#getdriverbycode) | **Get** /v3/drivers/by-code | Get driver by code
+*DriversAPI* | [**GetDriverById**](docs/DriversAPI.md#getdriverbyid) | **Get** /v3/drivers/{driverId} | Get driver by id
 *DriversAPI* | [**GetDrivers**](docs/DriversAPI.md#getdrivers) | **Get** /v3/drivers | Get drivers
+*EdiEquivalenceConfigurationsAPI* | [**GetCustomerEquivalencesConfigurationByUid**](docs/EdiEquivalenceConfigurationsAPI.md#getcustomerequivalencesconfigurationbyuid) | **Get** /v3/edi-equivalences-configurations/customer-type-configurations/{uid} | Get a customer equivalences configuration by its unique identifier
+*EdiEquivalenceConfigurationsAPI* | [**GetCustomerEquivalencesConfigurations**](docs/EdiEquivalenceConfigurationsAPI.md#getcustomerequivalencesconfigurations) | **Get** /v3/edi-equivalences-configurations/customer-type-configurations | Get customer equivalences configurations
+*EdiEquivalenceConfigurationsAPI* | [**GetPackageNatureEquivalencesConfigurationByUid**](docs/EdiEquivalenceConfigurationsAPI.md#getpackagenatureequivalencesconfigurationbyuid) | **Get** /v3/edi-equivalences-configurations/package-nature-type-configurations/{uid} | Get a package nature equivalences configuration by its unique identifier
+*EdiEquivalenceConfigurationsAPI* | [**GetPackageNatureEquivalencesConfigurations**](docs/EdiEquivalenceConfigurationsAPI.md#getpackagenatureequivalencesconfigurations) | **Get** /v3/edi-equivalences-configurations/package-nature-type-configurations | Get package nature equivalences configurations
+*EdiEquivalenceConfigurationsAPI* | [**GetServiceEquivalencesConfigurationByUid**](docs/EdiEquivalenceConfigurationsAPI.md#getserviceequivalencesconfigurationbyuid) | **Get** /v3/edi-equivalences-configurations/service-type-configurations/{uid} | Get a service equivalences configuration by its unique identifier
+*EdiEquivalenceConfigurationsAPI* | [**GetServiceEquivalencesConfigurations**](docs/EdiEquivalenceConfigurationsAPI.md#getserviceequivalencesconfigurations) | **Get** /v3/edi-equivalences-configurations/service-type-configurations | Get service equivalences configurations
+*EdiEquivalenceConfigurationsAPI* | [**GetSubstateEquivalencesConfigurationByUid**](docs/EdiEquivalenceConfigurationsAPI.md#getsubstateequivalencesconfigurationbyuid) | **Get** /v3/edi-equivalences-configurations/substate-type-configurations/{uid} | Get a substate equivalences configuration by its unique identifier
+*EdiEquivalenceConfigurationsAPI* | [**GetSubstateEquivalencesConfigurations**](docs/EdiEquivalenceConfigurationsAPI.md#getsubstateequivalencesconfigurations) | **Get** /v3/edi-equivalences-configurations/substate-type-configurations | Get substate equivalences configurations
 *FileCategoriesAPI* | [**GetFileCategories**](docs/FileCategoriesAPI.md#getfilecategories) | **Get** /v3/file-categories | Get file categories
+*LanguagesAPI* | [**GetLanguages**](docs/LanguagesAPI.md#getlanguages) | **Get** /v3/languages | Get languages
 *MeAPI* | [**GetMyAccountInformation**](docs/MeAPI.md#getmyaccountinformation) | **Get** /v3/me | Get my account information
+*MeAPI* | [**GetOauthAuthorizationUrl**](docs/MeAPI.md#getoauthauthorizationurl) | **Get** /v3/sso/oauth-authorization-url | Get oauth authorization url
+*MeAPI* | [**GetSAMLAuthorizationUrl**](docs/MeAPI.md#getsamlauthorizationurl) | **Get** /v3/sso/saml-authorization-url | Get SAML authorization url
 *MissionsAPI* | [**CancelMission**](docs/MissionsAPI.md#cancelmission) | **Post** /v3/missions/{uid}/cancellation-process | Cancel mission
-*MissionsAPI* | [**CreateMission**](docs/MissionsAPI.md#createmission) | **Post** /v3/missions | Create a mission
-*MissionsAPI* | [**GetMissionById**](docs/MissionsAPI.md#getmissionbyid) | **Get** /v3/missions/{uid} | Get a mission by its unique identifier
-*MissionsAPI* | [**GetMissionByMissionNumber**](docs/MissionsAPI.md#getmissionbymissionnumber) | **Get** /v3/missions/by-mission-number | Get a mission by its mission number
+*MissionsAPI* | [**CreateMission**](docs/MissionsAPI.md#createmission) | **Post** /v3/missions | Create mission
+*MissionsAPI* | [**GetMissionById**](docs/MissionsAPI.md#getmissionbyid) | **Get** /v3/missions/{uid} | Get mission by id
+*MissionsAPI* | [**GetMissionByMissionNumber**](docs/MissionsAPI.md#getmissionbymissionnumber) | **Get** /v3/missions/by-mission-number | Get mission by mission number
 *MissionsAPI* | [**MissionCreationDryRun**](docs/MissionsAPI.md#missioncreationdryrun) | **Post** /v3/missions/dry-run | Mission creation dry run
 *MissionsAPI* | [**MissionUpdateDryRun**](docs/MissionsAPI.md#missionupdatedryrun) | **Patch** /v3/missions/{uid}/dry-run | Mission update dry run
 *MissionsAPI* | [**UpdateMission**](docs/MissionsAPI.md#updatemission) | **Patch** /v3/missions/{uid} | Update mission
+*OperationZonesAPI* | [**GetOperationZones**](docs/OperationZonesAPI.md#getoperationzones) | **Get** /v3/operation-zones | Get operation zones
 *OrderersAPI* | [**GetOrderers**](docs/OrderersAPI.md#getorderers) | **Get** /v3/orderers | Get orderers
 *PackageNaturesAPI* | [**GetPackageNatureById**](docs/PackageNaturesAPI.md#getpackagenaturebyid) | **Get** /v3/package-natures/{packageNatureId} | Get package nature by id
 *PackageNaturesAPI* | [**GetPackageNatureReferenceValues**](docs/PackageNaturesAPI.md#getpackagenaturereferencevalues) | **Get** /v3/package-natures/{packageNatureId}/references/{referenceIndex}/values | Get package nature reference values
 *PackageNaturesAPI* | [**GetPackageNatureReferences**](docs/PackageNaturesAPI.md#getpackagenaturereferences) | **Get** /v3/package-natures/{packageNatureId}/references | Get package nature references
 *PackageNaturesAPI* | [**GetPackageNatures**](docs/PackageNaturesAPI.md#getpackagenatures) | **Get** /v3/package-natures | Get package natures
+*PaymentMethodsAPI* | [**GetPaymentMethods**](docs/PaymentMethodsAPI.md#getpaymentmethods) | **Get** /v3/payment-methods | Get payment methods
+*PaymentTermsAPI* | [**GetPaymentTerms**](docs/PaymentTermsAPI.md#getpaymentterms) | **Get** /v3/payment-terms | Get payment terms
 *PricingPathsAPI* | [**GetPricingPathAdditionalUnits**](docs/PricingPathsAPI.md#getpricingpathadditionalunits) | **Get** /v3/pricing-paths/{pricingPathId}/sub-service-additional-units | Get pricing path additional units
 *PricingPathsAPI* | [**GetPricingPathById**](docs/PricingPathsAPI.md#getpricingpathbyid) | **Get** /v3/pricing-paths/{pricingPathId} | Get pricing path by id
 *PricingPathsAPI* | [**GetPricingPathSubServiceUnitPricingSlots**](docs/PricingPathsAPI.md#getpricingpathsubserviceunitpricingslots) | **Get** /v3/pricing-paths/{pricingPathId}/sub-service-unit-pricing-slots | Get pricing path sub service unit pricing slots
 *PricingPathsAPI* | [**GetPricingPathSubServices**](docs/PricingPathsAPI.md#getpricingpathsubservices) | **Get** /v3/pricing-paths/{pricingPathId}/sub-services | Get pricing path sub services
 *PricingPathsAPI* | [**GetPricingPathUnitPricingSlotEquivalences**](docs/PricingPathsAPI.md#getpricingpathunitpricingslotequivalences) | **Get** /v3/pricing-paths/{pricingPathId}/unit-pricing-slot-equivalences | Get pricing path unit pricing slot equivalences
 *PricingPathsAPI* | [**GetPricingPaths**](docs/PricingPathsAPI.md#getpricingpaths) | **Get** /v3/pricing-paths | Get pricing paths
+*ProvincesAPI* | [**GetProvinceSubdivisions**](docs/ProvincesAPI.md#getprovincesubdivisions) | **Get** /v3/provinces/{uid}/subdivisions | Get province subdivisions
+*ProvincesAPI* | [**GetProvinces**](docs/ProvincesAPI.md#getprovinces) | **Get** /v3/provinces | Get provinces
 *QuotationsAPI* | [**CancelQuotation**](docs/QuotationsAPI.md#cancelquotation) | **Post** /v3/quotations/{uid}/cancellation-process | Cancel quotation
 *QuotationsAPI* | [**CreateMissionFromQuotation**](docs/QuotationsAPI.md#createmissionfromquotation) | **Post** /v3/quotations/{uid}/to-mission-process | Create mission from quotation
-*QuotationsAPI* | [**CreateQuotation**](docs/QuotationsAPI.md#createquotation) | **Post** /v3/quotations | Create a quotation
-*QuotationsAPI* | [**GetQuotationById**](docs/QuotationsAPI.md#getquotationbyid) | **Get** /v3/quotations/{uid} | Get a quotation by its unique identifier
-*QuotationsAPI* | [**GetQuotationByQuotationNumber**](docs/QuotationsAPI.md#getquotationbyquotationnumber) | **Get** /v3/quotations/by-quotation-number | Get a quotation by its quotation number
+*QuotationsAPI* | [**CreateQuotation**](docs/QuotationsAPI.md#createquotation) | **Post** /v3/quotations | Create quotation
+*QuotationsAPI* | [**GetQuotationById**](docs/QuotationsAPI.md#getquotationbyid) | **Get** /v3/quotations/{uid} | Get quotation by id
+*QuotationsAPI* | [**GetQuotationByQuotationNumber**](docs/QuotationsAPI.md#getquotationbyquotationnumber) | **Get** /v3/quotations/by-quotation-number | Get quotation by quotation number
 *QuotationsAPI* | [**QuotationCreationDryRun**](docs/QuotationsAPI.md#quotationcreationdryrun) | **Post** /v3/quotations/dry-run | Quotation creation dry run
 *QuotationsAPI* | [**QuotationUpdateDryRun**](docs/QuotationsAPI.md#quotationupdatedryrun) | **Patch** /v3/quotations/{uid}/dry-run | Quotation update dry run
 *QuotationsAPI* | [**UpdateQuotation**](docs/QuotationsAPI.md#updatequotation) | **Patch** /v3/quotations/{uid} | Update quotation
 *SectorsAPI* | [**GetSectors**](docs/SectorsAPI.md#getsectors) | **Get** /v3/sectors | Get sectors
-*ServicesAPI* | [**GetCustomParameterValues**](docs/ServicesAPI.md#getcustomparametervalues) | **Get** /v3/services/{uid}/custom-parameters/{parameterId}/values | Get custom parameter values
-*ServicesAPI* | [**GetCustomParameters**](docs/ServicesAPI.md#getcustomparameters) | **Get** /v3/services/{uid}/custom-parameters | Get custom parameters
+*ServicesAPI* | [**GetServiceCustomParameterValues**](docs/ServicesAPI.md#getservicecustomparametervalues) | **Get** /v3/services/{uid}/custom-parameters/{parameterId}/values | Get custom parameter values
+*ServicesAPI* | [**GetServiceCustomParameters**](docs/ServicesAPI.md#getservicecustomparameters) | **Get** /v3/services/{uid}/custom-parameters | Get custom parameters
 *ServicesAPI* | [**GetServices**](docs/ServicesAPI.md#getservices) | **Get** /v3/services | Get services
 *ServicesAPI* | [**GetSubServices**](docs/ServicesAPI.md#getsubservices) | **Get** /v3/services/{uid}/sub-services | Get sub services
+*SubServicesAPI* | [**GetAllSubServices**](docs/SubServicesAPI.md#getallsubservices) | **Get** /v3/sub-services | Get sub services
 *SubServicesAPI* | [**GetQuantities**](docs/SubServicesAPI.md#getquantities) | **Get** /v3/sub-services/quantities | Get quantities
-*SubServicesAPI* | [**GetSubServices**](docs/SubServicesAPI.md#getsubservices) | **Get** /v3/sub-services | Get sub services
-*SubstatesAPI* | [**GetSubstateByCode**](docs/SubstatesAPI.md#getsubstatebycode) | **Get** /v3/substates/by-code | Get a substate by its code
+*SubcontractorPriceCatalogsAPI* | [**GetSubcontractorsPriceCatalogs**](docs/SubcontractorPriceCatalogsAPI.md#getsubcontractorspricecatalogs) | **Get** /v3/subcontractor-price-catalogs | Get subcontractors price catalogs
+*SubstatesAPI* | [**GetSubstateByCode**](docs/SubstatesAPI.md#getsubstatebycode) | **Get** /v3/substates/by-code | Get substate by code
 *SubstatesAPI* | [**GetSubstates**](docs/SubstatesAPI.md#getsubstates) | **Get** /v3/substates | Get substates
 *TeamsAPI* | [**GetTeams**](docs/TeamsAPI.md#getteams) | **Get** /v3/teams | Get teams
 *TransportDocumentFilesAPI* | [**DeleteTransportDocumentFile**](docs/TransportDocumentFilesAPI.md#deletetransportdocumentfile) | **Delete** /v3/transports/{uid}/documents/files/{fileId} | Delete transport document file
@@ -1422,19 +1487,22 @@ Class | Method | HTTP request | Description
 *TransportDocumentLinksAPI* | [**DeleteTransportDocumentLink**](docs/TransportDocumentLinksAPI.md#deletetransportdocumentlink) | **Delete** /v3/transports/{uid}/documents/links/{linkId} | Delete transport document link
 *TransportDocumentLinksAPI* | [**GetTransportDocumentLinkById**](docs/TransportDocumentLinksAPI.md#gettransportdocumentlinkbyid) | **Get** /v3/transports/{uid}/documents/links/{linkId} | Get transport document link by id
 *TransportDocumentLinksAPI* | [**GetTransportDocumentLinks**](docs/TransportDocumentLinksAPI.md#gettransportdocumentlinks) | **Get** /v3/transports/{uid}/documents/links | Get transport document links
-*TransportDocumentReportsAPI* | [**DownloadTransportDocumentReport**](docs/TransportDocumentReportsAPI.md#downloadtransportdocumentreport) | **Get** /v3/transport-document-reports/{uid}/data | Download a transport document report by its unique identifier
+*TransportDocumentReportsAPI* | [**DownloadTransportDocumentReport**](docs/TransportDocumentReportsAPI.md#downloadtransportdocumentreport) | **Get** /v3/transport-document-reports/{uid}/data | Download transport document report
 *TransportDocumentReportsAPI* | [**GenerateTransportDocumentReport**](docs/TransportDocumentReportsAPI.md#generatetransportdocumentreport) | **Post** /v3/transport-document-reports | Generate transport document reports
-*TransportDocumentReportsAPI* | [**GetTransportDocumentReportById**](docs/TransportDocumentReportsAPI.md#gettransportdocumentreportbyid) | **Get** /v3/transport-document-reports/{uid} | Get a transport document report by its unique identifier
-*TransportsAPI* | [**ApplySubState**](docs/TransportsAPI.md#applysubstate) | **Post** /v3/transports/{uid}/substates | Apply a sub state to the transport
+*TransportDocumentReportsAPI* | [**GetTransportDocumentReportById**](docs/TransportDocumentReportsAPI.md#gettransportdocumentreportbyid) | **Get** /v3/transport-document-reports/{uid} | Get transport document report by id
+*TransportsAPI* | [**ApplyHistoryStateOnTransportPackageLine**](docs/TransportsAPI.md#applyhistorystateontransportpackageline) | **Post** /v3/transports/{uid}/package-lines/{packageLineId}/history-states | Apply a history state on a transport package line
+*TransportsAPI* | [**ApplySubState**](docs/TransportsAPI.md#applysubstate) | **Post** /v3/transports/{uid}/substates | Apply sub state
 *TransportsAPI* | [**ApplyTransportCancelledStatus**](docs/TransportsAPI.md#applytransportcancelledstatus) | **Post** /v3/transports/{uid}/cancellation-process | Apply transport cancelled status
 *TransportsAPI* | [**ApplyTransportDeliveredStatus**](docs/TransportsAPI.md#applytransportdeliveredstatus) | **Post** /v3/transports/{uid}/delivery-process | Apply transport delivered state
 *TransportsAPI* | [**ApplyTransportPickedUpStatus**](docs/TransportsAPI.md#applytransportpickedupstatus) | **Post** /v3/transports/{uid}/pickup-process | Apply transport pickup state
 *TransportsAPI* | [**ApplyTransportTerminatedStatus**](docs/TransportsAPI.md#applytransportterminatedstatus) | **Post** /v3/transports/{uid}/termination-process | Apply transport terminated state
+*TransportsAPI* | [**CheckSeveralTransportsAssignmentConstraints**](docs/TransportsAPI.md#checkseveraltransportsassignmentconstraints) | **Patch** /v3/transports/assignment/constraints-validation/batch | Check several transports&#39; assignment constraints
 *TransportsAPI* | [**CheckTransportAssignmentsConstraints**](docs/TransportsAPI.md#checktransportassignmentsconstraints) | **Patch** /v3/transports/{uid}/assignment/constraints-validation | Check transport assignment&#39;s constraints
 *TransportsAPI* | [**DefragmentTransport**](docs/TransportsAPI.md#defragmenttransport) | **Post** /v3/transports/{uid}/defragmentation-process | Defragment transport
 *TransportsAPI* | [**FragmentTransport**](docs/TransportsAPI.md#fragmenttransport) | **Post** /v3/transports/{uid}/fragmentation-process | Fragment transport
 *TransportsAPI* | [**GetTransportAirData**](docs/TransportsAPI.md#gettransportairdata) | **Get** /v3/transports/{uid}/air-data | Get transport air data
 *TransportsAPI* | [**GetTransportBillAddress**](docs/TransportsAPI.md#gettransportbilladdress) | **Get** /v3/transports/{uid}/transport-bill-address | Get transport bill address
+*TransportsAPI* | [**GetTransportByTransportIdentifier**](docs/TransportsAPI.md#gettransportbytransportidentifier) | **Get** /v3/transports/by-transport-id | Get transport by transport identifier
 *TransportsAPI* | [**GetTransportByUniqueIdentifier**](docs/TransportsAPI.md#gettransportbyuniqueidentifier) | **Get** /v3/transports/{uid} | Get a transport by uid
 *TransportsAPI* | [**GetTransportCommunicationConfiguration**](docs/TransportsAPI.md#gettransportcommunicationconfiguration) | **Get** /v3/transports/{uid}/communication-configuration | Get transport communication configuration
 *TransportsAPI* | [**GetTransportCustomerCustomParameters**](docs/TransportsAPI.md#gettransportcustomercustomparameters) | **Get** /v3/transports/{uid}/customer-custom-parameters | Get transport customer custom parameters
@@ -1448,33 +1516,48 @@ Class | Method | HTTP request | Description
 *TransportsAPI* | [**GetTransportTotalBulkSizes**](docs/TransportsAPI.md#gettransporttotalbulksizes) | **Get** /v3/transports/{uid}/total-bulk-sizes | Get transport total bulk sizes
 *TransportsAPI* | [**GetTransports**](docs/TransportsAPI.md#gettransports) | **Get** /v3/transports | Get transports
 *TransportsAPI* | [**TransportUpdateDryRun**](docs/TransportsAPI.md#transportupdatedryrun) | **Patch** /v3/transports/{uid}/dry-run | Transport update dry run
+*TransportsAPI* | [**UpdateSeveralTransportsAssignment**](docs/TransportsAPI.md#updateseveraltransportsassignment) | **Patch** /v3/transports/assignment/batch | Update several transports&#39; assignment
 *TransportsAPI* | [**UpdateTransport**](docs/TransportsAPI.md#updatetransport) | **Patch** /v3/transports/{uid} | Update transport
 *TransportsAPI* | [**UpdateTransportAssignment**](docs/TransportsAPI.md#updatetransportassignment) | **Patch** /v3/transports/{uid}/assignment | Update transport assignment
 *TransportsAPI* | [**UpdateTransportAssignmentStatus**](docs/TransportsAPI.md#updatetransportassignmentstatus) | **Post** /v3/transports/{uid}/assignment/status | Update transport assignment status
 *UnitsAPI* | [**GetUnits**](docs/UnitsAPI.md#getunits) | **Get** /v3/units | Get units
 *UsersAPI* | [**GetUsers**](docs/UsersAPI.md#getusers) | **Get** /v3/users | Get users
-*VehicleTypesAPI* | [**GetVehicles**](docs/VehicleTypesAPI.md#getvehicles) | **Get** /v3/vehicle-types | Get vehicle types
+*VehicleTypesAPI* | [**GetVehicleTypes**](docs/VehicleTypesAPI.md#getvehicletypes) | **Get** /v3/vehicle-types | Get vehicle types
 *VehiclesAPI* | [**GetVehicles**](docs/VehiclesAPI.md#getvehicles) | **Get** /v3/vehicles | Get vehicles
-*VehiclesAPI* | [**GetVehiclesSubcontractors**](docs/VehiclesAPI.md#getvehiclessubcontractors) | **Get** /v3/vehicles/{uid}/subcontractors | Get the subcontractors linked to the vehicle
+*VehiclesAPI* | [**GetVehiclesSubcontractors**](docs/VehiclesAPI.md#getvehiclessubcontractors) | **Get** /v3/vehicles/{uid}/subcontractors | Get vehicle&#39;s subcontractors
 
 
 ## Documentation For Models
 
+ - [AddressCategoryDto](docs/AddressCategoryDto.md)
+ - [AddressContactDto](docs/AddressContactDto.md)
  - [AddressDto](docs/AddressDto.md)
+ - [AddressGeocodingEditionDto](docs/AddressGeocodingEditionDto.md)
+ - [AddressIncludedDto](docs/AddressIncludedDto.md)
+ - [AddressOpeningDto](docs/AddressOpeningDto.md)
+ - [AddressVehicleTypeDto](docs/AddressVehicleTypeDto.md)
  - [AgencyDto](docs/AgencyDto.md)
  - [ApiFlagsDto](docs/ApiFlagsDto.md)
  - [ApiFlagsDtoApiFlag](docs/ApiFlagsDtoApiFlag.md)
  - [ApplyAssignmentStatusChangeCommand](docs/ApplyAssignmentStatusChangeCommand.md)
  - [ApplyCancelledStatusCommand](docs/ApplyCancelledStatusCommand.md)
  - [ApplyDeliveredStatusCommand](docs/ApplyDeliveredStatusCommand.md)
+ - [ApplyHistoryStateOnTransportPackageLineCommand](docs/ApplyHistoryStateOnTransportPackageLineCommand.md)
  - [ApplyPickedUpStatusCommand](docs/ApplyPickedUpStatusCommand.md)
  - [ApplyTerminatedStatusCommand](docs/ApplyTerminatedStatusCommand.md)
  - [ApplyTransportSubStateCommand](docs/ApplyTransportSubStateCommand.md)
+ - [AssignBatchTransportsDto](docs/AssignBatchTransportsDto.md)
+ - [AssignBatchTransportsResultDto](docs/AssignBatchTransportsResultDto.md)
+ - [AssignBatchTransportsResultDtoAssignSingleTransportResultDto](docs/AssignBatchTransportsResultDtoAssignSingleTransportResultDto.md)
  - [AssignTransportDto](docs/AssignTransportDto.md)
  - [AssignTransportDtoApiBehaviorDto](docs/AssignTransportDtoApiBehaviorDto.md)
+ - [AssignmentConstraintDto](docs/AssignmentConstraintDto.md)
  - [CancelMissionCommand](docs/CancelMissionCommand.md)
  - [CancelQuotationCommand](docs/CancelQuotationCommand.md)
+ - [CappedCollectionDtoAddressContactDto](docs/CappedCollectionDtoAddressContactDto.md)
+ - [CappedCollectionDtoAddressVehicleTypeDto](docs/CappedCollectionDtoAddressVehicleTypeDto.md)
  - [CappedCollectionDtoCustomParameterValueDto](docs/CappedCollectionDtoCustomParameterValueDto.md)
+ - [CappedCollectionDtoOrdererDtoOrdererCustomerDto](docs/CappedCollectionDtoOrdererDtoOrdererCustomerDto.md)
  - [CappedCollectionDtoPackageLineDto](docs/CappedCollectionDtoPackageLineDto.md)
  - [CappedCollectionDtoPackageLineReferenceValueDto](docs/CappedCollectionDtoPackageLineReferenceValueDto.md)
  - [CappedCollectionDtoPackageLineSizeDto](docs/CappedCollectionDtoPackageLineSizeDto.md)
@@ -1491,13 +1574,28 @@ Class | Method | HTTP request | Description
  - [CappedCollectionDtoTransportHistoryAnomalyDto](docs/CappedCollectionDtoTransportHistoryAnomalyDto.md)
  - [CappedCollectionDtoTransportPricingDtoTransportSubServicePricingDto](docs/CappedCollectionDtoTransportPricingDtoTransportSubServicePricingDto.md)
  - [CappedCollectionDtoTransportSubServiceDto](docs/CappedCollectionDtoTransportSubServiceDto.md)
+ - [CheckBatchTransportsAssignmentConstraintsResultDto](docs/CheckBatchTransportsAssignmentConstraintsResultDto.md)
+ - [CheckBatchTransportsAssignmentConstraintsResultDtoCheckSingleTransportAssignmentConstraintsResultDto](docs/CheckBatchTransportsAssignmentConstraintsResultDtoCheckSingleTransportAssignmentConstraintsResultDto.md)
  - [CheckTransportAssignmentConstraintsResultDto](docs/CheckTransportAssignmentConstraintsResultDto.md)
- - [CheckTransportAssignmentConstraintsResultDtoAssignmentConstraintDto](docs/CheckTransportAssignmentConstraintsResultDtoAssignmentConstraintDto.md)
+ - [CircuitAddressSetDto](docs/CircuitAddressSetDto.md)
  - [CityDto](docs/CityDto.md)
+ - [CityIncludedDto](docs/CityIncludedDto.md)
+ - [CollectionDtoAddressOpeningDto](docs/CollectionDtoAddressOpeningDto.md)
  - [CommunicationTypeConfigurationDto](docs/CommunicationTypeConfigurationDto.md)
  - [CompanyDto](docs/CompanyDto.md)
  - [ContractorAgentDto](docs/ContractorAgentDto.md)
  - [CountryDto](docs/CountryDto.md)
+ - [CountryFamilyDto](docs/CountryFamilyDto.md)
+ - [CreateAddressCommand](docs/CreateAddressCommand.md)
+ - [CreateAddressCommandCreateAddressAdditionalContactDto](docs/CreateAddressCommandCreateAddressAdditionalContactDto.md)
+ - [CreateAddressCommandCreateAddressOpeningDto](docs/CreateAddressCommandCreateAddressOpeningDto.md)
+ - [CreateAddressResultDto](docs/CreateAddressResultDto.md)
+ - [CreateCityCommand](docs/CreateCityCommand.md)
+ - [CreateCityCommandCreateCityGeocodingDto](docs/CreateCityCommandCreateCityGeocodingDto.md)
+ - [CreateCityResultDto](docs/CreateCityResultDto.md)
+ - [CreateCountryCommand](docs/CreateCountryCommand.md)
+ - [CreateCustomerCommand](docs/CreateCustomerCommand.md)
+ - [CreateCustomerResultDto](docs/CreateCustomerResultDto.md)
  - [CreateMissionCommand](docs/CreateMissionCommand.md)
  - [CreateMissionCommandApiBehaviorDto](docs/CreateMissionCommandApiBehaviorDto.md)
  - [CreateMissionFromQuotationCommand](docs/CreateMissionFromQuotationCommand.md)
@@ -1530,9 +1628,24 @@ Class | Method | HTTP request | Description
  - [CreateTransportResultDto](docs/CreateTransportResultDto.md)
  - [CustomParameterDto](docs/CustomParameterDto.md)
  - [CustomParameterValueDto](docs/CustomParameterValueDto.md)
+ - [CustomerBillingAddressDto](docs/CustomerBillingAddressDto.md)
+ - [CustomerBillingAddressEditionDto](docs/CustomerBillingAddressEditionDto.md)
+ - [CustomerBillingConfigurationDto](docs/CustomerBillingConfigurationDto.md)
+ - [CustomerBillingConfigurationEditionDto](docs/CustomerBillingConfigurationEditionDto.md)
+ - [CustomerBillingDetailsDto](docs/CustomerBillingDetailsDto.md)
+ - [CustomerBillingDetailsDtoAdministrativeInfoDto](docs/CustomerBillingDetailsDtoAdministrativeInfoDto.md)
+ - [CustomerBillingDetailsDtoBankDetailsDto](docs/CustomerBillingDetailsDtoBankDetailsDto.md)
+ - [CustomerBillingDetailsEditionDto](docs/CustomerBillingDetailsEditionDto.md)
+ - [CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto](docs/CustomerBillingDetailsEditionDtoAdministrativeInfoEditionDto.md)
+ - [CustomerBillingDetailsEditionDtoBankDetailsEditionDto](docs/CustomerBillingDetailsEditionDtoBankDetailsEditionDto.md)
  - [CustomerCommunicationConfigurationDto](docs/CustomerCommunicationConfigurationDto.md)
  - [CustomerDto](docs/CustomerDto.md)
+ - [CustomerEquivalenceDto](docs/CustomerEquivalenceDto.md)
+ - [CustomerFamilyDto](docs/CustomerFamilyDto.md)
+ - [CustomerIncludedDto](docs/CustomerIncludedDto.md)
  - [CustomerOperationalConfigurationDto](docs/CustomerOperationalConfigurationDto.md)
+ - [CustomerOperationalConfigurationEditionDto](docs/CustomerOperationalConfigurationEditionDto.md)
+ - [CustomerOperationalConfigurationEditionDtoCustomerReferencesConfigurationEditionDto](docs/CustomerOperationalConfigurationEditionDtoCustomerReferencesConfigurationEditionDto.md)
  - [CustomerReferenceDto](docs/CustomerReferenceDto.md)
  - [CustomerReferencesConfigurationDto](docs/CustomerReferencesConfigurationDto.md)
  - [DefragmentTransportCommand](docs/DefragmentTransportCommand.md)
@@ -1541,35 +1654,52 @@ Class | Method | HTTP request | Description
  - [DocumentReportDto](docs/DocumentReportDto.md)
  - [DriverDto](docs/DriverDto.md)
  - [DriverIncludedDto](docs/DriverIncludedDto.md)
+ - [EdiEquivalenceConfigurationDto](docs/EdiEquivalenceConfigurationDto.md)
+ - [EntityDeletionConstraintsDto](docs/EntityDeletionConstraintsDto.md)
  - [FileCategoryDto](docs/FileCategoryDto.md)
  - [FragmentTransportCommand](docs/FragmentTransportCommand.md)
  - [FragmentTransportCommandStepDto](docs/FragmentTransportCommandStepDto.md)
  - [GenerateTransportDocumentReportCommand](docs/GenerateTransportDocumentReportCommand.md)
  - [GenerateTransportDocumentReportResultDto](docs/GenerateTransportDocumentReportResultDto.md)
  - [GeocodingDto](docs/GeocodingDto.md)
+ - [GetSsoAuthorizationUrlResultDto](docs/GetSsoAuthorizationUrlResultDto.md)
+ - [IPagedResourceListAddressCategoryDto](docs/IPagedResourceListAddressCategoryDto.md)
+ - [IPagedResourceListAddressContactDto](docs/IPagedResourceListAddressContactDto.md)
  - [IPagedResourceListAddressDto](docs/IPagedResourceListAddressDto.md)
+ - [IPagedResourceListAddressVehicleTypeDto](docs/IPagedResourceListAddressVehicleTypeDto.md)
  - [IPagedResourceListAgencyDto](docs/IPagedResourceListAgencyDto.md)
+ - [IPagedResourceListCircuitAddressSetDto](docs/IPagedResourceListCircuitAddressSetDto.md)
  - [IPagedResourceListCityDto](docs/IPagedResourceListCityDto.md)
  - [IPagedResourceListCompanyDto](docs/IPagedResourceListCompanyDto.md)
  - [IPagedResourceListContractorAgentDto](docs/IPagedResourceListContractorAgentDto.md)
  - [IPagedResourceListCountryDto](docs/IPagedResourceListCountryDto.md)
+ - [IPagedResourceListCountryFamilyDto](docs/IPagedResourceListCountryFamilyDto.md)
  - [IPagedResourceListCustomParameterDto](docs/IPagedResourceListCustomParameterDto.md)
  - [IPagedResourceListCustomParameterValueDto](docs/IPagedResourceListCustomParameterValueDto.md)
  - [IPagedResourceListCustomerDto](docs/IPagedResourceListCustomerDto.md)
+ - [IPagedResourceListCustomerFamilyDto](docs/IPagedResourceListCustomerFamilyDto.md)
  - [IPagedResourceListCustomerReferenceDto](docs/IPagedResourceListCustomerReferenceDto.md)
  - [IPagedResourceListDriverDto](docs/IPagedResourceListDriverDto.md)
+ - [IPagedResourceListEdiEquivalenceConfigurationDto](docs/IPagedResourceListEdiEquivalenceConfigurationDto.md)
  - [IPagedResourceListFileCategoryDto](docs/IPagedResourceListFileCategoryDto.md)
+ - [IPagedResourceListLanguageDto](docs/IPagedResourceListLanguageDto.md)
+ - [IPagedResourceListOperationZoneDto](docs/IPagedResourceListOperationZoneDto.md)
  - [IPagedResourceListOrdererDto](docs/IPagedResourceListOrdererDto.md)
  - [IPagedResourceListPackageLineDto](docs/IPagedResourceListPackageLineDto.md)
  - [IPagedResourceListPackageNatureDto](docs/IPagedResourceListPackageNatureDto.md)
  - [IPagedResourceListPackageNatureReferenceDto](docs/IPagedResourceListPackageNatureReferenceDto.md)
  - [IPagedResourceListPackageNatureReferenceValueDto](docs/IPagedResourceListPackageNatureReferenceValueDto.md)
  - [IPagedResourceListPackagesTotalBulkSizeDto](docs/IPagedResourceListPackagesTotalBulkSizeDto.md)
+ - [IPagedResourceListPaymentMethodDto](docs/IPagedResourceListPaymentMethodDto.md)
+ - [IPagedResourceListPaymentTermDto](docs/IPagedResourceListPaymentTermDto.md)
+ - [IPagedResourceListPriceCatalogDto](docs/IPagedResourceListPriceCatalogDto.md)
  - [IPagedResourceListPricingPathDto](docs/IPagedResourceListPricingPathDto.md)
  - [IPagedResourceListPricingPathSubServiceAdditionalUnitDto](docs/IPagedResourceListPricingPathSubServiceAdditionalUnitDto.md)
  - [IPagedResourceListPricingPathSubServiceDto](docs/IPagedResourceListPricingPathSubServiceDto.md)
  - [IPagedResourceListPricingPathSubServiceUnitPricingSlotDto](docs/IPagedResourceListPricingPathSubServiceUnitPricingSlotDto.md)
  - [IPagedResourceListPricingPathUnitPricingSlotEquivalenceDto](docs/IPagedResourceListPricingPathUnitPricingSlotEquivalenceDto.md)
+ - [IPagedResourceListProvinceDto](docs/IPagedResourceListProvinceDto.md)
+ - [IPagedResourceListProvinceSubdivisionDto](docs/IPagedResourceListProvinceSubdivisionDto.md)
  - [IPagedResourceListSectorDto](docs/IPagedResourceListSectorDto.md)
  - [IPagedResourceListServiceDto](docs/IPagedResourceListServiceDto.md)
  - [IPagedResourceListServiceSubServiceDto](docs/IPagedResourceListServiceSubServiceDto.md)
@@ -1587,32 +1717,47 @@ Class | Method | HTTP request | Description
  - [IPagedResourceListUserDto](docs/IPagedResourceListUserDto.md)
  - [IPagedResourceListVehicleDto](docs/IPagedResourceListVehicleDto.md)
  - [IPagedResourceListVehicleTypeDto](docs/IPagedResourceListVehicleTypeDto.md)
+ - [IResourceListCustomerEquivalenceDto](docs/IResourceListCustomerEquivalenceDto.md)
+ - [IResourceListPackageNatureEquivalenceDto](docs/IResourceListPackageNatureEquivalenceDto.md)
+ - [IResourceListServiceEquivalenceDto](docs/IResourceListServiceEquivalenceDto.md)
  - [IResourceListStreetSuggestionDto](docs/IResourceListStreetSuggestionDto.md)
+ - [IResourceListSubstateEquivalenceDto](docs/IResourceListSubstateEquivalenceDto.md)
  - [IResourceListTransportDangerousGoodDto](docs/IResourceListTransportDangerousGoodDto.md)
+ - [LanguageDto](docs/LanguageDto.md)
+ - [LocalizedLabelDto](docs/LocalizedLabelDto.md)
  - [MergeableTransportDto](docs/MergeableTransportDto.md)
  - [MissionDto](docs/MissionDto.md)
  - [MissionEntryDryRunDto](docs/MissionEntryDryRunDto.md)
  - [MyAccountInfoDto](docs/MyAccountInfoDto.md)
  - [NonBlockingErrorDto](docs/NonBlockingErrorDto.md)
+ - [OperationAddressEditionDto](docs/OperationAddressEditionDto.md)
+ - [OperationZoneDto](docs/OperationZoneDto.md)
  - [OrdererDto](docs/OrdererDto.md)
+ - [OrdererDtoOrdererCustomerDto](docs/OrdererDtoOrdererCustomerDto.md)
  - [PackageLineDto](docs/PackageLineDto.md)
  - [PackageLineReferenceValueDto](docs/PackageLineReferenceValueDto.md)
  - [PackageLineSizeDto](docs/PackageLineSizeDto.md)
  - [PackageNatureBulkSizeDto](docs/PackageNatureBulkSizeDto.md)
  - [PackageNatureDto](docs/PackageNatureDto.md)
+ - [PackageNatureEquivalenceDto](docs/PackageNatureEquivalenceDto.md)
  - [PackageNatureReferenceDto](docs/PackageNatureReferenceDto.md)
  - [PackageNatureReferenceValueDto](docs/PackageNatureReferenceValueDto.md)
  - [PackagesTotalBulkSizeDto](docs/PackagesTotalBulkSizeDto.md)
  - [PagingInformations](docs/PagingInformations.md)
+ - [PaymentMethodDto](docs/PaymentMethodDto.md)
+ - [PaymentTermDto](docs/PaymentTermDto.md)
  - [PickupCommunicationConfigurationDto](docs/PickupCommunicationConfigurationDto.md)
  - [PickupDataOnStatusAppliedDto](docs/PickupDataOnStatusAppliedDto.md)
  - [PositionDto](docs/PositionDto.md)
+ - [PriceCatalogDto](docs/PriceCatalogDto.md)
  - [PricingPathDto](docs/PricingPathDto.md)
  - [PricingPathSubServiceAdditionalUnitDto](docs/PricingPathSubServiceAdditionalUnitDto.md)
  - [PricingPathSubServiceDto](docs/PricingPathSubServiceDto.md)
  - [PricingPathSubServiceUnitPricingSlotDto](docs/PricingPathSubServiceUnitPricingSlotDto.md)
  - [PricingPathUnitPricingSlotEquivalenceDto](docs/PricingPathUnitPricingSlotEquivalenceDto.md)
  - [PricingPointDto](docs/PricingPointDto.md)
+ - [ProvinceDto](docs/ProvinceDto.md)
+ - [ProvinceSubdivisionDto](docs/ProvinceSubdivisionDto.md)
  - [QuotationDto](docs/QuotationDto.md)
  - [QuotationEntryDryRunDto](docs/QuotationEntryDryRunDto.md)
  - [ReportPaperOptionsDto](docs/ReportPaperOptionsDto.md)
@@ -1620,6 +1765,7 @@ Class | Method | HTTP request | Description
  - [SearchFlagsDtoLastSubStateForFamilyCodeDto](docs/SearchFlagsDtoLastSubStateForFamilyCodeDto.md)
  - [SectorDto](docs/SectorDto.md)
  - [ServiceDto](docs/ServiceDto.md)
+ - [ServiceEquivalenceDto](docs/ServiceEquivalenceDto.md)
  - [ServiceFamilyDto](docs/ServiceFamilyDto.md)
  - [ServiceSubServiceDto](docs/ServiceSubServiceDto.md)
  - [ServiceTypeDto](docs/ServiceTypeDto.md)
@@ -1633,6 +1779,7 @@ Class | Method | HTTP request | Description
  - [SubServiceDto](docs/SubServiceDto.md)
  - [SubServiceQuantityDto](docs/SubServiceQuantityDto.md)
  - [SubStateDto](docs/SubStateDto.md)
+ - [SubstateEquivalenceDto](docs/SubstateEquivalenceDto.md)
  - [TeamDto](docs/TeamDto.md)
  - [TransportAirDataDto](docs/TransportAirDataDto.md)
  - [TransportAirDataDtoTransportAirWaybillDto](docs/TransportAirDataDtoTransportAirWaybillDto.md)
@@ -1681,6 +1828,13 @@ Class | Method | HTTP request | Description
  - [TransportStepContactDto](docs/TransportStepContactDto.md)
  - [TransportSubServiceDto](docs/TransportSubServiceDto.md)
  - [UnitDto](docs/UnitDto.md)
+ - [UpdateAddressDto](docs/UpdateAddressDto.md)
+ - [UpdateAddressDtoUpdateAddressAdditionalContactDto](docs/UpdateAddressDtoUpdateAddressAdditionalContactDto.md)
+ - [UpdateAddressDtoUpdateAddressOpeningDto](docs/UpdateAddressDtoUpdateAddressOpeningDto.md)
+ - [UpdateCityDto](docs/UpdateCityDto.md)
+ - [UpdateCityDtoUpdateCityGeocodingDto](docs/UpdateCityDtoUpdateCityGeocodingDto.md)
+ - [UpdateCountryDto](docs/UpdateCountryDto.md)
+ - [UpdateCustomerDto](docs/UpdateCustomerDto.md)
  - [UpdateMissionDto](docs/UpdateMissionDto.md)
  - [UpdateMissionDtoApiBehaviorDto](docs/UpdateMissionDtoApiBehaviorDto.md)
  - [UpdateQuotationDto](docs/UpdateQuotationDto.md)

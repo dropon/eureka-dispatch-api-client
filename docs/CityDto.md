@@ -8,10 +8,14 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **PostCode** | Pointer to **string** |  | [optional] 
 **SectorCode** | Pointer to **string** |  | [optional] 
+**OperationZoneCode** | Pointer to **string** |  | [optional] 
 **Geocoding** | Pointer to [**GeocodingDto**](GeocodingDto.md) |  | [optional] 
+**ProvinceUid** | Pointer to **string** |  | [optional] 
+**ProvinceSubdivisionUid** | Pointer to **string** |  | [optional] 
 **Country** | Pointer to [**CountryDto**](CountryDto.md) |  | [optional] 
 **AgencyCode** | Pointer to **string** |  | [optional] 
 **IsAvailableForMissionEntry** | Pointer to **bool** |  | [optional] 
+**Included** | Pointer to [**CityIncludedDto**](CityIncludedDto.md) |  | [optional] 
 
 ## Methods
 
@@ -132,6 +136,31 @@ SetSectorCode sets SectorCode field to given value.
 
 HasSectorCode returns a boolean if a field has been set.
 
+### GetOperationZoneCode
+
+`func (o *CityDto) GetOperationZoneCode() string`
+
+GetOperationZoneCode returns the OperationZoneCode field if non-nil, zero value otherwise.
+
+### GetOperationZoneCodeOk
+
+`func (o *CityDto) GetOperationZoneCodeOk() (*string, bool)`
+
+GetOperationZoneCodeOk returns a tuple with the OperationZoneCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOperationZoneCode
+
+`func (o *CityDto) SetOperationZoneCode(v string)`
+
+SetOperationZoneCode sets OperationZoneCode field to given value.
+
+### HasOperationZoneCode
+
+`func (o *CityDto) HasOperationZoneCode() bool`
+
+HasOperationZoneCode returns a boolean if a field has been set.
+
 ### GetGeocoding
 
 `func (o *CityDto) GetGeocoding() GeocodingDto`
@@ -156,6 +185,56 @@ SetGeocoding sets Geocoding field to given value.
 `func (o *CityDto) HasGeocoding() bool`
 
 HasGeocoding returns a boolean if a field has been set.
+
+### GetProvinceUid
+
+`func (o *CityDto) GetProvinceUid() string`
+
+GetProvinceUid returns the ProvinceUid field if non-nil, zero value otherwise.
+
+### GetProvinceUidOk
+
+`func (o *CityDto) GetProvinceUidOk() (*string, bool)`
+
+GetProvinceUidOk returns a tuple with the ProvinceUid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvinceUid
+
+`func (o *CityDto) SetProvinceUid(v string)`
+
+SetProvinceUid sets ProvinceUid field to given value.
+
+### HasProvinceUid
+
+`func (o *CityDto) HasProvinceUid() bool`
+
+HasProvinceUid returns a boolean if a field has been set.
+
+### GetProvinceSubdivisionUid
+
+`func (o *CityDto) GetProvinceSubdivisionUid() string`
+
+GetProvinceSubdivisionUid returns the ProvinceSubdivisionUid field if non-nil, zero value otherwise.
+
+### GetProvinceSubdivisionUidOk
+
+`func (o *CityDto) GetProvinceSubdivisionUidOk() (*string, bool)`
+
+GetProvinceSubdivisionUidOk returns a tuple with the ProvinceSubdivisionUid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvinceSubdivisionUid
+
+`func (o *CityDto) SetProvinceSubdivisionUid(v string)`
+
+SetProvinceSubdivisionUid sets ProvinceSubdivisionUid field to given value.
+
+### HasProvinceSubdivisionUid
+
+`func (o *CityDto) HasProvinceSubdivisionUid() bool`
+
+HasProvinceSubdivisionUid returns a boolean if a field has been set.
 
 ### GetCountry
 
@@ -231,6 +310,31 @@ SetIsAvailableForMissionEntry sets IsAvailableForMissionEntry field to given val
 `func (o *CityDto) HasIsAvailableForMissionEntry() bool`
 
 HasIsAvailableForMissionEntry returns a boolean if a field has been set.
+
+### GetIncluded
+
+`func (o *CityDto) GetIncluded() CityIncludedDto`
+
+GetIncluded returns the Included field if non-nil, zero value otherwise.
+
+### GetIncludedOk
+
+`func (o *CityDto) GetIncludedOk() (*CityIncludedDto, bool)`
+
+GetIncludedOk returns a tuple with the Included field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncluded
+
+`func (o *CityDto) SetIncluded(v CityIncludedDto)`
+
+SetIncluded sets Included field to given value.
+
+### HasIncluded
+
+`func (o *CityDto) HasIncluded() bool`
+
+HasIncluded returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

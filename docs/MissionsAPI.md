@@ -5,9 +5,9 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CancelMission**](MissionsAPI.md#CancelMission) | **Post** /v3/missions/{uid}/cancellation-process | Cancel mission
-[**CreateMission**](MissionsAPI.md#CreateMission) | **Post** /v3/missions | Create a mission
-[**GetMissionById**](MissionsAPI.md#GetMissionById) | **Get** /v3/missions/{uid} | Get a mission by its unique identifier
-[**GetMissionByMissionNumber**](MissionsAPI.md#GetMissionByMissionNumber) | **Get** /v3/missions/by-mission-number | Get a mission by its mission number
+[**CreateMission**](MissionsAPI.md#CreateMission) | **Post** /v3/missions | Create mission
+[**GetMissionById**](MissionsAPI.md#GetMissionById) | **Get** /v3/missions/{uid} | Get mission by id
+[**GetMissionByMissionNumber**](MissionsAPI.md#GetMissionByMissionNumber) | **Get** /v3/missions/by-mission-number | Get mission by mission number
 [**MissionCreationDryRun**](MissionsAPI.md#MissionCreationDryRun) | **Post** /v3/missions/dry-run | Mission creation dry run
 [**MissionUpdateDryRun**](MissionsAPI.md#MissionUpdateDryRun) | **Patch** /v3/missions/{uid}/dry-run | Mission update dry run
 [**UpdateMission**](MissionsAPI.md#UpdateMission) | **Patch** /v3/missions/{uid} | Update mission
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 > CreateMissionResultDto CreateMission(ctx).Command(command).Execute()
 
-Create a mission
+Create mission
 
 ### Example
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 > MissionDto GetMissionById(ctx, uid).Fields(fields).Execute()
 
-Get a mission by its unique identifier
+Get mission by id
 
 ### Example
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 > MissionDto GetMissionByMissionNumber(ctx).MissionNumber(missionNumber).Fields(fields).Execute()
 
-Get a mission by its mission number
+Get mission by mission number
 
 ### Example
 

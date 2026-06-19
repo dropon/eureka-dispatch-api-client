@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Reference1** | Pointer to **string** |  | [optional] 
 **Reference2** | Pointer to **string** |  | [optional] 
 **Reference3** | Pointer to **string** |  | [optional] 
+**Customers** | Pointer to [**CappedCollectionDtoOrdererDtoOrdererCustomerDto**](CappedCollectionDtoOrdererDtoOrdererCustomerDto.md) |  | [optional] 
 
 ## Methods
 
@@ -361,6 +362,31 @@ SetReference3 sets Reference3 field to given value.
 `func (o *OrdererDto) HasReference3() bool`
 
 HasReference3 returns a boolean if a field has been set.
+
+### GetCustomers
+
+`func (o *OrdererDto) GetCustomers() CappedCollectionDtoOrdererDtoOrdererCustomerDto`
+
+GetCustomers returns the Customers field if non-nil, zero value otherwise.
+
+### GetCustomersOk
+
+`func (o *OrdererDto) GetCustomersOk() (*CappedCollectionDtoOrdererDtoOrdererCustomerDto, bool)`
+
+GetCustomersOk returns a tuple with the Customers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomers
+
+`func (o *OrdererDto) SetCustomers(v CappedCollectionDtoOrdererDtoOrdererCustomerDto)`
+
+SetCustomers sets Customers field to given value.
+
+### HasCustomers
+
+`func (o *OrdererDto) HasCustomers() bool`
+
+HasCustomers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

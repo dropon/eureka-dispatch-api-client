@@ -5,7 +5,7 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetVehicles**](VehiclesAPI.md#GetVehicles) | **Get** /v3/vehicles | Get vehicles
-[**GetVehiclesSubcontractors**](VehiclesAPI.md#GetVehiclesSubcontractors) | **Get** /v3/vehicles/{uid}/subcontractors | Get the subcontractors linked to the vehicle
+[**GetVehiclesSubcontractors**](VehiclesAPI.md#GetVehiclesSubcontractors) | **Get** /v3/vehicles/{uid}/subcontractors | Get vehicle&#39;s subcontractors
 
 
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 > IPagedResourceListDriverDto GetVehiclesSubcontractors(ctx, uid).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 
-Get the subcontractors linked to the vehicle
+Get vehicle's subcontractors
 
 
 

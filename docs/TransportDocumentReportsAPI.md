@@ -4,9 +4,9 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DownloadTransportDocumentReport**](TransportDocumentReportsAPI.md#DownloadTransportDocumentReport) | **Get** /v3/transport-document-reports/{uid}/data | Download a transport document report by its unique identifier
+[**DownloadTransportDocumentReport**](TransportDocumentReportsAPI.md#DownloadTransportDocumentReport) | **Get** /v3/transport-document-reports/{uid}/data | Download transport document report
 [**GenerateTransportDocumentReport**](TransportDocumentReportsAPI.md#GenerateTransportDocumentReport) | **Post** /v3/transport-document-reports | Generate transport document reports
-[**GetTransportDocumentReportById**](TransportDocumentReportsAPI.md#GetTransportDocumentReportById) | **Get** /v3/transport-document-reports/{uid} | Get a transport document report by its unique identifier
+[**GetTransportDocumentReportById**](TransportDocumentReportsAPI.md#GetTransportDocumentReportById) | **Get** /v3/transport-document-reports/{uid} | Get transport document report by id
 
 
 
@@ -14,7 +14,9 @@ Method | HTTP request | Description
 
 > *os.File DownloadTransportDocumentReport(ctx, uid).Execute()
 
-Download a transport document report by its unique identifier
+Download transport document report
+
+
 
 ### Example
 
@@ -146,7 +148,9 @@ Name | Type | Description  | Notes
 
 > DocumentReportDto GetTransportDocumentReportById(ctx, uid).Execute()
 
-Get a transport document report by its unique identifier
+Get transport document report by id
+
+
 
 ### Example
 

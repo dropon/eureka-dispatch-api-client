@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetOrderers
 
-> IPagedResourceListOrdererDto GetOrderers(ctx).Code(code).Name(name).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+> IPagedResourceListOrdererDto GetOrderers(ctx).Code(code).Name(name).Login(login).CustomerCode(customerCode).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 
 Get orderers
 
@@ -31,6 +31,8 @@ import (
 func main() {
 	code := "code_example" // string | Orderer code pattern (optional)
 	name := "name_example" // string | Orderer name pattern (optional)
+	login := "login_example" // string | Orderer login pattern (optional)
+	customerCode := "customerCode_example" // string | Exact customer code used to return only orderers associated with this customer (optional)
 	pattern := "pattern_example" // string | A pattern to look for in fields specified  by PatternFields. (optional)
 	patternFields := []string{"PatternFields_example"} // []string | Fields in which to search for Pattern (optional)
 	startIndex := int32(56) // int32 | Pagination start index (offset). Default is 0. (optional)
@@ -41,7 +43,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrderersAPI.GetOrderers(context.Background()).Code(code).Name(name).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+	resp, r, err := apiClient.OrderersAPI.GetOrderers(context.Background()).Code(code).Name(name).Login(login).CustomerCode(customerCode).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrderersAPI.GetOrderers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,6 +66,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string** | Orderer code pattern | 
  **name** | **string** | Orderer name pattern | 
+ **login** | **string** | Orderer login pattern | 
+ **customerCode** | **string** | Exact customer code used to return only orderers associated with this customer | 
  **pattern** | **string** | A pattern to look for in fields specified  by PatternFields. | 
  **patternFields** | **[]string** | Fields in which to search for Pattern | 
  **startIndex** | **int32** | Pagination start index (offset). Default is 0. | 

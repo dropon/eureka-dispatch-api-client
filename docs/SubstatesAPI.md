@@ -4,7 +4,7 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetSubstateByCode**](SubstatesAPI.md#GetSubstateByCode) | **Get** /v3/substates/by-code | Get a substate by its code
+[**GetSubstateByCode**](SubstatesAPI.md#GetSubstateByCode) | **Get** /v3/substates/by-code | Get substate by code
 [**GetSubstates**](SubstatesAPI.md#GetSubstates) | **Get** /v3/substates | Get substates
 
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 > SubStateDto GetSubstateByCode(ctx).Code(code).Fields(fields).Execute()
 
-Get a substate by its code
+Get substate by code
 
 ### Example
 

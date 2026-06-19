@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **NetWeightKg** | Pointer to **float64** |  | [optional] 
 **NetVolumeL** | Pointer to **float64** |  | [optional] 
 **GrossWeightKg** | Pointer to **int32** |  | [optional] 
+**TunnelCode** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -387,6 +388,31 @@ SetGrossWeightKg sets GrossWeightKg field to given value.
 `func (o *TransportEntryDryRunDtoDangerousGoodDto) HasGrossWeightKg() bool`
 
 HasGrossWeightKg returns a boolean if a field has been set.
+
+### GetTunnelCode
+
+`func (o *TransportEntryDryRunDtoDangerousGoodDto) GetTunnelCode() string`
+
+GetTunnelCode returns the TunnelCode field if non-nil, zero value otherwise.
+
+### GetTunnelCodeOk
+
+`func (o *TransportEntryDryRunDtoDangerousGoodDto) GetTunnelCodeOk() (*string, bool)`
+
+GetTunnelCodeOk returns a tuple with the TunnelCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTunnelCode
+
+`func (o *TransportEntryDryRunDtoDangerousGoodDto) SetTunnelCode(v string)`
+
+SetTunnelCode sets TunnelCode field to given value.
+
+### HasTunnelCode
+
+`func (o *TransportEntryDryRunDtoDangerousGoodDto) HasTunnelCode() bool`
+
+HasTunnelCode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

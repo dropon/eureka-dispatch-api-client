@@ -4,10 +4,219 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CheckCityDeletionConstraints**](CitiesAPI.md#CheckCityDeletionConstraints) | **Get** /v3/cities/{cityId}/deletion-constraints | Check city deletion constraints
+[**CreateCity**](CitiesAPI.md#CreateCity) | **Post** /v3/cities | Create city
+[**DeleteCity**](CitiesAPI.md#DeleteCity) | **Delete** /v3/cities/{cityId} | Delete city
 [**GetBestMatch**](CitiesAPI.md#GetBestMatch) | **Get** /v3/cities/best-match | Get best match
 [**GetCities**](CitiesAPI.md#GetCities) | **Get** /v3/cities | Get cities
-[**GetCityById**](CitiesAPI.md#GetCityById) | **Get** /v3/cities/by-city-id | Get a city by its identifier
+[**GetCityById**](CitiesAPI.md#GetCityById) | **Get** /v3/cities/{cityId} | Get city by id
+[**GetCityByIdAlternativeRoute**](CitiesAPI.md#GetCityByIdAlternativeRoute) | **Get** /v3/cities/by-city-id | Get city by id (alternative route)
+[**UpdateCity**](CitiesAPI.md#UpdateCity) | **Patch** /v3/cities/{cityId} | Update city
 
+
+
+## CheckCityDeletionConstraints
+
+> EntityDeletionConstraintsDto CheckCityDeletionConstraints(ctx, cityId).Execute()
+
+Check city deletion constraints
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	cityId := int32(56) // int32 | City identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CitiesAPI.CheckCityDeletionConstraints(context.Background(), cityId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CitiesAPI.CheckCityDeletionConstraints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CheckCityDeletionConstraints`: EntityDeletionConstraintsDto
+	fmt.Fprintf(os.Stdout, "Response from `CitiesAPI.CheckCityDeletionConstraints`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**cityId** | **int32** | City identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCheckCityDeletionConstraintsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**EntityDeletionConstraintsDto**](EntityDeletionConstraintsDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCity
+
+> CreateCityResultDto CreateCity(ctx).Command(command).Execute()
+
+Create city
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	command := *openapiclient.NewCreateCityCommand("Name_example", "CountryCode_example") // CreateCityCommand | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CitiesAPI.CreateCity(context.Background()).Command(command).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CitiesAPI.CreateCity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCity`: CreateCityResultDto
+	fmt.Fprintf(os.Stdout, "Response from `CitiesAPI.CreateCity`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **command** | [**CreateCityCommand**](CreateCityCommand.md) |  | 
+
+### Return type
+
+[**CreateCityResultDto**](CreateCityResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json
+- **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCity
+
+> DeleteCity(ctx, cityId).Execute()
+
+Delete city
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	cityId := int32(56) // int32 | City identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CitiesAPI.DeleteCity(context.Background(), cityId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CitiesAPI.DeleteCity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**cityId** | **int32** | City identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteCityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetBestMatch
@@ -90,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## GetCities
 
-> IPagedResourceListCityDto GetCities(ctx).PostCode(postCode).CityName(cityName).AgencyCode(agencyCode).CountryCode(countryCode).CountryFamilyCode(countryFamilyCode).MissionEntryAvailability(missionEntryAvailability).CityIds(cityIds).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+> IPagedResourceListCityDto GetCities(ctx).PostCode(postCode).CityName(cityName).SectorCode(sectorCode).AgencyCode(agencyCode).CountryCode(countryCode).CountryFamilyCode(countryFamilyCode).MissionEntryAvailability(missionEntryAvailability).CityIds(cityIds).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 
 Get cities
 
@@ -111,6 +320,7 @@ import (
 func main() {
 	postCode := "postCode_example" // string | The postal code pattern to look for. (optional)
 	cityName := "cityName_example" // string | The city name pattern to look for. (optional)
+	sectorCode := "sectorCode_example" // string | The sector code pattern to look for. (optional)
 	agencyCode := "agencyCode_example" // string | Optional : Restrict research to cities in the specified agency,  or that are not linked to a specific agency. (optional)
 	countryCode := "countryCode_example" // string | Optional : Restrict research to cities in the specified country. (optional)
 	countryFamilyCode := "countryFamilyCode_example" // string | Optional : Restrict to cities in the specified country family.  Used only if CountryCode is not provided. (optional)
@@ -126,7 +336,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CitiesAPI.GetCities(context.Background()).PostCode(postCode).CityName(cityName).AgencyCode(agencyCode).CountryCode(countryCode).CountryFamilyCode(countryFamilyCode).MissionEntryAvailability(missionEntryAvailability).CityIds(cityIds).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+	resp, r, err := apiClient.CitiesAPI.GetCities(context.Background()).PostCode(postCode).CityName(cityName).SectorCode(sectorCode).AgencyCode(agencyCode).CountryCode(countryCode).CountryFamilyCode(countryFamilyCode).MissionEntryAvailability(missionEntryAvailability).CityIds(cityIds).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CitiesAPI.GetCities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -149,6 +359,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postCode** | **string** | The postal code pattern to look for. | 
  **cityName** | **string** | The city name pattern to look for. | 
+ **sectorCode** | **string** | The sector code pattern to look for. | 
  **agencyCode** | **string** | Optional : Restrict research to cities in the specified agency,  or that are not linked to a specific agency. | 
  **countryCode** | **string** | Optional : Restrict research to cities in the specified country. | 
  **countryFamilyCode** | **string** | Optional : Restrict to cities in the specified country family.  Used only if CountryCode is not provided. | 
@@ -182,9 +393,11 @@ Name | Type | Description  | Notes
 
 ## GetCityById
 
-> CityDto GetCityById(ctx).CityId(cityId).Fields(fields).Execute()
+> CityDto GetCityById(ctx, cityId).Fields(fields).Execute()
 
-Get a city by its identifier
+Get city by id
+
+
 
 ### Example
 
@@ -204,7 +417,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CitiesAPI.GetCityById(context.Background()).CityId(cityId).Fields(fields).Execute()
+	resp, r, err := apiClient.CitiesAPI.GetCityById(context.Background(), cityId).Fields(fields).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CitiesAPI.GetCityById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -217,10 +430,82 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**cityId** | **int32** |  | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetCityByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **fields** | **string** | Projection fields separated with a comma | 
+
+### Return type
+
+[**CityDto**](CityDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCityByIdAlternativeRoute
+
+> CityDto GetCityByIdAlternativeRoute(ctx).CityId(cityId).Fields(fields).Execute()
+
+Get city by id (alternative route)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	cityId := int32(56) // int32 | 
+	fields := "fields_example" // string | Projection fields separated with a comma (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CitiesAPI.GetCityByIdAlternativeRoute(context.Background()).CityId(cityId).Fields(fields).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CitiesAPI.GetCityByIdAlternativeRoute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCityByIdAlternativeRoute`: CityDto
+	fmt.Fprintf(os.Stdout, "Response from `CitiesAPI.GetCityByIdAlternativeRoute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCityByIdAlternativeRouteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -240,6 +525,76 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCity
+
+> UpdateCity(ctx, cityId).Command(command).Execute()
+
+Update city
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	cityId := int32(56) // int32 | City identifier
+	command := *openapiclient.NewUpdateCityDto() // UpdateCityDto | Update city command.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CitiesAPI.UpdateCity(context.Background(), cityId).Command(command).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CitiesAPI.UpdateCity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**cityId** | **int32** | City identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **command** | [**UpdateCityDto**](UpdateCityDto.md) | Update city command. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/merge-patch+json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

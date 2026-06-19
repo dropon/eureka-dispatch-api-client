@@ -7,6 +7,10 @@ Name | Type | Description | Notes
 **Label1** | Pointer to **string** |  | [optional] 
 **Label2** | Pointer to **string** |  | [optional] 
 **Label3** | Pointer to **string** |  | [optional] 
+**IsAtLeastOneReferenceMandatory** | Pointer to **bool** |  | [optional] 
+**IsReference1Mandatory** | Pointer to **bool** |  | [optional] 
+**IsReference2Mandatory** | Pointer to **bool** |  | [optional] 
+**IsReference3Mandatory** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -101,6 +105,106 @@ SetLabel3 sets Label3 field to given value.
 `func (o *CustomerReferencesConfigurationDto) HasLabel3() bool`
 
 HasLabel3 returns a boolean if a field has been set.
+
+### GetIsAtLeastOneReferenceMandatory
+
+`func (o *CustomerReferencesConfigurationDto) GetIsAtLeastOneReferenceMandatory() bool`
+
+GetIsAtLeastOneReferenceMandatory returns the IsAtLeastOneReferenceMandatory field if non-nil, zero value otherwise.
+
+### GetIsAtLeastOneReferenceMandatoryOk
+
+`func (o *CustomerReferencesConfigurationDto) GetIsAtLeastOneReferenceMandatoryOk() (*bool, bool)`
+
+GetIsAtLeastOneReferenceMandatoryOk returns a tuple with the IsAtLeastOneReferenceMandatory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsAtLeastOneReferenceMandatory
+
+`func (o *CustomerReferencesConfigurationDto) SetIsAtLeastOneReferenceMandatory(v bool)`
+
+SetIsAtLeastOneReferenceMandatory sets IsAtLeastOneReferenceMandatory field to given value.
+
+### HasIsAtLeastOneReferenceMandatory
+
+`func (o *CustomerReferencesConfigurationDto) HasIsAtLeastOneReferenceMandatory() bool`
+
+HasIsAtLeastOneReferenceMandatory returns a boolean if a field has been set.
+
+### GetIsReference1Mandatory
+
+`func (o *CustomerReferencesConfigurationDto) GetIsReference1Mandatory() bool`
+
+GetIsReference1Mandatory returns the IsReference1Mandatory field if non-nil, zero value otherwise.
+
+### GetIsReference1MandatoryOk
+
+`func (o *CustomerReferencesConfigurationDto) GetIsReference1MandatoryOk() (*bool, bool)`
+
+GetIsReference1MandatoryOk returns a tuple with the IsReference1Mandatory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsReference1Mandatory
+
+`func (o *CustomerReferencesConfigurationDto) SetIsReference1Mandatory(v bool)`
+
+SetIsReference1Mandatory sets IsReference1Mandatory field to given value.
+
+### HasIsReference1Mandatory
+
+`func (o *CustomerReferencesConfigurationDto) HasIsReference1Mandatory() bool`
+
+HasIsReference1Mandatory returns a boolean if a field has been set.
+
+### GetIsReference2Mandatory
+
+`func (o *CustomerReferencesConfigurationDto) GetIsReference2Mandatory() bool`
+
+GetIsReference2Mandatory returns the IsReference2Mandatory field if non-nil, zero value otherwise.
+
+### GetIsReference2MandatoryOk
+
+`func (o *CustomerReferencesConfigurationDto) GetIsReference2MandatoryOk() (*bool, bool)`
+
+GetIsReference2MandatoryOk returns a tuple with the IsReference2Mandatory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsReference2Mandatory
+
+`func (o *CustomerReferencesConfigurationDto) SetIsReference2Mandatory(v bool)`
+
+SetIsReference2Mandatory sets IsReference2Mandatory field to given value.
+
+### HasIsReference2Mandatory
+
+`func (o *CustomerReferencesConfigurationDto) HasIsReference2Mandatory() bool`
+
+HasIsReference2Mandatory returns a boolean if a field has been set.
+
+### GetIsReference3Mandatory
+
+`func (o *CustomerReferencesConfigurationDto) GetIsReference3Mandatory() bool`
+
+GetIsReference3Mandatory returns the IsReference3Mandatory field if non-nil, zero value otherwise.
+
+### GetIsReference3MandatoryOk
+
+`func (o *CustomerReferencesConfigurationDto) GetIsReference3MandatoryOk() (*bool, bool)`
+
+GetIsReference3MandatoryOk returns a tuple with the IsReference3Mandatory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsReference3Mandatory
+
+`func (o *CustomerReferencesConfigurationDto) SetIsReference3Mandatory(v bool)`
+
+SetIsReference3Mandatory sets IsReference3Mandatory field to given value.
+
+### HasIsReference3Mandatory
+
+`func (o *CustomerReferencesConfigurationDto) HasIsReference3Mandatory() bool`
+
+HasIsReference3Mandatory returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

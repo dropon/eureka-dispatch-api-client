@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **AddressCategoryCode** | Pointer to **string** |  | [optional] 
 **ExternalAddressCode** | Pointer to **string** |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
+**StopDurationInSeconds** | Pointer to **int32** |  | [optional] 
+**CircuitAddressSetId** | Pointer to **int32** |  | [optional] 
 **AddressComplement1** | Pointer to **string** |  | [optional] 
 **AddressComplement2** | Pointer to **string** |  | [optional] 
 **AddressComplement3** | Pointer to **string** |  | [optional] 
@@ -34,6 +36,10 @@ Name | Type | Description | Notes
 **Geocoding** | Pointer to [**GeocodingDto**](GeocodingDto.md) |  | [optional] 
 **City** | Pointer to [**CityDto**](CityDto.md) |  | [optional] 
 **Emails** | Pointer to **[]string** |  | [optional] 
+**Included** | Pointer to [**AddressIncludedDto**](AddressIncludedDto.md) |  | [optional] 
+**AdditionalContacts** | Pointer to [**CappedCollectionDtoAddressContactDto**](CappedCollectionDtoAddressContactDto.md) |  | [optional] 
+**AddressOpenings** | Pointer to [**CollectionDtoAddressOpeningDto**](CollectionDtoAddressOpeningDto.md) |  | [optional] 
+**ForbiddenVehicleTypes** | Pointer to [**CappedCollectionDtoAddressVehicleTypeDto**](CappedCollectionDtoAddressVehicleTypeDto.md) |  | [optional] 
 
 ## Methods
 
@@ -429,6 +435,56 @@ SetNotes sets Notes field to given value.
 
 HasNotes returns a boolean if a field has been set.
 
+### GetStopDurationInSeconds
+
+`func (o *AddressDto) GetStopDurationInSeconds() int32`
+
+GetStopDurationInSeconds returns the StopDurationInSeconds field if non-nil, zero value otherwise.
+
+### GetStopDurationInSecondsOk
+
+`func (o *AddressDto) GetStopDurationInSecondsOk() (*int32, bool)`
+
+GetStopDurationInSecondsOk returns a tuple with the StopDurationInSeconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStopDurationInSeconds
+
+`func (o *AddressDto) SetStopDurationInSeconds(v int32)`
+
+SetStopDurationInSeconds sets StopDurationInSeconds field to given value.
+
+### HasStopDurationInSeconds
+
+`func (o *AddressDto) HasStopDurationInSeconds() bool`
+
+HasStopDurationInSeconds returns a boolean if a field has been set.
+
+### GetCircuitAddressSetId
+
+`func (o *AddressDto) GetCircuitAddressSetId() int32`
+
+GetCircuitAddressSetId returns the CircuitAddressSetId field if non-nil, zero value otherwise.
+
+### GetCircuitAddressSetIdOk
+
+`func (o *AddressDto) GetCircuitAddressSetIdOk() (*int32, bool)`
+
+GetCircuitAddressSetIdOk returns a tuple with the CircuitAddressSetId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitAddressSetId
+
+`func (o *AddressDto) SetCircuitAddressSetId(v int32)`
+
+SetCircuitAddressSetId sets CircuitAddressSetId field to given value.
+
+### HasCircuitAddressSetId
+
+`func (o *AddressDto) HasCircuitAddressSetId() bool`
+
+HasCircuitAddressSetId returns a boolean if a field has been set.
+
 ### GetAddressComplement1
 
 `func (o *AddressDto) GetAddressComplement1() string`
@@ -803,6 +859,106 @@ SetEmails sets Emails field to given value.
 `func (o *AddressDto) HasEmails() bool`
 
 HasEmails returns a boolean if a field has been set.
+
+### GetIncluded
+
+`func (o *AddressDto) GetIncluded() AddressIncludedDto`
+
+GetIncluded returns the Included field if non-nil, zero value otherwise.
+
+### GetIncludedOk
+
+`func (o *AddressDto) GetIncludedOk() (*AddressIncludedDto, bool)`
+
+GetIncludedOk returns a tuple with the Included field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncluded
+
+`func (o *AddressDto) SetIncluded(v AddressIncludedDto)`
+
+SetIncluded sets Included field to given value.
+
+### HasIncluded
+
+`func (o *AddressDto) HasIncluded() bool`
+
+HasIncluded returns a boolean if a field has been set.
+
+### GetAdditionalContacts
+
+`func (o *AddressDto) GetAdditionalContacts() CappedCollectionDtoAddressContactDto`
+
+GetAdditionalContacts returns the AdditionalContacts field if non-nil, zero value otherwise.
+
+### GetAdditionalContactsOk
+
+`func (o *AddressDto) GetAdditionalContactsOk() (*CappedCollectionDtoAddressContactDto, bool)`
+
+GetAdditionalContactsOk returns a tuple with the AdditionalContacts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdditionalContacts
+
+`func (o *AddressDto) SetAdditionalContacts(v CappedCollectionDtoAddressContactDto)`
+
+SetAdditionalContacts sets AdditionalContacts field to given value.
+
+### HasAdditionalContacts
+
+`func (o *AddressDto) HasAdditionalContacts() bool`
+
+HasAdditionalContacts returns a boolean if a field has been set.
+
+### GetAddressOpenings
+
+`func (o *AddressDto) GetAddressOpenings() CollectionDtoAddressOpeningDto`
+
+GetAddressOpenings returns the AddressOpenings field if non-nil, zero value otherwise.
+
+### GetAddressOpeningsOk
+
+`func (o *AddressDto) GetAddressOpeningsOk() (*CollectionDtoAddressOpeningDto, bool)`
+
+GetAddressOpeningsOk returns a tuple with the AddressOpenings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddressOpenings
+
+`func (o *AddressDto) SetAddressOpenings(v CollectionDtoAddressOpeningDto)`
+
+SetAddressOpenings sets AddressOpenings field to given value.
+
+### HasAddressOpenings
+
+`func (o *AddressDto) HasAddressOpenings() bool`
+
+HasAddressOpenings returns a boolean if a field has been set.
+
+### GetForbiddenVehicleTypes
+
+`func (o *AddressDto) GetForbiddenVehicleTypes() CappedCollectionDtoAddressVehicleTypeDto`
+
+GetForbiddenVehicleTypes returns the ForbiddenVehicleTypes field if non-nil, zero value otherwise.
+
+### GetForbiddenVehicleTypesOk
+
+`func (o *AddressDto) GetForbiddenVehicleTypesOk() (*CappedCollectionDtoAddressVehicleTypeDto, bool)`
+
+GetForbiddenVehicleTypesOk returns a tuple with the ForbiddenVehicleTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForbiddenVehicleTypes
+
+`func (o *AddressDto) SetForbiddenVehicleTypes(v CappedCollectionDtoAddressVehicleTypeDto)`
+
+SetForbiddenVehicleTypes sets ForbiddenVehicleTypes field to given value.
+
+### HasForbiddenVehicleTypes
+
+`func (o *AddressDto) HasForbiddenVehicleTypes() bool`
+
+HasForbiddenVehicleTypes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

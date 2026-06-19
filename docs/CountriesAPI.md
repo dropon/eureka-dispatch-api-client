@@ -4,9 +4,210 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CheckCountryDeletionConstraints**](CountriesAPI.md#CheckCountryDeletionConstraints) | **Get** /v3/countries/{code}/deletion-constraints | Check country deletion constraints
+[**CreateCountry**](CountriesAPI.md#CreateCountry) | **Post** /v3/countries | Create country
+[**DeleteCountry**](CountriesAPI.md#DeleteCountry) | **Delete** /v3/countries/{code} | Delete country
 [**GetCountries**](CountriesAPI.md#GetCountries) | **Get** /v3/countries | Get countries
-[**GetCountryByCode**](CountriesAPI.md#GetCountryByCode) | **Get** /v3/countries/by-country-code | Get country by code
+[**GetCountryByCode**](CountriesAPI.md#GetCountryByCode) | **Get** /v3/countries/{code} | Get country by code
+[**GetCountryByCodeAlternativeRoute**](CountriesAPI.md#GetCountryByCodeAlternativeRoute) | **Get** /v3/countries/by-country-code | Get country by code (alternative route)
+[**UpdateCountry**](CountriesAPI.md#UpdateCountry) | **Patch** /v3/countries/{code} | Update country
 
+
+
+## CheckCountryDeletionConstraints
+
+> EntityDeletionConstraintsDto CheckCountryDeletionConstraints(ctx, code).Execute()
+
+Check country deletion constraints
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	code := "code_example" // string | Country iso code
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CountriesAPI.CheckCountryDeletionConstraints(context.Background(), code).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CountriesAPI.CheckCountryDeletionConstraints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CheckCountryDeletionConstraints`: EntityDeletionConstraintsDto
+	fmt.Fprintf(os.Stdout, "Response from `CountriesAPI.CheckCountryDeletionConstraints`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**code** | **string** | Country iso code | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCheckCountryDeletionConstraintsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**EntityDeletionConstraintsDto**](EntityDeletionConstraintsDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCountry
+
+> CreateCountry(ctx).Command(command).Execute()
+
+Create country
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	command := *openapiclient.NewCreateCountryCommand("Code_example") // CreateCountryCommand | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CountriesAPI.CreateCountry(context.Background()).Command(command).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CountriesAPI.CreateCountry``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCountryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **command** | [**CreateCountryCommand**](CreateCountryCommand.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCountry
+
+> DeleteCountry(ctx, code).Execute()
+
+Delete country
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	code := "code_example" // string | Country iso code
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CountriesAPI.DeleteCountry(context.Background(), code).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CountriesAPI.DeleteCountry``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**code** | **string** | Country iso code | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteCountryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetCountries
@@ -95,7 +296,7 @@ Name | Type | Description  | Notes
 
 ## GetCountryByCode
 
-> CountryDto GetCountryByCode(ctx).CountryCode(countryCode).Fields(fields).Execute()
+> CountryDto GetCountryByCode(ctx, code).Fields(fields).Execute()
 
 Get country by code
 
@@ -114,12 +315,12 @@ import (
 )
 
 func main() {
-	countryCode := "countryCode_example" // string | Country iso code.
+	code := "code_example" // string | Country iso code
 	fields := "fields_example" // string | Projection fields separated with a comma (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CountriesAPI.GetCountryByCode(context.Background()).CountryCode(countryCode).Fields(fields).Execute()
+	resp, r, err := apiClient.CountriesAPI.GetCountryByCode(context.Background(), code).Fields(fields).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CountriesAPI.GetCountryByCode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,6 +333,10 @@ func main() {
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**code** | **string** | Country iso code | 
 
 ### Other Parameters
 
@@ -140,7 +345,7 @@ Other parameters are passed through a pointer to a apiGetCountryByCodeRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **countryCode** | **string** | Country iso code. | 
+
  **fields** | **string** | Projection fields separated with a comma | 
 
 ### Return type
@@ -155,6 +360,144 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCountryByCodeAlternativeRoute
+
+> CountryDto GetCountryByCodeAlternativeRoute(ctx).CountryCode(countryCode).Fields(fields).Execute()
+
+Get country by code (alternative route)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	countryCode := "countryCode_example" // string | Country iso code
+	fields := "fields_example" // string | Projection fields separated with a comma (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CountriesAPI.GetCountryByCodeAlternativeRoute(context.Background()).CountryCode(countryCode).Fields(fields).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CountriesAPI.GetCountryByCodeAlternativeRoute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCountryByCodeAlternativeRoute`: CountryDto
+	fmt.Fprintf(os.Stdout, "Response from `CountriesAPI.GetCountryByCodeAlternativeRoute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCountryByCodeAlternativeRouteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **countryCode** | **string** | Country iso code | 
+ **fields** | **string** | Projection fields separated with a comma | 
+
+### Return type
+
+[**CountryDto**](CountryDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCountry
+
+> UpdateCountry(ctx, code).Command(command).Execute()
+
+Update country
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	code := "code_example" // string | Country iso code
+	command := *openapiclient.NewUpdateCountryDto() // UpdateCountryDto | Update country command
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CountriesAPI.UpdateCountry(context.Background(), code).Command(command).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CountriesAPI.UpdateCountry``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**code** | **string** | Country iso code | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCountryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **command** | [**UpdateCountryDto**](UpdateCountryDto.md) | Update country command | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/merge-patch+json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -4,13 +4,221 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CheckCustomerDeletionConstraints**](CustomersAPI.md#CheckCustomerDeletionConstraints) | **Get** /v3/customers/{uid}/deletion-constraints | Check customer deletion constraints
+[**CreateCustomer**](CustomersAPI.md#CreateCustomer) | **Post** /v3/customers | Create customer
+[**DeleteCustomer**](CustomersAPI.md#DeleteCustomer) | **Delete** /v3/customers/{uid} | Delete customer
 [**GetCustomParameterValues**](CustomersAPI.md#GetCustomParameterValues) | **Get** /v3/customers/{uid}/custom-parameters/{parameterId}/values | Get custom parameter values
 [**GetCustomParameters**](CustomersAPI.md#GetCustomParameters) | **Get** /v3/customers/{uid}/custom-parameters | Get custom parameters
-[**GetCustomerByCode**](CustomersAPI.md#GetCustomerByCode) | **Get** /v3/customers/by-customer-code | Get a customer by its code
-[**GetCustomerById**](CustomersAPI.md#GetCustomerById) | **Get** /v3/customers/{uid} | Get a customer by its unique identifier
+[**GetCustomerByCode**](CustomersAPI.md#GetCustomerByCode) | **Get** /v3/customers/by-customer-code | Get customer by code
+[**GetCustomerById**](CustomersAPI.md#GetCustomerById) | **Get** /v3/customers/{uid} | Get customer by id
 [**GetCustomerReferences**](CustomersAPI.md#GetCustomerReferences) | **Get** /v3/customers/{uid}/references | Get customer references
 [**GetCustomers**](CustomersAPI.md#GetCustomers) | **Get** /v3/customers | Get customers
+[**UpdateCustomer**](CustomersAPI.md#UpdateCustomer) | **Patch** /v3/customers/{uid} | Update customer
 
+
+
+## CheckCustomerDeletionConstraints
+
+> EntityDeletionConstraintsDto CheckCustomerDeletionConstraints(ctx, uid).Execute()
+
+Check customer deletion constraints
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	uid := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | customer unique identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.CheckCustomerDeletionConstraints(context.Background(), uid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CheckCustomerDeletionConstraints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CheckCustomerDeletionConstraints`: EntityDeletionConstraintsDto
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CheckCustomerDeletionConstraints`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**uid** | **string** | customer unique identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCheckCustomerDeletionConstraintsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**EntityDeletionConstraintsDto**](EntityDeletionConstraintsDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCustomer
+
+> CreateCustomerResultDto CreateCustomer(ctx).Command(command).Execute()
+
+Create customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	command := *openapiclient.NewCreateCustomerCommand("AgencyCode_example") // CreateCustomerCommand | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomersAPI.CreateCustomer(context.Background()).Command(command).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.CreateCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomer`: CreateCustomerResultDto
+	fmt.Fprintf(os.Stdout, "Response from `CustomersAPI.CreateCustomer`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **command** | [**CreateCustomerCommand**](CreateCustomerCommand.md) |  | 
+
+### Return type
+
+[**CreateCustomerResultDto**](CreateCustomerResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json
+- **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCustomer
+
+> DeleteCustomer(ctx, uid).Execute()
+
+Delete customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	uid := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | customer unique identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CustomersAPI.DeleteCustomer(context.Background(), uid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.DeleteCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**uid** | **string** | customer unique identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetCustomParameterValues
@@ -180,7 +388,7 @@ Name | Type | Description  | Notes
 
 > CustomerDto GetCustomerByCode(ctx).CustomerCode(customerCode).Fields(fields).Execute()
 
-Get a customer by its code
+Get customer by code
 
 ### Example
 
@@ -195,7 +403,7 @@ import (
 )
 
 func main() {
-	customerCode := "customerCode_example" // string | Customer's code.
+	customerCode := "customerCode_example" // string | Customer's code
 	fields := "fields_example" // string | Projection fields separated with a comma (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -221,7 +429,7 @@ Other parameters are passed through a pointer to a apiGetCustomerByCodeRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerCode** | **string** | Customer&#39;s code. | 
+ **customerCode** | **string** | Customer&#39;s code | 
  **fields** | **string** | Projection fields separated with a comma | 
 
 ### Return type
@@ -246,7 +454,9 @@ Name | Type | Description  | Notes
 
 > CustomerDto GetCustomerById(ctx, uid).Fields(fields).Execute()
 
-Get a customer by its unique identifier
+Get customer by id
+
+
 
 ### Example
 
@@ -261,7 +471,7 @@ import (
 )
 
 func main() {
-	uid := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Customer's unique identifier.
+	uid := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Customer's unique identifier
 	fields := "fields_example" // string | Projection fields separated with a comma (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -282,7 +492,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uid** | **string** | Customer&#39;s unique identifier. | 
+**uid** | **string** | Customer&#39;s unique identifier | 
 
 ### Other Parameters
 
@@ -398,7 +608,7 @@ Name | Type | Description  | Notes
 
 ## GetCustomers
 
-> IPagedResourceListCustomerDto GetCustomers(ctx).Code(code).Label(label).PostCode(postCode).CityName(cityName).CountryCode(countryCode).FamilyCode(familyCode).AgencyCode(agencyCode).AgencyCodes(agencyCodes).CustomerUids(customerUids).CustomerCodes(customerCodes).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+> IPagedResourceListCustomerDto GetCustomers(ctx).Code(code).Label(label).IsEnabled(isEnabled).HasExited(hasExited).PostCode(postCode).CityName(cityName).CountryCode(countryCode).FamilyCode(familyCode).AgencyCode(agencyCode).AgencyCodes(agencyCodes).CustomerUids(customerUids).CustomerCodes(customerCodes).CompanyRegistrationNumber(companyRegistrationNumber).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 
 Get customers
 
@@ -419,6 +629,8 @@ import (
 func main() {
 	code := "code_example" // string | Customer code pattern (optional)
 	label := "label_example" // string | Customer label pattern (optional)
+	isEnabled := true // bool | Search for customers with enabled/disabled status.   When not set, both enabled and disabled customers are returned. (optional)
+	hasExited := true // bool | Search for customers with exit date reached or not.  When not set, both customers with exit date reached and not reached are returned. (optional)
 	postCode := "postCode_example" // string | Customer operation address post code pattern (optional)
 	cityName := "cityName_example" // string | Customer operation address city name pattern (optional)
 	countryCode := "countryCode_example" // string | Customer operation address country code pattern (optional)
@@ -427,6 +639,7 @@ func main() {
 	agencyCodes := []string{"Inner_example"} // []string | A list of exact agency codes (optional)
 	customerUids := []string{"Inner_example"} // []string | Collection of customer unique identifiers (optional)
 	customerCodes := []string{"Inner_example"} // []string | A list of exact customer codes (optional)
+	companyRegistrationNumber := "companyRegistrationNumber_example" // string | Company registration number pattern (optional)
 	pattern := "pattern_example" // string | A pattern to look for in fields specified  by PatternFields. (optional)
 	patternFields := []string{"PatternFields_example"} // []string | Fields in which to search for Pattern (optional)
 	startIndex := int32(56) // int32 | Pagination start index (offset). Default is 0. (optional)
@@ -437,7 +650,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomersAPI.GetCustomers(context.Background()).Code(code).Label(label).PostCode(postCode).CityName(cityName).CountryCode(countryCode).FamilyCode(familyCode).AgencyCode(agencyCode).AgencyCodes(agencyCodes).CustomerUids(customerUids).CustomerCodes(customerCodes).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+	resp, r, err := apiClient.CustomersAPI.GetCustomers(context.Background()).Code(code).Label(label).IsEnabled(isEnabled).HasExited(hasExited).PostCode(postCode).CityName(cityName).CountryCode(countryCode).FamilyCode(familyCode).AgencyCode(agencyCode).AgencyCodes(agencyCodes).CustomerUids(customerUids).CustomerCodes(customerCodes).CompanyRegistrationNumber(companyRegistrationNumber).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.GetCustomers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -460,6 +673,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **string** | Customer code pattern | 
  **label** | **string** | Customer label pattern | 
+ **isEnabled** | **bool** | Search for customers with enabled/disabled status.   When not set, both enabled and disabled customers are returned. | 
+ **hasExited** | **bool** | Search for customers with exit date reached or not.  When not set, both customers with exit date reached and not reached are returned. | 
  **postCode** | **string** | Customer operation address post code pattern | 
  **cityName** | **string** | Customer operation address city name pattern | 
  **countryCode** | **string** | Customer operation address country code pattern | 
@@ -468,6 +683,7 @@ Name | Type | Description  | Notes
  **agencyCodes** | **[]string** | A list of exact agency codes | 
  **customerUids** | **[]string** | Collection of customer unique identifiers | 
  **customerCodes** | **[]string** | A list of exact customer codes | 
+ **companyRegistrationNumber** | **string** | Company registration number pattern | 
  **pattern** | **string** | A pattern to look for in fields specified  by PatternFields. | 
  **patternFields** | **[]string** | Fields in which to search for Pattern | 
  **startIndex** | **int32** | Pagination start index (offset). Default is 0. | 
@@ -488,6 +704,76 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomer
+
+> UpdateCustomer(ctx, uid).Command(command).Execute()
+
+Update customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	uid := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Customer unique identifier
+	command := *openapiclient.NewUpdateCustomerDto("AgencyCode_example") // UpdateCustomerDto | Update customer command.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CustomersAPI.UpdateCustomer(context.Background(), uid).Command(command).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomersAPI.UpdateCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**uid** | **string** | Customer unique identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **command** | [**UpdateCustomerDto**](UpdateCustomerDto.md) | Update customer command. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/merge-patch+json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

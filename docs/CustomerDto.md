@@ -7,11 +7,19 @@ Name | Type | Description | Notes
 **Uid** | Pointer to **string** | Customer&#39;s unique identifier | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
+**CreationDateTime** | Pointer to **time.Time** |  | [optional] 
+**LastModificationDateTime** | Pointer to **time.Time** |  | [optional] 
 **AgencyCode** | Pointer to **string** |  | [optional] 
+**OperationAddressId** | Pointer to **int32** |  | [optional] 
+**UseAgencyAddressInsteadOfOperationAddress** | Pointer to **bool** | If true, the agency address should be used instead of operation address. | [optional] 
 **CustomerFamilyCode** | Pointer to **string** |  | [optional] 
 **CustomerFamilyLabel** | Pointer to **string** |  | [optional] 
 **EdiConfigurationId** | Pointer to **int32** |  | [optional] 
 **OperationalConfiguration** | Pointer to [**CustomerOperationalConfigurationDto**](CustomerOperationalConfigurationDto.md) |  | [optional] 
+**BillingAddress** | Pointer to [**CustomerBillingAddressDto**](CustomerBillingAddressDto.md) |  | [optional] 
+**BillingConfiguration** | Pointer to [**CustomerBillingConfigurationDto**](CustomerBillingConfigurationDto.md) |  | [optional] 
+**BillingDetails** | Pointer to [**CustomerBillingDetailsDto**](CustomerBillingDetailsDto.md) |  | [optional] 
+**Included** | Pointer to [**CustomerIncludedDto**](CustomerIncludedDto.md) |  | [optional] 
 
 ## Methods
 
@@ -107,6 +115,56 @@ SetLabel sets Label field to given value.
 
 HasLabel returns a boolean if a field has been set.
 
+### GetCreationDateTime
+
+`func (o *CustomerDto) GetCreationDateTime() time.Time`
+
+GetCreationDateTime returns the CreationDateTime field if non-nil, zero value otherwise.
+
+### GetCreationDateTimeOk
+
+`func (o *CustomerDto) GetCreationDateTimeOk() (*time.Time, bool)`
+
+GetCreationDateTimeOk returns a tuple with the CreationDateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreationDateTime
+
+`func (o *CustomerDto) SetCreationDateTime(v time.Time)`
+
+SetCreationDateTime sets CreationDateTime field to given value.
+
+### HasCreationDateTime
+
+`func (o *CustomerDto) HasCreationDateTime() bool`
+
+HasCreationDateTime returns a boolean if a field has been set.
+
+### GetLastModificationDateTime
+
+`func (o *CustomerDto) GetLastModificationDateTime() time.Time`
+
+GetLastModificationDateTime returns the LastModificationDateTime field if non-nil, zero value otherwise.
+
+### GetLastModificationDateTimeOk
+
+`func (o *CustomerDto) GetLastModificationDateTimeOk() (*time.Time, bool)`
+
+GetLastModificationDateTimeOk returns a tuple with the LastModificationDateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastModificationDateTime
+
+`func (o *CustomerDto) SetLastModificationDateTime(v time.Time)`
+
+SetLastModificationDateTime sets LastModificationDateTime field to given value.
+
+### HasLastModificationDateTime
+
+`func (o *CustomerDto) HasLastModificationDateTime() bool`
+
+HasLastModificationDateTime returns a boolean if a field has been set.
+
 ### GetAgencyCode
 
 `func (o *CustomerDto) GetAgencyCode() string`
@@ -131,6 +189,56 @@ SetAgencyCode sets AgencyCode field to given value.
 `func (o *CustomerDto) HasAgencyCode() bool`
 
 HasAgencyCode returns a boolean if a field has been set.
+
+### GetOperationAddressId
+
+`func (o *CustomerDto) GetOperationAddressId() int32`
+
+GetOperationAddressId returns the OperationAddressId field if non-nil, zero value otherwise.
+
+### GetOperationAddressIdOk
+
+`func (o *CustomerDto) GetOperationAddressIdOk() (*int32, bool)`
+
+GetOperationAddressIdOk returns a tuple with the OperationAddressId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOperationAddressId
+
+`func (o *CustomerDto) SetOperationAddressId(v int32)`
+
+SetOperationAddressId sets OperationAddressId field to given value.
+
+### HasOperationAddressId
+
+`func (o *CustomerDto) HasOperationAddressId() bool`
+
+HasOperationAddressId returns a boolean if a field has been set.
+
+### GetUseAgencyAddressInsteadOfOperationAddress
+
+`func (o *CustomerDto) GetUseAgencyAddressInsteadOfOperationAddress() bool`
+
+GetUseAgencyAddressInsteadOfOperationAddress returns the UseAgencyAddressInsteadOfOperationAddress field if non-nil, zero value otherwise.
+
+### GetUseAgencyAddressInsteadOfOperationAddressOk
+
+`func (o *CustomerDto) GetUseAgencyAddressInsteadOfOperationAddressOk() (*bool, bool)`
+
+GetUseAgencyAddressInsteadOfOperationAddressOk returns a tuple with the UseAgencyAddressInsteadOfOperationAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseAgencyAddressInsteadOfOperationAddress
+
+`func (o *CustomerDto) SetUseAgencyAddressInsteadOfOperationAddress(v bool)`
+
+SetUseAgencyAddressInsteadOfOperationAddress sets UseAgencyAddressInsteadOfOperationAddress field to given value.
+
+### HasUseAgencyAddressInsteadOfOperationAddress
+
+`func (o *CustomerDto) HasUseAgencyAddressInsteadOfOperationAddress() bool`
+
+HasUseAgencyAddressInsteadOfOperationAddress returns a boolean if a field has been set.
 
 ### GetCustomerFamilyCode
 
@@ -231,6 +339,106 @@ SetOperationalConfiguration sets OperationalConfiguration field to given value.
 `func (o *CustomerDto) HasOperationalConfiguration() bool`
 
 HasOperationalConfiguration returns a boolean if a field has been set.
+
+### GetBillingAddress
+
+`func (o *CustomerDto) GetBillingAddress() CustomerBillingAddressDto`
+
+GetBillingAddress returns the BillingAddress field if non-nil, zero value otherwise.
+
+### GetBillingAddressOk
+
+`func (o *CustomerDto) GetBillingAddressOk() (*CustomerBillingAddressDto, bool)`
+
+GetBillingAddressOk returns a tuple with the BillingAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingAddress
+
+`func (o *CustomerDto) SetBillingAddress(v CustomerBillingAddressDto)`
+
+SetBillingAddress sets BillingAddress field to given value.
+
+### HasBillingAddress
+
+`func (o *CustomerDto) HasBillingAddress() bool`
+
+HasBillingAddress returns a boolean if a field has been set.
+
+### GetBillingConfiguration
+
+`func (o *CustomerDto) GetBillingConfiguration() CustomerBillingConfigurationDto`
+
+GetBillingConfiguration returns the BillingConfiguration field if non-nil, zero value otherwise.
+
+### GetBillingConfigurationOk
+
+`func (o *CustomerDto) GetBillingConfigurationOk() (*CustomerBillingConfigurationDto, bool)`
+
+GetBillingConfigurationOk returns a tuple with the BillingConfiguration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingConfiguration
+
+`func (o *CustomerDto) SetBillingConfiguration(v CustomerBillingConfigurationDto)`
+
+SetBillingConfiguration sets BillingConfiguration field to given value.
+
+### HasBillingConfiguration
+
+`func (o *CustomerDto) HasBillingConfiguration() bool`
+
+HasBillingConfiguration returns a boolean if a field has been set.
+
+### GetBillingDetails
+
+`func (o *CustomerDto) GetBillingDetails() CustomerBillingDetailsDto`
+
+GetBillingDetails returns the BillingDetails field if non-nil, zero value otherwise.
+
+### GetBillingDetailsOk
+
+`func (o *CustomerDto) GetBillingDetailsOk() (*CustomerBillingDetailsDto, bool)`
+
+GetBillingDetailsOk returns a tuple with the BillingDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingDetails
+
+`func (o *CustomerDto) SetBillingDetails(v CustomerBillingDetailsDto)`
+
+SetBillingDetails sets BillingDetails field to given value.
+
+### HasBillingDetails
+
+`func (o *CustomerDto) HasBillingDetails() bool`
+
+HasBillingDetails returns a boolean if a field has been set.
+
+### GetIncluded
+
+`func (o *CustomerDto) GetIncluded() CustomerIncludedDto`
+
+GetIncluded returns the Included field if non-nil, zero value otherwise.
+
+### GetIncludedOk
+
+`func (o *CustomerDto) GetIncludedOk() (*CustomerIncludedDto, bool)`
+
+GetIncludedOk returns a tuple with the Included field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncluded
+
+`func (o *CustomerDto) SetIncluded(v CustomerIncludedDto)`
+
+SetIncluded sets Included field to given value.
+
+### HasIncluded
+
+`func (o *CustomerDto) HasIncluded() bool`
+
+HasIncluded returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

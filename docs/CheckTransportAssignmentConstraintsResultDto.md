@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Constraints** | Pointer to [**[]CheckTransportAssignmentConstraintsResultDtoAssignmentConstraintDto**](CheckTransportAssignmentConstraintsResultDtoAssignmentConstraintDto.md) |  | [optional] 
+**Constraints** | Pointer to [**[]AssignmentConstraintDto**](AssignmentConstraintDto.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConstraints
 
-`func (o *CheckTransportAssignmentConstraintsResultDto) GetConstraints() []CheckTransportAssignmentConstraintsResultDtoAssignmentConstraintDto`
+`func (o *CheckTransportAssignmentConstraintsResultDto) GetConstraints() []AssignmentConstraintDto`
 
 GetConstraints returns the Constraints field if non-nil, zero value otherwise.
 
 ### GetConstraintsOk
 
-`func (o *CheckTransportAssignmentConstraintsResultDto) GetConstraintsOk() (*[]CheckTransportAssignmentConstraintsResultDtoAssignmentConstraintDto, bool)`
+`func (o *CheckTransportAssignmentConstraintsResultDto) GetConstraintsOk() (*[]AssignmentConstraintDto, bool)`
 
 GetConstraintsOk returns a tuple with the Constraints field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConstraints
 
-`func (o *CheckTransportAssignmentConstraintsResultDto) SetConstraints(v []CheckTransportAssignmentConstraintsResultDtoAssignmentConstraintDto)`
+`func (o *CheckTransportAssignmentConstraintsResultDto) SetConstraints(v []AssignmentConstraintDto)`
 
 SetConstraints sets Constraints field to given value.
 

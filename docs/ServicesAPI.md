@@ -4,16 +4,16 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCustomParameterValues**](ServicesAPI.md#GetCustomParameterValues) | **Get** /v3/services/{uid}/custom-parameters/{parameterId}/values | Get custom parameter values
-[**GetCustomParameters**](ServicesAPI.md#GetCustomParameters) | **Get** /v3/services/{uid}/custom-parameters | Get custom parameters
+[**GetServiceCustomParameterValues**](ServicesAPI.md#GetServiceCustomParameterValues) | **Get** /v3/services/{uid}/custom-parameters/{parameterId}/values | Get custom parameter values
+[**GetServiceCustomParameters**](ServicesAPI.md#GetServiceCustomParameters) | **Get** /v3/services/{uid}/custom-parameters | Get custom parameters
 [**GetServices**](ServicesAPI.md#GetServices) | **Get** /v3/services | Get services
 [**GetSubServices**](ServicesAPI.md#GetSubServices) | **Get** /v3/services/{uid}/sub-services | Get sub services
 
 
 
-## GetCustomParameterValues
+## GetServiceCustomParameterValues
 
-> IPagedResourceListCustomParameterValueDto GetCustomParameterValues(ctx, uid, parameterId).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+> IPagedResourceListCustomParameterValueDto GetServiceCustomParameterValues(ctx, uid, parameterId).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 
 Get custom parameter values
 
@@ -42,13 +42,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServicesAPI.GetCustomParameterValues(context.Background(), uid, parameterId).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+	resp, r, err := apiClient.ServicesAPI.GetServiceCustomParameterValues(context.Background(), uid, parameterId).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.GetCustomParameterValues``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.GetServiceCustomParameterValues``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCustomParameterValues`: IPagedResourceListCustomParameterValueDto
-	fmt.Fprintf(os.Stdout, "Response from `ServicesAPI.GetCustomParameterValues`: %v\n", resp)
+	// response from `GetServiceCustomParameterValues`: IPagedResourceListCustomParameterValueDto
+	fmt.Fprintf(os.Stdout, "Response from `ServicesAPI.GetServiceCustomParameterValues`: %v\n", resp)
 }
 ```
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCustomParameterValuesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetServiceCustomParameterValuesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -94,9 +94,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCustomParameters
+## GetServiceCustomParameters
 
-> IPagedResourceListCustomParameterDto GetCustomParameters(ctx, uid).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+> IPagedResourceListCustomParameterDto GetServiceCustomParameters(ctx, uid).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 
 Get custom parameters
 
@@ -124,13 +124,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServicesAPI.GetCustomParameters(context.Background(), uid).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+	resp, r, err := apiClient.ServicesAPI.GetServiceCustomParameters(context.Background(), uid).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.GetCustomParameters``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.GetServiceCustomParameters``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCustomParameters`: IPagedResourceListCustomParameterDto
-	fmt.Fprintf(os.Stdout, "Response from `ServicesAPI.GetCustomParameters`: %v\n", resp)
+	// response from `GetServiceCustomParameters`: IPagedResourceListCustomParameterDto
+	fmt.Fprintf(os.Stdout, "Response from `ServicesAPI.GetServiceCustomParameters`: %v\n", resp)
 }
 ```
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCustomParametersRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetServiceCustomParametersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ## GetServices
 
-> IPagedResourceListServiceDto GetServices(ctx).Code(code).Label(label).Codes(codes).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+> IPagedResourceListServiceDto GetServices(ctx).Code(code).Label(label).Codes(codes).IsEnabled(isEnabled).RestrictToAgencyCode(restrictToAgencyCode).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 
 Get services
 
@@ -198,6 +198,8 @@ func main() {
 	code := "code_example" // string | Service code pattern (optional)
 	label := "label_example" // string | Service label pattern (optional)
 	codes := []string{"Inner_example"} // []string | List of service codes. (optional)
+	isEnabled := true // bool | Search for services with enabled/disabled status.   When not set, both enabled and disabled services are returned. (optional)
+	restrictToAgencyCode := "restrictToAgencyCode_example" // string | If this filter is specified, the results will be filtered to services that are either :  - Available from any agency.  - Available only from the specific agency (optional)
 	pattern := "pattern_example" // string | A pattern to look for in fields specified  by PatternFields. (optional)
 	patternFields := []string{"PatternFields_example"} // []string | Fields in which to search for Pattern (optional)
 	startIndex := int32(56) // int32 | Pagination start index (offset). Default is 0. (optional)
@@ -208,7 +210,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServicesAPI.GetServices(context.Background()).Code(code).Label(label).Codes(codes).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
+	resp, r, err := apiClient.ServicesAPI.GetServices(context.Background()).Code(code).Label(label).Codes(codes).IsEnabled(isEnabled).RestrictToAgencyCode(restrictToAgencyCode).Pattern(pattern).PatternFields(patternFields).StartIndex(startIndex).Count(count).Sort(sort).Desc(desc).Fields(fields).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.GetServices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -232,6 +234,8 @@ Name | Type | Description  | Notes
  **code** | **string** | Service code pattern | 
  **label** | **string** | Service label pattern | 
  **codes** | **[]string** | List of service codes. | 
+ **isEnabled** | **bool** | Search for services with enabled/disabled status.   When not set, both enabled and disabled services are returned. | 
+ **restrictToAgencyCode** | **string** | If this filter is specified, the results will be filtered to services that are either :  - Available from any agency.  - Available only from the specific agency | 
  **pattern** | **string** | A pattern to look for in fields specified  by PatternFields. | 
  **patternFields** | **[]string** | Fields in which to search for Pattern | 
  **startIndex** | **int32** | Pagination start index (offset). Default is 0. | 

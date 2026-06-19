@@ -4,8 +4,8 @@ All URIs are relative to *https://mylicense.dispatchapi.dispatch-rts.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDriverByCode**](DriversAPI.md#GetDriverByCode) | **Get** /v3/drivers/by-code | Get a driver by its code
-[**GetDriverById**](DriversAPI.md#GetDriverById) | **Get** /v3/drivers/{driverId} | Get a driver by its identifier
+[**GetDriverByCode**](DriversAPI.md#GetDriverByCode) | **Get** /v3/drivers/by-code | Get driver by code
+[**GetDriverById**](DriversAPI.md#GetDriverById) | **Get** /v3/drivers/{driverId} | Get driver by id
 [**GetDrivers**](DriversAPI.md#GetDrivers) | **Get** /v3/drivers | Get drivers
 
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 > DriverDto GetDriverByCode(ctx).Code(code).Fields(fields).Execute()
 
-Get a driver by its code
+Get driver by code
 
 ### Example
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 > DriverDto GetDriverById(ctx, driverId).Fields(fields).Execute()
 
-Get a driver by its identifier
+Get driver by id
 
 ### Example
 

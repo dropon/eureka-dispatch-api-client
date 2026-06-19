@@ -5,11 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Service** | Pointer to [**ServiceDto**](ServiceDto.md) |  | [optional] 
+**SubState** | Pointer to [**SubStateDto**](SubStateDto.md) |  | [optional] 
 **Customer** | Pointer to [**CustomerDto**](CustomerDto.md) |  | [optional] 
 **Agency** | Pointer to [**AgencyDto**](AgencyDto.md) |  | [optional] 
 **SearchFlags** | Pointer to [**SearchFlagsDto**](SearchFlagsDto.md) |  | [optional] 
 **Handler** | Pointer to [**DriverDto**](DriverDto.md) |  | [optional] 
 **Driver** | Pointer to [**DriverDto**](DriverDto.md) |  | [optional] 
+**Vehicle** | Pointer to [**VehicleDto**](VehicleDto.md) |  | [optional] 
+**Trailer** | Pointer to [**VehicleDto**](VehicleDto.md) |  | [optional] 
 
 ## Methods
 
@@ -54,6 +57,31 @@ SetService sets Service field to given value.
 `func (o *TransportIncludedDto) HasService() bool`
 
 HasService returns a boolean if a field has been set.
+
+### GetSubState
+
+`func (o *TransportIncludedDto) GetSubState() SubStateDto`
+
+GetSubState returns the SubState field if non-nil, zero value otherwise.
+
+### GetSubStateOk
+
+`func (o *TransportIncludedDto) GetSubStateOk() (*SubStateDto, bool)`
+
+GetSubStateOk returns a tuple with the SubState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubState
+
+`func (o *TransportIncludedDto) SetSubState(v SubStateDto)`
+
+SetSubState sets SubState field to given value.
+
+### HasSubState
+
+`func (o *TransportIncludedDto) HasSubState() bool`
+
+HasSubState returns a boolean if a field has been set.
 
 ### GetCustomer
 
@@ -179,6 +207,56 @@ SetDriver sets Driver field to given value.
 `func (o *TransportIncludedDto) HasDriver() bool`
 
 HasDriver returns a boolean if a field has been set.
+
+### GetVehicle
+
+`func (o *TransportIncludedDto) GetVehicle() VehicleDto`
+
+GetVehicle returns the Vehicle field if non-nil, zero value otherwise.
+
+### GetVehicleOk
+
+`func (o *TransportIncludedDto) GetVehicleOk() (*VehicleDto, bool)`
+
+GetVehicleOk returns a tuple with the Vehicle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVehicle
+
+`func (o *TransportIncludedDto) SetVehicle(v VehicleDto)`
+
+SetVehicle sets Vehicle field to given value.
+
+### HasVehicle
+
+`func (o *TransportIncludedDto) HasVehicle() bool`
+
+HasVehicle returns a boolean if a field has been set.
+
+### GetTrailer
+
+`func (o *TransportIncludedDto) GetTrailer() VehicleDto`
+
+GetTrailer returns the Trailer field if non-nil, zero value otherwise.
+
+### GetTrailerOk
+
+`func (o *TransportIncludedDto) GetTrailerOk() (*VehicleDto, bool)`
+
+GetTrailerOk returns a tuple with the Trailer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrailer
+
+`func (o *TransportIncludedDto) SetTrailer(v VehicleDto)`
+
+SetTrailer sets Trailer field to given value.
+
+### HasTrailer
+
+`func (o *TransportIncludedDto) HasTrailer() bool`
+
+HasTrailer returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

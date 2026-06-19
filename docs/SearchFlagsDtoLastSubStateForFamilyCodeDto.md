@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **FamilyCode** | Pointer to **string** |  | [optional] 
 **SubStateCode** | Pointer to **string** |  | [optional] 
+**SubStateBackgroundColor** | Pointer to **string** | Substate background color in ARGB hexadecimal format, example : #FFFF4500 | [optional] 
+**SubStateTextColor** | Pointer to **string** | Substate text color in ARGB hexadecimal format, example : #FFFF4500 | [optional] 
 
 ## Methods
 
@@ -75,6 +77,56 @@ SetSubStateCode sets SubStateCode field to given value.
 `func (o *SearchFlagsDtoLastSubStateForFamilyCodeDto) HasSubStateCode() bool`
 
 HasSubStateCode returns a boolean if a field has been set.
+
+### GetSubStateBackgroundColor
+
+`func (o *SearchFlagsDtoLastSubStateForFamilyCodeDto) GetSubStateBackgroundColor() string`
+
+GetSubStateBackgroundColor returns the SubStateBackgroundColor field if non-nil, zero value otherwise.
+
+### GetSubStateBackgroundColorOk
+
+`func (o *SearchFlagsDtoLastSubStateForFamilyCodeDto) GetSubStateBackgroundColorOk() (*string, bool)`
+
+GetSubStateBackgroundColorOk returns a tuple with the SubStateBackgroundColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubStateBackgroundColor
+
+`func (o *SearchFlagsDtoLastSubStateForFamilyCodeDto) SetSubStateBackgroundColor(v string)`
+
+SetSubStateBackgroundColor sets SubStateBackgroundColor field to given value.
+
+### HasSubStateBackgroundColor
+
+`func (o *SearchFlagsDtoLastSubStateForFamilyCodeDto) HasSubStateBackgroundColor() bool`
+
+HasSubStateBackgroundColor returns a boolean if a field has been set.
+
+### GetSubStateTextColor
+
+`func (o *SearchFlagsDtoLastSubStateForFamilyCodeDto) GetSubStateTextColor() string`
+
+GetSubStateTextColor returns the SubStateTextColor field if non-nil, zero value otherwise.
+
+### GetSubStateTextColorOk
+
+`func (o *SearchFlagsDtoLastSubStateForFamilyCodeDto) GetSubStateTextColorOk() (*string, bool)`
+
+GetSubStateTextColorOk returns a tuple with the SubStateTextColor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubStateTextColor
+
+`func (o *SearchFlagsDtoLastSubStateForFamilyCodeDto) SetSubStateTextColor(v string)`
+
+SetSubStateTextColor sets SubStateTextColor field to given value.
+
+### HasSubStateTextColor
+
+`func (o *SearchFlagsDtoLastSubStateForFamilyCodeDto) HasSubStateTextColor() bool`
+
+HasSubStateTextColor returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
